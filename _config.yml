@@ -2,7 +2,7 @@ title:              Hve
 email:              hve4638@gmail.com
 description:        Test Blog
 author:             Hve
-baseurl:            "/blog"
+baseurl:            ""
 url:                "https://hve4638.github.io"
 
 # Social Profiles
