@@ -1,0 +1,213 @@
+I"/<p>수정됨2</p>
+
+<blockquote>
+  <p><strong>cd</strong><br />
+경로 이동</p>
+
+  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> <span class="o">[</span>경로]
+</code></pre></div>  </div>
+</blockquote>
+
+<blockquote>
+  <p><strong>ls</strong><br />
+디렉토리 목록 출력</p>
+
+  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">ls</span> <span class="o">[</span>경로]
+</code></pre></div>  </div>
+
+  <p>-a: 모두보기 (숨김파일)</p>
+
+  <p>-l		: 자세히 보기</p>
+
+  <p>-r		: 하위까지 보기</p>
+
+  <p>-d		: 디렉토리 보기</p>
+
+  <p>d rwxr-xr-x.  21 root root 4096  9월  2 04:37 var<br />
+1) d　　　　: File Type</p>
+
+  <blockquote>
+    <p>　　　　* : 일반 파일</p>
+
+    <p>　　　　d : 디렉토리 파일</p>
+
+    <p>　　　　l : 링크 파일</p>
+
+    <p>　　　　b : 블록형 장치파일</p>
+
+    <p>　　　　c : 문자형 장치파일</p>
+  </blockquote>
+
+  <p>2) rwxr-xr-x.　　　　: 권한<br />
+3) 21　　　　　: 연결된 상하위 디렉토리 개수<br />
+4) root　　　　: 권한<br />
+5) root				: 권한 - 소유그룹계정<br />
+6) 4096				: 크기<br />
+7) 9월  2 04:37　:  생성 날자<br />
+8) var　　　　　:  파일 명</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>mkdir</strong><br />
+디렉토리 생성</p>
+
+  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir</span> <span class="o">[</span>경로]
+</code></pre></div>  </div>
+
+  <p>-p	: 상위 디렉토리 포함 생성</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>man</strong><br />
+명령어 정보 확인</p>
+
+  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>man <span class="o">[</span>명령어]
+</code></pre></div>  </div>
+</blockquote>
+
+<blockquote>
+  <p><strong>cp</strong><br />
+파일 복사</p>
+
+  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cp</span> <span class="o">[</span>원본1] <span class="o">[</span>원본2...] <span class="o">[</span>경로]
+</code></pre></div>  </div>
+
+  <p>-r　: 디렉토리 포함 복사</p>
+
+  <p>-p　: 속성 포함 복사</p>
+
+  <p>-i　: 파일 중복시 물어봄</p>
+
+  <p>-f　: 파일 중복시 강제 복사</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>mv</strong>
+파일 이동</p>
+
+  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mv</span> <span class="o">[</span>원본1] <span class="o">[</span>원본2...] <span class="o">[</span>경로]
+</code></pre></div>  </div>
+
+  <p>cp 명령어와 옵션, 포맷 동일</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>rm</strong><br />
+파일 삭제</p>
+
+  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">rm</span> <span class="o">[</span>경로]
+</code></pre></div>  </div>
+
+  <p>-r　: 디렉토리 포함 삭제</p>
+
+  <p>-i　: 파일 중복시 물어봄</p>
+
+  <p>-f　: 파일 중복시 강제 삭제</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>cat</strong><br />
+파일 내용 출력</p>
+
+  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat</span> <span class="o">[</span>경로]
+</code></pre></div>  </div>
+
+  <p>-n 　: 행번호 붙혀서 출력</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>head</strong>
+파일 내용 n줄 출력</p>
+
+  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">head</span> -<span class="o">{</span>n<span class="o">}</span> <span class="o">{</span>path<span class="o">}</span>
+</code></pre></div>  </div>
+
+  <p>-{n}　: {n} 줄 출력</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>tail</strong><br />
+파일 내용 n줄 출력</p>
+
+  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">tail</span> -<span class="o">{</span>n<span class="o">}</span> <span class="o">{</span>path<span class="o">}</span>
+</code></pre></div>  </div>
+
+  <p>-{n}　: {n} 줄 출력</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>more</strong>
+n행씩 끊어서 출력</p>
+
+  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>more <span class="o">{</span>path<span class="o">}</span>
+</code></pre></div>  </div>
+
+  <p>-{n}　: {n} 만큼 출력</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>find</strong><br />
+파일&amp;디렉토리 검색</p>
+
+  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>find <span class="o">[</span>경로] <span class="o">[</span>조건]
+</code></pre></div>  </div>
+
+  <p>-name　　　　: 파일/디렉토리명 검색</p>
+
+  <p>-perm　　　　: 지정된 권한 검색</p>
+
+  <p>-size　　　　　: 파일 크기가 일치하는 파일 찾기</p>
+
+  <p>-type　　　　　: 파일 형식 지정함</p>
+
+  <blockquote>
+    <p>f : 파일<br />
+d : 디렉토리</p>
+  </blockquote>
+
+  <p>-exec　　　　: 검색 결과를 해당 명령어로 실행 하는 옵션</p>
+
+  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>find / <span class="nt">-name</span> <span class="k">*</span> <span class="nt">-exec</span> <span class="nb">cat</span> <span class="o">{}</span> <span class="se">\;</span>
+</code></pre></div>  </div>
+
+  <p>-o　: 복수 옵션 적용 (or)</p>
+
+  <p>-type　: 파일 유형검색 (파일 or 디렉토리)</p>
+
+  <p>-atime {n}　: {n}일 전에 엑세스한 파일 찾기, +n 또는 -n 형식으로도 사용가능</p>
+
+  <p>-mtime {n}　: {n}일 전에 마지막으로 수정된 파일 찾기, +n 또는 -n 형식으로도 사용가능</p>
+
+  <p>-newer　: 지정된 파일 이후 생성된 파일 찾기</p>
+
+  <p>-used {n}　: 변경된지 {n}일이 지난 모든 파일 찾기</p>
+
+  <p>-uid　: 지정된 UID를 가진 파일 검색</p>
+
+  <p>-gid　: 지정된 GID를 가진 파일 검색</p>
+
+  <p>-group　: 지정된 그룹을 가진 파일 검색</p>
+
+  <p>-user　: 지정된 소유자가 소유한 모든 파일 검색</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>alias</strong>
+단축키 지정</p>
+
+  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">alias </span><span class="nv">var</span><span class="o">=</span><span class="s1">'명령어'</span>
+</code></pre></div>  </div>
+
+  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">alias </span><span class="nv">a1</span><span class="o">=</span><span class="s1">'mkdir /aliastest'</span>
+
+<span class="nb">alias </span><span class="nv">a2</span><span class="o">=</span><span class="s1">'touch /aliastest/test'</span>
+
+<span class="nb">alias </span><span class="nv">a3</span><span class="o">=</span><span class="s1">'
+a1
+a2'</span>
+
+<span class="nb">unalias </span>a1 a2 a3
+</code></pre></div>  </div>
+</blockquote>
+
+:ET

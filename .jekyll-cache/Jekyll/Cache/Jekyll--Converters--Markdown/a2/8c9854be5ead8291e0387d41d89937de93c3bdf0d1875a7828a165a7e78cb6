@@ -1,0 +1,50 @@
+I"y<blockquote>
+  <p><strong>useradd</strong><br />
+계정 생성</p>
+
+  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>useradd <span class="o">[</span>계정]
+</code></pre></div>  </div>
+
+  <p>-u　:　UID 지정<br />
+-g　:　주그룹 지정<br />
+-G　:　보조 그룹 지정<br />
+-c　:　주석<br />
+-d　:　홈디렉토리 경로 지정<br />
+-m　:　메뉴얼 ( = man useradd )<br />
+-k　:　스컬디렉토리 경로 지정<br />
+-s　:　쉘 지정</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>usermod</strong> <br />
+계정 설정</p>
+
+  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>usermod <span class="o">[</span>계정]
+</code></pre></div>  </div>
+
+  <p>-u<br />
+-g <br />
+-G<br />
+-c<br />
+-d<br />
+-m　:　홈디렉토리 이동 (재지정시 -md로 설정하여야함)<br />
+-k<br />
+-s</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>userdel</strong><br />
+계정 삭제</p>
+
+  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>userdel <span class="o">[</span>계정명]
+</code></pre></div>  </div>
+
+  <p>-r　:　홈디렉토리, 메일함 삭제</p>
+
+  <p>/etc/passwd		삭제<br />
+/etc/shadow		삭제<br />
+/etc/group 		삭제<br />
+/home/mod			존재 (-r: 삭제)<br />
+/var/spool/mail/mod	존재 (-r: 삭제)</p>
+</blockquote>
+:ET

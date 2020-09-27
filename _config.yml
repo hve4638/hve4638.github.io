@@ -1,14 +1,14 @@
 title:              Hve
 email:              hve4638@gmail.com
-description:        My Blog!
-author:             Start Bootstrap
+description:        Test Blog
+author:             Hve
 baseurl:            "/blog"
 url:                "https://hve4638.github.io"
 
 # Social Profiles
-twitter_username:   hve4638
-github_username:    hve4638
-facebook_username:  hve4638
+twitter_username:   SBootstrap
+github_username:    StartBootstrap
+facebook_username:  StartBootstrap
 instagram_username:  
 linkedin_username:
 
