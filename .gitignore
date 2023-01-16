@@ -16,6 +16,7 @@ vendor
 *.gem
 
 Gemfile.lock
+.nojekyll
 
 # npm dependencies
 node_modules
