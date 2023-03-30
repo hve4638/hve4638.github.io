@@ -1,5 +1,5 @@
 ---
-title: 파이썬 코드 뭉치 - 2
+title: Python | 파이썬 코드 뭉치 - 2
 author: Hve
 date: 2023-01-18 14:40:00 +0900
 categories: [Dev, Python]

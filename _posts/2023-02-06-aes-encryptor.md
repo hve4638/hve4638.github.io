@@ -1,5 +1,5 @@
 ---
-title: [Project] AES Encryptor
+title: 프로젝트 | AES Encryptor
 author: Hve
 date: 2023-02-06 07:11:00 +0900
 categories: [Dev, Project, C#]
@@ -27,6 +27,7 @@ tags: [c#]
 - 폴더 단위 암호화
 - Advanced 모드 (운영모드, KeySize, Salt 등 세부 선택)
 
+## Download
 
 [Download][release-link]
 
