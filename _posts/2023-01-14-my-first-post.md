@@ -1,5 +1,5 @@
 ---
-title: [Blogging] 첫 포스팅
+title: Blogging | 첫 포스팅
 author: Hve
 date: 2023-01-14 21:46:00 +0900
 categories: [Blogging, Talk]
