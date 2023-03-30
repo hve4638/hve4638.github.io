@@ -10,13 +10,32 @@ tags: []
 
 적용한 테마 : [**Chirpy**](https://github.com/cotes2020/jekyll-theme-chirpy)
 
-개발하는데 블로그 하나 있어야 할 것 같아서 만들었습니다
 
 이것저것 해보고(주로 코딩) 올리는 용도
 
+## 할 수 있는것
 
+### C++
 
-### 다루고 싶은 것
+조금 함
+
+관련 프로젝트
+- [HEMacro](https://hve4638.github.io/posts/hemacro)
+
+### C#
+
+관련 프로젝트
+- [FWI](https://hve4638.github.io/posts/fwi/)
+- [AES Encrypter](https://hve4638.github.io/posts/aes-encryptor/)
+- [getip](https://hve4638.github.io/posts/getip/)
+
+### Python
+
+### Gamemaker (GML)
+
+### Flutter (Dart)
+
+## 다루고 싶은 것
 
 1. 만들고싶은거 코딩하기
 2. 게임 개발
