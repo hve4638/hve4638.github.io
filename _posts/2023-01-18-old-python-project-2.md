@@ -5,7 +5,7 @@ date: 2023-01-18 14:40:00 +0900
 categories: [Dev, Python]
 math: false
 mermaid: false
-tags: [python, 암호]
+tags: [python, crypto]
 ---
 
 예전에 암호 수업을 들을때 복습 겸 짜던 코드뭉치

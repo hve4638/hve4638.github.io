@@ -2,7 +2,7 @@
 title: Blogging | 첫 포스팅
 author: Hve
 date: 2023-01-14 21:46:00 +0900
-categories: [Blogging, Talk]
+categories: [Blog, Talk]
 math: true
 mermaid: true
 tags: []
@@ -16,8 +16,6 @@ tags: []
 ## 할 수 있는것
 
 ### C++
-
-조금 함
 
 관련 프로젝트
 - [HEMacro](https://hve4638.github.io/posts/hemacro)
