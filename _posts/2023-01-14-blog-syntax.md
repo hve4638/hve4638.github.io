@@ -2,7 +2,7 @@
 title: Blogging | 블로그 문법 정리
 author: Hve
 date: 2023-01-14 23:22:00 +0900
-categories: [Blogging, Posting]
+categories: [Blog, Posting]
 tags: [markdown]
 pin: false
 toc: false
