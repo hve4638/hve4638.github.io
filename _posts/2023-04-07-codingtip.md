@@ -40,3 +40,8 @@ netsh interface portproxy delete v4tov4 listenport=2222 listenaddress=192.168.0.
 
 한 컴퓨터의 WSL나 가상머신을 다른 컴퓨터에서 접속해야 할때 유용하다
 
+## 바탕화면 아이콘 설정 (윈도우11 기준)
+
+1. 바탕화면에서 오른쪽클릭 -> 개인설정
+2. 테마
+3. 바탕 화면 아이콘 설정
