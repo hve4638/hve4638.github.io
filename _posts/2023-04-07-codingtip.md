@@ -56,7 +56,6 @@ yum -y install openssh-server
 ```
 
 2. network 재시작
-
 ```bash
 systemctl restart network
 ```
