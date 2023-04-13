@@ -45,3 +45,35 @@ netsh interface portproxy delete v4tov4 listenport=2222 listenaddress=192.168.0.
 1. 바탕화면에서 오른쪽클릭 -> 개인설정
 2. 테마
 3. 바탕 화면 아이콘 설정
+
+# Linux
+
+## CentOS SSH 설치
+
+1. ssh 서버 설치
+```bash 
+yum -y install openssh-server
+```
+
+2. network 재시작
+
+```bash
+systemctl restart network
+```
+
+3. ssh 설정파일 수정
+```bash 
+vim /etc/ssh/sshd_config
+```
+Port 주석 해제
+
+4. ssh 서비스 구동
+```bash
+systemctl start sshd.service
+```
+
+5. 방화벽 열기
+```bash
+firewall-cmd --zone=public --add-port=22/tcp --permanent
+firewall-cmd --reload
+```
