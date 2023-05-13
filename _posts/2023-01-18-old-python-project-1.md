@@ -10,25 +10,20 @@ tags: [python]
 
 옛날에 만든 파이썬 코드뭉치들
 
-## 파일 이동
+## 파일 이동 예제
 
 ```python
 import shutil
 import os
 
-scr = 'C:\\Users\\UserName\\Desktop\\'
-dir = 'C:\\Resource\\Picture\\Screenshot\\Hearthstone\\'
+def moveFile(src, dest)
+    file_list = os.listdir(scr + "./")
 
-path = scr + "./"
-file_list = os.listdir(path)
+    for fn in file_list:
+        shutil.move(src + fn, dest + fn);
 
-for fn in file_list:
-    if 'Hearthstone Screenshot' in fn:
-        print("moved " + fn);
-        shutil.move(scr + fn, dir + fn);
-
-path=os.path.realpath(dir)
-os.startfile(path)
+    path=os.path.realpath(dir)
+    os.startfile(path)
 ```
 
 하스스톤에서 스크린샷을 찍으면 무조건 바탕화면에 저장되는걸 옮기기 위한 코드
