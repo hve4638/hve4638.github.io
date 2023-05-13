@@ -12,6 +12,8 @@ baseurl: ''
 # otherwise, the layout language will use the default value of 'en'.
 lang: ko-KR
 
+gems: [jekyll-paginate]
+plugins: [jekyll-paginate]
 
 # Change to your timezone › http://www.timezoneconverter.com/cgi-bin/findzone/findzone
 timezone: Asia/Seoul
@@ -38,7 +40,7 @@ twitter:
 social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
-  name: LeeHanbin
+  name: Hve
   email: hve4638@google.com             # change to your email address
   links:
     # The first element serves as the copyright owner's link
