@@ -6,9 +6,10 @@ categories: [Project]
 math: false
 mermaid: false
 tags: [c#]
+img_path: /assets/img/
 ---
 
-![encryptor](/assets/img/aes-encryptor/aes-enc0.png)
+![encryptor](/aes-encryptor/aes-enc0.png)
 
 # AES Encryptor
 
