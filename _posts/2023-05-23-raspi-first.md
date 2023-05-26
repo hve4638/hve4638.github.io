@@ -5,7 +5,7 @@ date: 2023-05-23 23:33:31 +0900
 categories: [ Dev, RasberryPi ]
 math: false
 mermaid: false
-tags: [rasberrypi4]
+tags: [rasberry-pi4]
 ---
 
 ![123](/assets/img/raspi/raspi-0.png)
