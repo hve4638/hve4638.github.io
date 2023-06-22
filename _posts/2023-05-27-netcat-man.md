@@ -1,5 +1,5 @@
 ---
-title: Linux | Netcat 
+title: "Linux | Netcat : 네트워크 통신 유틸리티"
 author: Hve
 date: 2023-05-27 00:11:05 +0900
 categories: [Dev, Linux]
@@ -11,6 +11,8 @@ tags: [linux]
 # Netcat
 
 간단한 네트워크 테스트를 하는데 유용한 도구
+
+여러 기능을 지원하지만 통신중 보안 기능이 없기 때문에 테스트를 위해서만 사용해야 한다.
 
 ## 설치
 
@@ -32,7 +34,7 @@ yum install nc
 nc -l -p 2000
 ```
 
-서버 접
+서버 접속
 ```bash
 # nc -v [IP주소] [포트]
 nc -v 192.168.0.15 2000
