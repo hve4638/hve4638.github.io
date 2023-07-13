@@ -1,5 +1,5 @@
 ---
-title: "Linux | 저장용 스크립트"
+title: "Linux | 스크립트 저장용"
 author: Hve
 date: 2023-07-09 18:17:53 +0900
 categories: [Dev, Linux]
@@ -12,15 +12,31 @@ tags: []
 
 ```bash
 apt update -y && apt upgrade -y
-apt install vim build-essential iproute2 -y
+apt install vim build-essential iproute2 curl wget -y
 
 echo "export PS1='\[\e]0;\u@\h: \w\a\]\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w$\[\033[00m\] '" >> ~/.bashrc
 source ~/.bashrc
 ```
 
+## python pip 설치
+```bash
+wget https://bootstrap.pypa.io/get-pip.py
+python3 get-pip.py
+```
+
 `ubuntu` 이미지로 컨테이너를 생성했을때 기준
 
-## Rubt 설치 및 Jekyll 블로그 세팅
+### Python 설치
+
+```bash
+apt install python3 -y
+echo "alias python='python3'" >> ~/.bashrc
+source ~/.bashrc
+
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && python3 get-pip.py
+```
+
+## Ruby 설치 및 Jekyll 블로그 세팅
 
 ```bash
 apt install ruby-full build-essential zlib1g-dev -y
