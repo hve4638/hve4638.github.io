@@ -63,3 +63,21 @@ sudo omv-confdbadm populate
 ```
 
 스크립트 실행중 네트워크 재설정을 하기 때문에 원격 환경일 경우 연결이 끊긴다.
+
+## docker 설치
+
+```bash
+curl -sSL get.docker.com | sh
+sudo usermod -aG docker $USER
+```
+
+### docker 명령어 편의용 alias
+
+```bash
+alias dockcp='docker cp'
+alias dockls='docker container ls'
+alias dockrm='docker container rm'
+alias dockst='docker start -i'
+```
+
+`~/.bashrc` 에 추가
