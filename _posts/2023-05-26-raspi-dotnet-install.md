@@ -1,12 +1,18 @@
 ---
-title: 라즈베리파이4 | 닷넷 설치 및 실행
+title: 닷넷 설치 및 실행
 author: Hve
 date: 2023-05-26 15:45:47 +0900
-categories: [ Dev, RasberryPi ]
+categories: [ 개발, 개발환경 ]
 math: false
 mermaid: false
 tags: [rasberry-pi4, c#]
 ---
+
+라즈베리파이4 환경을 기준으로 작성되었다.
+
+라즈베리파이는 arm32 환경으로 다른 환경에서 설치시 다른 버전의 SDK를 다운받아야 한다.
+
+(일반적인 인텔/AMD 프로세서를 사용한다면 AMD64를 다운받으면 된다.)
 
 # 닷넷 설치
 

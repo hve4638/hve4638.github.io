@@ -1,8 +1,8 @@
 ---
-title: Linux | Docker 설치 및 사용
+title: Docker 설치 및 사용
 author: Hve
 date: 2023-06-10 22:53:35 +0900
-categories: [ Dev, Linux ]
+categories: [ 개발, 개발환경 ]
 math: false
 mermaid: false
 tags: []

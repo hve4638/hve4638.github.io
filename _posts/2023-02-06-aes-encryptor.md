@@ -2,7 +2,7 @@
 title: Project | AES Encryptor
 author: Hve
 date: 2023-02-06 07:11:00 +0900
-categories: [Project]
+categories: [프로젝트]
 math: false
 mermaid: false
 tags: [c#]
