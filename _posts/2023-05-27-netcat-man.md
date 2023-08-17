@@ -2,7 +2,7 @@
 title: "Linux | Netcat : 네트워크 통신 유틸리티"
 author: Hve
 date: 2023-05-27 00:11:05 +0900
-categories: [Dev, Linux]
+categories: [ 개발, Linux ]
 math: false
 mermaid: false
 tags: [linux]
@@ -12,7 +12,7 @@ tags: [linux]
 
 간단한 네트워크 테스트를 하는데 유용한 도구
 
-여러 기능을 지원하지만 통신중 보안 기능이 없기 때문에 테스트를 위해서만 사용해야 한다.
+통신중 보안 기능이 없기 때문에 테스트를 위해서만 사용해야 한다.
 
 ## 설치
 

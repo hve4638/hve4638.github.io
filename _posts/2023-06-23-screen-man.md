@@ -2,7 +2,7 @@
 title: "Linux | Screen : 가상 터미널 세션 도구"
 author: Hve
 date: 2023-06-23 13:17:39 +0900
-categories: []
+categories: [ 개발, Linux ]
 math: false
 mermaid: false
 tags: []
