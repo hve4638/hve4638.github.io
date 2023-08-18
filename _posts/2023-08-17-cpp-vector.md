@@ -5,12 +5,12 @@ date: 2023-08-17 20:35:04 +0900
 categories: [프로그래밍, C++]
 math: false
 mermaid: false
-tags: []
+tags: ["c++"]
 ---
 
 # Vector
 
-vector는 동적 배열을 구현하는 자료형이다.
+vector는 동적 배열을 구현하는 컨테이너다.
 
 내부 원소의 증가 및 감소에 따라 알아서 메모리를 할당 및 해제 한다.
 
@@ -52,7 +52,7 @@ int main() {
 
 ## 선언
 
-> std::vector<자료형>
+> std::vector\<자료형\>
 
 ```cpp
 // 비어있는 vector 생성
@@ -70,7 +70,7 @@ vector<int> src(10, 5);
 vector<int> dst(src);
 ```
 
-### 원소 추가 & 삭제
+## 원소 추가 & 삭제
 
 > std::vector::push_back()
 
@@ -80,11 +80,11 @@ vector<int> dst(src);
 // 원소 5 추가
 vec.push_back(5);
 
-// 마지막 원소 제거 후 리턴
-value = vec.pop_back();
+// 마지막 원소 제거
+vec.pop_back();
 ```
 
-### 원소 가져오기
+## 원소 가져오기
 
 > std::vector::at()
 
@@ -105,6 +105,8 @@ value = vec[2];
 *반면 `operator[]`의 경우 범위 체크를 하지 않으며, 범위를 벗어난 곳을 접근하는 경우는 정의되지 않은 동작 (undefined behavior) 이다.*
 
 *`at()`이 좀더 안전한 방법이지만 범위를 벗어난 접근은 일반적으로 정상적인 상황은 아니기 때문에 `at()`을 쓰는 대신 먼저 범위를 확인하고 `operator[]`를 쓰는 것이 좋다.*
+
+## 기타
 
 ### size
 
