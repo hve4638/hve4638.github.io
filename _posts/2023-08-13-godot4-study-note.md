@@ -30,7 +30,7 @@ Layer Names에서 `2D 물리` 에서 각 레이어의 이름을 수정할 수 �
 
 아래 예시는 플랫포머 게임에서 0번 레이어가 _'World'_, 1번 레이어가 _'Player'_ 라고 가정한다.
 
-### 레이어
+### \*레이어
 
 "해당 노드가 어디에 위치하는가?"
 
@@ -38,7 +38,7 @@ Layer Names에서 `2D 물리` 에서 각 레이어의 이름을 수정할 수 �
 - 발판은 _'World'_ 레이어에 포함해야 한다
 
 
-### 마스크
+### \*마스크
 
 "해당 노드가 누구와 상호작용하는가?"
 
@@ -66,8 +66,18 @@ Layer Names에서 `2D 물리` 에서 각 레이어의 이름을 수정할 수 �
 
 `CollisionPolygon2D` : 충돌 범위를 지정하기 위한 폴리곤 범위
 
+`CanvasLayer` : 자식 노드가 무조건 카메라 기준이 아닌 화면 위에 표시되도록 한다
+
+`Camera2D` : 카메라 노드
+
+`Timer` : 타이머 노드
+
+`CenterContainer` : 자식 노드는 무조건 중앙으로 위치가 고정된다
+
+`Label` : 텍스트 표시 노드
+
 ### 예시
-k
+
 **2D 플랫포머 룸**
 
     Node2D (루트 노드)
@@ -81,3 +91,46 @@ k
     - AnimatedSprite2D (애니메이션 스프라이트 노드)
     - CollisionShape2d (캐릭터 충돌영역)
 
+## 노드 참조 코드 가져오기
+
+![GD](/assets/img/godot/godotstudy02.gif)
+
+ctrl+드래그 를 통해 노드를 코드로 가져올 수 있다
+
+## Signal (신호)
+
+![GD](/assets/img/godot/godotstudy03.png)
+
+노드의 신호를 스크립트에 연결해 사용할 수 있다
+
+### 커스텀 Signal
+
+```python
+# Signal 정의
+signal signal_name
+
+# Signal 호출
+signal_name.emit()
+
+# Signal 등록
+signal_name.connect(func_name)
+```
+
+## 싱글턴 (자동 로드, Autoload)
+
+![GD](/assets/img/godot/godotstudy04.png)
+
+`프로젝트` > `프로젝트 설정` > `자동 로드` 에서 스크립트를 추가하면 게임 시작시 해당 스크립트를 자동으로 불러온다.
+
+## 노드 그룹
+
+![GD](/assets/img/godot/godotstudy05.png)
+
+우측의 `노드` 탭에서 `그룹` 버튼을 클릭해 특정 노드를 그룹에 속하게 할 수 있다.
+
+아래 코드는 현재 그룹에 속한 노드가 몇개 있는지 확인한다.
+
+```python
+var hearts = get_tree().get_nodes_in_group("그룹_이름")
+print(hearts.size())
+```
