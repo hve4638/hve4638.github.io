@@ -5,7 +5,7 @@ date: 2023-08-19 05:00:31 +0900
 categories: [공부, Godot]
 math: false
 mermaid: false
-tags: []
+tags: [ godot ]
 ---
 
 ## 노드 종류
@@ -33,3 +33,18 @@ tags: []
 `CenterContainer` : 자식 노드는 무조건 중앙으로 위치가 고정된다
 
 `Label` : 텍스트 표시 노드
+
+## 예시
+
+**2D 플랫포머 룸**
+
+    Node2D (루트 노드)
+    - StaticBody2D (벽)
+    -- CollisionShape2D (벽 충돌영역)
+    --- ColorRect (벽 표시)
+
+**캐릭터**
+
+    CharacterBody2D (캐릭터 노드)
+    - AnimatedSprite2D (애니메이션 스프라이트 노드)
+    - CollisionShape2d (캐릭터 충돌영역)

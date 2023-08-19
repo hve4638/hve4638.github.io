@@ -5,14 +5,23 @@ date: 2023-08-17 20:35:04 +0900
 categories: [프로그래밍, C++]
 math: false
 mermaid: false
-tags: []
+tags: ["c++"]
 ---
 
 # Vector
 
-vector는 동적 배열을 구현하는 자료형이다.
+vector는 동적 배열을 구현하는 컨테이너다.
 
 내부 원소의 증가 및 감소에 따라 알아서 메모리를 할당 및 해제 한다.
+
+## 목차
+- [예시](#예시)
+- [필요 헤더](#필요헤더)
+- [원소 추가 & 삭제](#원소-추가-&-삭제)
+- [원소 가져오기](#원소-가져오기)
+- [size](#size)
+- [resize](#resize)
+- [capacity](#capacity)
 
 ## 예시
 
@@ -80,8 +89,8 @@ vector<int> dst(src);
 // 원소 5 추가
 vec.push_back(5);
 
-// 마지막 원소 제거 후 리턴
-value = vec.pop_back();
+// 마지막 원소 제거
+vec.pop_back();
 ```
 
 ### 원소 가져오기
