@@ -52,7 +52,7 @@ int main() {
 
 ## 선언
 
-> std::vector<자료형>
+> std::vector\<자료형\>
 
 ```cpp
 // 비어있는 vector 생성
