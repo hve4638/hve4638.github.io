@@ -72,7 +72,7 @@ std::priority_queue<int, vector<int>, greater<int>> t;
 ### 클래스를 담는 priority_queue
 
 ```cpp
-class Label {
+struct Label {
     int index;
     int value;
 }
