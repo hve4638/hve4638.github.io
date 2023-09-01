@@ -1,5 +1,5 @@
 ---
-title: "트러블슈팅 | Jekyll \"Invalid first code point of tag name\" 문제"
+title: "Jekyll \"Invalid first code point of tag name\" 문제"
 author: Hve
 date: 2023-08-21 05:01:44 +0900
 categories: ["개발", "트러블슈팅"]
@@ -47,5 +47,5 @@ Detail을 살펴보니 'Test site' 과정에서 에러가 발생한 것을 볼 �
 >
 > \`\`\`
 
-해당 문법 속에 포함된 `<>`에는 `\`를 붙일 필요가 없다.
+해당 \`\`\` 문법 안에 들어간 `<>`에는 `\`를 붙일 필요가 없다.
 
