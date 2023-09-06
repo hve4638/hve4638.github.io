@@ -46,9 +46,9 @@ int main() {
 
 ## 선언
 
-> std::priority_queue<자료형>
+> std::priority_queue\<자료형\>
 
-> std::priority_queue<자료형, 컨테이너, 비교함수>
+> std::priority_queue\<자료형, 컨테이너, 비교함수\>
 
 
 ```cpp
