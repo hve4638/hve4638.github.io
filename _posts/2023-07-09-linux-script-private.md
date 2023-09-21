@@ -8,33 +8,46 @@ mermaid: false
 tags: []
 ---
 
-## docker 컨테이너 용 초기 세팅
+## 사용법
 
 ```bash
-apt update -y && apt upgrade -y
-apt install vim build-essential iproute2 curl wget -y
-
-echo "export PS1='\[\e]0;\u@\h: \w\a\]\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w$\[\033[00m\] '" >> ~/.bashrc
-source ~/.bashrc
+# 쉘스크립트 실행
+curl <url> | sh
 ```
 
-## python pip 설치
-```bash
-wget https://bootstrap.pypa.io/get-pip.py
-python3 get-pip.py
+
+## python 설치
+
+```sass
+http://cthve:4000/assets/sh/py-install.sh
 ```
+{: file='url' }
 
-`ubuntu` 이미지로 컨테이너를 생성했을때 기준
+sudo 명령이 포함된 스크립트
 
-### Python 설치
+```sass
+http://cthve:4000/assets/sh/nosudo-py-install.sh
+```
+{: file='url' }
+
+sudo 명령이 포함되지 않은 스크립트 (docker container용)
+
+### 코드
 
 ```bash
 apt install python3 -y
 echo "alias python='python3'" >> ~/.bashrc
 source ~/.bashrc
 
-curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && python3 get-pip.py
+curl https://bootstrap.pypa.io/get-pip.py | python3 
 ```
+
+## docker 초기 세팅
+
+```sass
+http://cthve:4000/assets/sh/docker-init.sh
+```
+{: file='url' }
 
 ## Ruby 설치 및 Jekyll 블로그 세팅
 
@@ -64,7 +77,7 @@ sudo omv-confdbadm populate
 
 스크립트 실행중 네트워크 재설정을 하기 때문에 원격 환경일 경우 연결이 끊긴다.
 
-## docker 설치
+## docker 설치 스크립트
 
 ```bash
 curl -sSL get.docker.com | sh
