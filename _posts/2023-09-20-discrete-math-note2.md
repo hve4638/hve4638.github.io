@@ -2,7 +2,7 @@
 title: "이산수학 | 일관성, 논리적 동등, 드모르간 법칙 등"
 author: Hve
 date: 2023-09-20 14:21:13 +0900
-categories: [ 정리, "이산수학" ]
+categories: [ "공부", "이산수학" ]
 math: false
 mermaid: false
 tags: []

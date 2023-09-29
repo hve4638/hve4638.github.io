@@ -2,7 +2,7 @@
 title: "이산수학 | 명제, 논리 연산자, 진위표"
 author: Hve
 date: 2023-09-20 10:42:20 +0900
-categories: [ 정리, "이산수학" ]
+categories: [ "공부", "이산수학" ]
 math: false
 mermaid: false
 tags: []
@@ -89,7 +89,7 @@ tags: []
 
 ## 쌍조건문 (Biconditional)
 
-| p | q | p → q |
+| p | q | p ↔ q |
 |---|---|-----|
 | T | T |  T  |
 | T | F |  F  |
