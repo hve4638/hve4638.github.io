@@ -2,7 +2,7 @@
 title: "이산수학 | 양화사의 논리적 동등과 드모르간 법칙, bound와 free, scope"
 author: Hve
 date: 2023-09-30 01:51:28 +0900
-categories: [ 정리, "이산수학" ]
+categories: [ "공부", "이산수학" ]
 math: false
 mermaid: false
 tags: []

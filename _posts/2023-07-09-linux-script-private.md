@@ -8,27 +8,17 @@ mermaid: false
 tags: []
 ---
 
-## 사용법
-
-```bash
-# 쉘스크립트 실행
-curl <url> | sh
-```
-
-
 ## python 설치
 
-```sass
-http://cthve:4000/assets/sh/py-install.sh
+```bash
+curl https://hve4638.github.io/assets/sh/py-install.sh | sh
 ```
-{: file='url' }
 
 sudo 명령이 포함된 스크립트
 
-```sass
-http://cthve:4000/assets/sh/nosudo-py-install.sh
+```bash
+curl https://hve4638.github.io/assets/sh/nosudo-py-install.sh | sh
 ```
-{: file='url' }
 
 sudo 명령이 포함되지 않은 스크립트 (docker container용)
 
@@ -44,10 +34,9 @@ curl https://bootstrap.pypa.io/get-pip.py | python3
 
 ## docker 초기 세팅
 
-```sass
-http://cthve:4000/assets/sh/docker-init.sh
+```bash
+curl https://hve4638.github.io/assets/sh/docker-init.sh | sh
 ```
-{: file='url' }
 
 ## Ruby 설치 및 Jekyll 블로그 세팅
 

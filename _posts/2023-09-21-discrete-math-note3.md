@@ -2,7 +2,7 @@
 title: "이산수학 | 술어 논리, 양화사"
 author: Hve
 date: 2023-09-21 03:56:57 +0900
-categories: [정리, 이산수학]
+categories: ["공부", 이산수학]
 math: false
 mermaid: false
 tags: []
