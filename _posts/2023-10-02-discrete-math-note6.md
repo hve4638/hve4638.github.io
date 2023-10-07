@@ -1,5 +1,5 @@
 ---
-title: "이산수학 | 추론(argument)"
+title: "이산수학 | 추론 규칙(Rules of Inference) - 1"
 author: Hve
 date: 2023-10-02 14:25:25 +0900
 categories: [ "공부", "이산수학" ]
@@ -8,23 +8,25 @@ mermaid: false
 tags: []
 ---
 
-## 추론
+## 논증 (The Argument)
 
-### 소크라테스의 삼단논법
+술어 논리(predicate logic)에서 전제(premise)와 결론(conclusion)의 나열을 논증(argument)라고 한다
+
+### 예시 : 소크라테스의 삼단논법
 
 1. 사람은 죽는다 (전제)
 2. 소크라테스는 사람이다 (전제)
 3. 소크라테스는 죽는다 (결론)
 
-어떻게 두 전제로부터 결론을 이끌어내는가?
+이를 논증(argument)으로 변환할 수 있다
 
-### 술어 논리 변환
+- `∀x(Man(x)→Mortal(x))` - 전제
+- `Man(Socrates)` - 전제
+- ∴ `Mortal(Socrates)` - 결론
 
-- ∀x(Man(x)→Mortal(x))
-- Man(Socrates)
-- ∴ Mortal(Socrates)
+---
 
-## 유효한 추론 (valid arguments)
+## 타당한 논증 (valid arguments)
 
 명제 논리의 추론은 명제의 나열(sequence of propositional)이다
 
@@ -44,76 +46,80 @@ tags: []
 
 $$ (p_1 ∧ p_2 ∧ p_3 ...) → q $$
 
-는 항진(tautology)이다.
+는 항진식(tautology)이다.
 
 ---
 
-## 전건 긍정 (Modus Ponens)
+## 추론 규칙 (Rules of Inference)
 
-- p → q
-- p
-- ∴ q
+### 전건 긍정 (Modus Ponens)
+
+- `p → q`
+- `p`
+- ∴ `q`
 
 항진식 : `(p ∧ (p→q)) → q`
 
----
+### 후건 부정 (Modus Tollens)
 
-## 후건 부정 (Modus Tollens)
-
-- p → q
-- ¬q
-- ∴ ¬p
+- `p → q`
+- `¬q`
+- ∴ `¬p`
 
 항진식 : `(¬q ∧ (p→q)) → ¬p`
 
-## 가언적 삼단 논법 (Hypothetical Syllogism)
+### 가언적 삼단 논법 (Hypothetical Syllogism)
 
-- p→q
-- q→r
-- ∴ p→r
+- `p→q`
+- `q→r`
+- ∴ `p→r`
 
 항진식 : `((p→q) ∧ (q→r)) → (p→r)`
 
-## 선언적 삼단논법 (Disjunction Syllogism)
+### 선언적 삼단논법 (Disjunction Syllogism)
 
-- p∨q
-- ¬p
-- ∴ q
+- `p∨q`
+- `¬p`
+- ∴ `q`
 
 항진식 : `(¬p ∧ (p ∨ q)) → q`
 
 
 ### 선언 도입 논법 (Addition)
 
-- P
-- ∴ p∨q
+- `p`
+- ∴ `p∨q` (`q`가 무엇이든 신경쓰지 않는다)
 
 항진식 : `p → (p ∨ q)`
 
 ### 연언 소거 논법 (Simplification)
 
-- P∧q
-- ∴ p
+- `p∧q`
+- ∴ `p`
 
 항진식 : `(p ∧ q) → p`
 
 ### 연언 도입 논법 (Conjunction)
 
-- p
-- q
-- ∴ p∧q
+- `p`
+- `q`
+- ∴ `p∧q`
 
 항진식 : `(p ∧ q) → (p ∧ q)`
 
-### Resolution
+### 분해 증명 (Resolution)
 
-- ¬p∨r
--  p∨q
-- ∴q∨r
+- `¬p∨r`
+-  `p∨q`
+- ∴ `q∨r`
 
 항진식 : `((¬p∨r)∧(p∨q)) → (q ∨ r)`
 
+---
+
 ## 문제
+
+### 문제 1
 
     모든 아테네 사람은 영리하고(1), 모든 스파르타인은 영웅적이다(2).
 
@@ -134,7 +140,7 @@ $$ (p_1 ∧ p_2 ∧ p_3 ...) → q $$
     날카로운 언변에도 불구하고, 세 명은 모두 진실을 말하고 있다. 누가 어느 도시에서 왔는가?
     
 
-### 풀이
+#### 풀이
 
 - `A(x)` is "아테네 인이다"
 - `S(x)` is "스파르타 인이다"
@@ -191,3 +197,51 @@ $$ (p_1 ∧ p_2 ∧ p_3 ...) → q $$
 
 이 된다
 
+---
+
+### 문제 2
+
+`p ∧ (p→q)`
+
+*q가 결론이 되도록 추론하기*
+
+1. `p ∧ (p→q)`  *추론(Premise)*
+2. `p`      *연언 소거(Simplification)*
+3. `p→q`    *연언 소거(Simplification)*
+4. ∴ `q`   *전건 긍정(Modus Ponens)*
+
+#∨# 문제 3
+
+*가설을 추론으로 변환하기*
+
+가설:
+
+1. "It is not sunny this afternoon and it is colder than yesterday"
+2. "We will go swimming only if it is sunny"
+3. "If we do not go swimming, then we will take a canoe trip."
+3. "If we take a canoe trip, then we will be home by sunset."
+
+결론:
+
+- "We will be home by sunset"
+
+#### 풀이
+
+명제 논리 변환
+
+- p : "It is sunny this afternoon"
+- q : "it is colder than yesterday"
+- r : "we will go swimming"
+- t : "we will be home by sunset"
+- s : "we will take a canoe trip"
+
+추론
+
+1. `¬p ∧ q` *추론*
+2. `¬p` *연언 소거*
+3. `r → p` *추론*
+4. `¬r` *연언 소거 using (2), (3)*
+5. `¬r → s` *추론*
+6. `s`  *전건 긍정 using (4), (5)*
+7. `s → t` *추론*
+8. ∴ `t` *전건 긍정*

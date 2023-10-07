@@ -77,7 +77,6 @@ tags: []
 | `∃x∀y P(x,y)` | 모든 `y`에 대해 참인 `x`가 존재 | 각 `x`에 대해 거짓인 `y`가 존재 | `x*y = 0` |
 | `∃x∃y P(x,y)` | 참인 `x y` 쌍이 존재 | 모든 `x y` 쌍이 거짓 | `x/y = 0` |
 
-
 ---
 
 ## Translate Statements
