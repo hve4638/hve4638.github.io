@@ -3,7 +3,7 @@ title: "이산수학 | 키워드 정리"
 author: Hve
 date: 2023-10-05 22:12:22 +0900
 categories: ["공부", "이산수학" ]
-math: false
+math: true
 mermaid: false
 tags: []
 ---
@@ -107,7 +107,7 @@ bound, free variable
 - 특칭 개괄화 논법 (Existential Generalization,EG)
 - Universal Modus Ponens
 
-## 증명 [#](/posts/discrete-math-note8)
+## 증명 - 1 [#](/posts/discrete-math-note8)
 
 증명 (Proof) 
 
@@ -125,3 +125,47 @@ bound, free variable
 귀류법 (Reductio Ad Absurbum, RAA)
 
 배치 (Contradiction)
+
+## 증명 - 2 [#](/posts/discrete-math-note9)
+
+일반성을 잃지 않음 (Without loss of generality, WLOG)
+
+존재 증명 (Existence Proofs)
+- 구성적 존재 증명법 (constructive proof of existence)
+- 비구성적 존재 증명 (Nonconstructive Proof of Existence)
+
+반례 (Conterexamples)
+
+유일성 증명 (Uniqueness proof)
+
+증명 전략 (Proof Strategies)
+- 전방 추론 (Forward Reasoning)
+- 후방 추론, 역추론 (Backward Reasoning)
+
+Universally Quantified Assertions
+
+## 집합 [#](/posts/discrete-math-note10)
+
+집합 (set)
+
+원소 표기법(Roaster Notation)
+
+Set-Builder 표기법 (Set-Builder Notation)
+
+구간 표기법 (Interval Notation)
+- 열린 구간 (open intervals)
+- 닫힌 구간 (closed intervals)
+
+전체집합 (Universal Set)
+
+공집합 (Empty Set)
+
+러셀의 역설 (Russell’s Paradox)
+
+집합의 상등 (Set Equality)
+
+부분집합 (Subset)
+- 진부분 집합 (Proper subset)
+
+집합의 크기 (Set Cardinality)
+- $א_0$ : 알레프 제로 (aleph zero)
