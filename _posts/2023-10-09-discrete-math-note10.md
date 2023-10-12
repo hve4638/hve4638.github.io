@@ -111,24 +111,24 @@ $a∈A$ 표기는 $a$가 집합 $A$의 요소임을 나타낸다
 
 ## 집합의 상등 (Set Equality)
 
-*Definition : Two sets are `equal` if and only if they have the same elements*
+> *Definition : Two sets are `equal` if and only if they have the same elements*
 
 따라서 $A$와 $B$라는 집합에 대해서 다음과 같은 경우에만 동일하다
 - $∀x(x∈A ↔ x∈B)$
 
 ## 부분집합 (Subset)
 
-*Definition : The Set A is a subset of B, if and only if every element A is also an element of B*
+> *Definition : 집합 A는 B의 부분집합이다, if and only if A의 모든 원소가 B의 원소라면*
 
-"집합 $A$는 집합 $B$의 부분집합이다"를 표기하면 $A ⊂ B$ (또한 $B ⊃ A$)
+"집합 $A$는 집합 $B$의 부분집합이다"를 표기하면 $A ⊂ B$ (또는 $B ⊃ A$)
 
-두 집합이 완전히 동일한 경우를 포함한다면 $⊆$와 $⊇$를 사용한다
+- $⊆$와 $⊇$를 사용하기도 한다. $A=B$ 일 수 있음을 더 강조한다
 
 $A ⊂ B$ holds if and only is $∀x(x∈A→x∈B)$ is true
 1. $a ∈ ∅$는 항상 거짓이므로, 모든 집합 $S$에 대해 $∅ ⊆ S$ 이다
 2. $a ∈ S → a ∈ S$ 이므로, 모든 집합 $S$에 대해 $S ⊆ S$ 이다
 
-*Definition : The set A is proper subset(진부분집합) of B, if and only if $A ⊆ B$ and $A \neq B$*
+> *Definition : The set A is proper subset(진부분집합) of B, if and only if $A ⊆ B$ and $A \neq B$*
 - *It denoted by $A ⊊ B$ or $B ⊋ A$*
 
 ### 집합의 부분집합 여부 판단하기
@@ -174,3 +174,53 @@ $$
 4. \|\{∅\}\| $= 1$
 5. 정수의 집합은 무한하다.
     - 무한한 크기를 $א_0$로 표기하고, *aleph zero(알레프 제로)*라고 읽는다
+
+## 멱집합 (Power set)
+
+> Definition : 집합 $A$의 모든 부분집합을 가진 집합 $P(A)$을 $A$의 `멱집합(power set)`이라 부른다
+
+*예시:*
+
+- If $A = \set{a, b}$ then $P(A) = \set{∅,\set{a}, \set{b}, \set{a,b}}$
+
+
+n개의 원소를 가지고 있다면, 멱집합의 크기(cardinality)는 $2^n$이다
+
+## Tuples
+
+`ordered n-tuple`은 정렬된 컬렉션을 뜻한다.
+
+- $(a,b)$는 $(c,d)$와 다음 조건을 때만 동일하다
+    - $a = c$ and $b = d$
+
+`1-tuple`은 `singletons`이라 부르며 `2-tuple`은 `pair`라 부른다
+
+## 곱집합, 데카르트 곱 (Cartesian product)
+
+> 정의 : 두 집합 A, B의 데카르트 곱은 (denoted by $A \times B$), $a ∈ A$ and $b ∈ B$인 `ordered pairs` (a,b)의 집합이다.
+> <details>
+> <summary>[Eng]</summary>
+> 
+> Definition : The Cartesian Product of two sets A and B, denoted by A × B, is the set of ordered pairs (a, b) where $a ∈ A$ and $b ∈ B$
+> </details>
+
+
+$A \times B$ = \{ $(a, b) \mid (a \in A) ∧ (b \in B)$ \}
+
+*예시:*
+
+$A = \set{a,b}$  $B = \set{1,2,3}$
+
+$A \times B = \set{(a,1), (a,2), (a,3), (b,1), (b,2), (b,3)}$
+
+## 진리 집합 (Truth sets)
+
+술어 `P(x)`와 정의역 D가 주어졌을때, `P(x)`가 참이 되게 하는 정의역 D의 원소의 집합을 `truth set`라고 정의한다.
+
+`truth set`은 다음과 같이 나타낸다:
+$$\set{x ∈D \mid P(x)}$$
+
+*예시:*
+
+- `P(x)`가 $\mid x \mid = 1$이고 정의역이 정수라면 `truth set`은 $\set{-1,1}$ 이다
+

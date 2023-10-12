@@ -1,5 +1,5 @@
 ---
-title: "이산수학 | 중첩된 양화사"
+title: "이산수학 | 중첩된 양화사 (Nesting Quantifier)"
 author: Hve
 date: 2023-10-02 02:05:28 +0900
 categories: [ "공부", "이산수학" ]
@@ -126,18 +126,20 @@ tags: []
     - `∃w∀a∃f(Q(a,f) ∧ P(w,f))`
 
 
-### 극한 변환
+### 예제 : 엡실론-델타 논법
 
-*실수 변수 x와 실수값 a에 대해 양화사를 사용해서 실수값 f(x)의 극한을 정의하기*
+> 실수 변수 $x$와 실수값 $a$에 대해 양화사를 사용해서 실수값 $f(x)$의 극한을 정의하기
 
 $$ \lim_{i\to a} f(a) = L $$
 
-1. statement 재정의
-    - 모든 실수 `ε > 0` 에 대해, 실수 `δ > 0`가 존재
-    - such that `|f(x) - L| < ε` whenever `0 < | x-a | < δ`
+#### 풀이
 
-2. 변환 결과
-    - `∀ε∃δ( (0 < |x-a| < δ) → (|f(x) - L| < ε) )` where the domain for the variables `ε` and `δ` consists of all positive real numbers and the domain for `x` consists of all real numbers.​
+모든 실수 $ ε>0 $ 에 대해, $0< \mid x-a \mid < δ$ 일 때 $\mid f(x) - L \mid < ε$  인 실수 $δ > 0$가 존재한다
+
+술어논리 변환
+- $ε$, $δ$의 정의역이 모든 양의 정수이고 $x$의 정의역이 모든 실수일 때
+- $∀ε∃δ( (0 < \mid x-a \mid  < δ) → ( \mid f(x) - L \mid < ε) )$
+
 
 ### 중첩된 양화사 부정
 
