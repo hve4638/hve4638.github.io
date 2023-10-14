@@ -169,3 +169,34 @@ Set-Builder 표기법 (Set-Builder Notation)
 
 집합의 크기 (Set Cardinality)
 - $א_0$ : 알레프 제로 (aleph zero)
+
+멱집합 (Power Set)
+
+Tuple
+
+곱집합, 데카르트 곱 (Cartesian product)
+
+진리 집합 (Truth sets)
+
+## 집합 연산 [#](/posts/discrete-math-note11)
+
+부울 대수 (Boolean Algebra)
+
+- 교집합 (Intersection)
+- 합집합 (Union)
+- 차집합 (Difference)
+- 여집합 (Complement)
+- 대칭차집합 (Symmetric Difference)
+
+집합의 항등원 (Set Indentities)
+- 항등 법칙 (Identity laws)
+- 지배 법칙 (Domination laws)
+- 멱등 법칙 (Idempotent laws)
+- 멱등 법칙 (Idempotent laws for complementation)
+- 교환 법칙 (Commutative laws)
+- 결합 법칙 (Associative laws)
+- 드모르간 법칙 (De Morgan’s laws)
+- 흡수 법칙 (Absorption laws)
+- 보 법칙 (Complement laws)
+
+Membership Table

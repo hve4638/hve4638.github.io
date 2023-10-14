@@ -31,8 +31,9 @@ tags: []
 ### 합집합 (Union)
 
 > 정의: $A$와 $B$의 합집합을 다음과 같이 정의한다
-> - $A \cup B := \set{ x \in U \mid (x \in A) ∨ (x \in B)}$ 
-> 
+
+$$A \cup B := \set{ x \in U \mid (x \in A) ∨ (x \in B)} $$
+
 
 *예시:*
 
@@ -45,7 +46,8 @@ $$\vert A \cup B \vert = \vert A \vert + \vert B \vert - \vert A \cap B \vert$$s
 ### 차집합 (Difference)
 
 > 정의 : $A$와 $B$의 차집합을 다음과 같이 정의한다
-> - $A$ \\ $B := \set{ x \in U \mid (x \in A) ∧ (x \notin B)}$ 
+
+$$A \backslash B := \set{ x \in U \mid (x \in A) ∧ (x \notin B)}$$ 
 
 ### 여집합 (Complement)
 
