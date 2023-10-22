@@ -85,3 +85,213 @@ $$
 
 두 행렬이 같은 차원을 가졌어도 교환법칙은 성립하지 않는다
 
+## 행렬의 상수곱 (Constant Multiple of Matrix)
+
+> $A$를 $m \times n$ 행렬이고 $c$를 상수라고 하자.
+
+$$
+cA = \left[ \begin{matrix}
+1 & 2 & -3 \\
+2 & 3 & 1 \\
+0 & 1 & 3 \\
+\end{matrix}
+\right]
+$$
+
+For $c=-2$
+
+$$
+cA = \left[ \begin{matrix}
+1 & 2 & -3 \\
+2 & 3 & 1 \\
+0 & 1 & 3 \\
+\end{matrix}
+\right]
+= \left[ \begin{matrix}
+(-2) \times 1 & (-2) \times 2 &  (-2) \times -3 \\
+(-2) \times 2 &  (-2) \times 3 &  (-2) \times 1 \\
+(-2) \times 0 &  (-2) \times 1 &  (-2) \times 3 \\
+\end{matrix}
+\right]
+= \left[
+\begin{matrix}
+-2 & -4 &  6 \\
+-4 &  6 & -2 \\
+0  & -2 & -6 \\
+\end{matrix}
+\right]
+$$
+
+
+## 항등행렬 (Identity Matrix)
+
+> `정의` : The identity matrix of order n은 $\delta_{ij}$ = 1 if $i = j$이고, $\delta_{ij} = 0$ if $i \neq j$인 $n \times n$ 인 $I_n = [\delta_{ij}]$ 행렬이다
+>
+> $\delta_{ij}$를 `Kronecker’s delta`라고 부른다
+
+$m \times n$ 행렬 $A$에 대해, 
+
+$$
+AI_n = I_mA = A
+$$
+
+## Powers of Matrix
+
+Square martix의 지수승은 다음과 같이 정의된다
+
+$$A^0 := I_n$$
+
+$$
+A^{n+1} := AA^{n}
+$$
+
+## Transpose of Matrix
+
+> `정의` : $A = [a_{ij}]$를 $m \times n$ 행렬이라고 하자. $A$의 transpose는 $A^T$로 나타내고, 행과 열을 반전한 행렬이다. 이는 다음과 같이 표현할 수 있다
+>
+> If $A^T=[b_{ij}]$, then $b_{ij} = a_{ji}$ for $i \in [n]$ and $j \in [m]$
+>
+
+*예시:*
+
+$$
+A = 
+\left[
+\begin{matrix}
+1 & 2 & 3 \\
+3 & 5 & 6 \\
+\end{matrix}
+\right]
+\text{,  }
+A^T = 
+\left[
+\begin{matrix}
+1 & 4 \\
+2 & 5 \\
+3 & 6 \\
+\end{matrix}
+\right]
+$$
+
+---
+
+### Symmetric
+
+> `정의` : $A = A^T$가 동일한 square matrix를 symmetic하다고 부른다. 즉, 다음과 같다
+>
+> $A = [a_{ij}]$ is `symmetric` if $a_{ij} = a{ji}$ for $j$ and $i$ with $1 \le i \le n, 1 \le j \le m$
+
+*예시:*
+
+$$
+A = A^T = 
+\left[
+\begin{matrix}
+1 & 4 & 1\\
+4 & 2 & 5\\
+1 & 5 & 3\\
+\end{matrix}
+\right]
+$$
+
+---
+
+## Zero-One Matrix
+
+> `정의` : 모든 값이 0 또는 1인 행렬을 `zero-one matrix`라고 부른다
+
+### join
+
+A와 B의 `join`은 각 ($i,j$)-entry에 대해 $a_{ij} ∨ b_{ij}$인 행렬이고 $A ∨ B$로 나타낸다
+
+### meet
+
+A와 B의 `meet`는 각 ($i,j$)-entry에 대해 $a_{ij} ∧ b_{ij}$인 행렬이고 $A ∧ B$로 나타낸다
+
+### 예시 
+
+$$A = \left[\begin{matrix}1 & 0 & 1 \\ 0 & 1 & 0\end{matrix}\right], B = \left[\begin{matrix}0 & 1 & 0 \\ 1 & 1 & 0\end{matrix}\right]$$
+
+$A$와 $B$의 `join`은 다음과 같다
+$$A ∨ B = \left[\begin{matrix}1∨0 & 0∨1&1∨0\\0∨1 & 1 ∨1& 0∨0\end{matrix}\right] = \left[\begin{matrix}1 & 1 & 1 \\ 1 & 1 & 0\end{matrix}\right]$$
+
+$A$와 $B$의 `meet`는 다음과 같다
+$$A ∧ B = \left[\begin{matrix}1∧0 & 0∧1&1∧0\\0∧1 & 1 ∧1& 0∧0\end{matrix}\right] = \left[\begin{matrix}0 & 0 & 0 \\ 0 & 1 & 0\end{matrix}\right]$$
+
+---
+
+## 부울 곱 (Boolean Product of Zero-One Matrix)
+
+> `정의` : $m \times p$인 zero-one 행렬 $A = [a_{ij}]$가 있고, $p \times n$인 zero-one 행렬 $B = [b_{ij}]$가 있을 때, $A$와 $B$의 부울 곱(boolean product)는 $m \times n$인 zero-one matrix이며 $A \odot B$로 표현한다
+
+$$c_{ij} = (a_{i1} ∧ b_{1j}) ∨ (a_{i2} ∧ b_{2j}) ∨ \cdots ∨ (a_{ip} ∧ b_{pj})$$
+
+*예시:*
+$$
+A = \left[\begin{matrix}1 & 0\\0 & 1\\ 1 & 0\end{matrix}\right],
+B = \left[\begin{matrix}1 & 1 & 0\\ 0 & 1 & 1\end{matrix}\right]
+$$
+
+$$
+A \odot B = \left[\begin{matrix}
+(1∧1)∨(0∧0) & (1∧1)∨(0∧1) & (1∧0)∨(0∧1) \\
+(0∧1)∨(1∧0) & (0∧1)∨(1∧1) & (0∧0)∨(1∧1) \\
+(1∧1)∨(0∧0) & (1∧1)∨(0∧1) & (1∧0)∨(0∧1) \\
+\end{matrix}\right] = 
+\left[\begin{matrix}
+1 & 1 & 0 \\
+0 & 1 & 1 \\
+1 & 1 & 0 \\
+\end{matrix}\right]
+$$
+
+## 부울 거듭제곱 (Boolean Power of Zero-One Matrix)
+
+> `정의` : square zero-one 행렬인 $A$가 있고, $n$을 양수라고 했을 때, $A$의 $n$번째 부울 거듭제곱(boolean power)는 $A$를 $n$번 부울 곱한 것과 같고, $A^{[n]}$  으로 나타낸다. $A^{[0]}$은 $I_n$으로 정의한다
+
+*예시*
+$$A = 
+\left[\begin{matrix}
+0 & 0 & 1 \\
+1 & 0 & 0 \\
+1 & 1 & 0 \\
+\end{matrix}\right]
+$$
+
+$$
+A^{[2]} = A \odot A =
+\left[\begin{matrix}
+1 & 1 & 0 \\
+0 & 0 & 1 \\
+1 & 0 & 1 \\
+\end{matrix}\right]
+$$
+
+$$
+A^{[3]} = A \odot A^{[2]} =
+\left[\begin{matrix}
+1 & 0 & 1 \\
+1 & 1 & 0 \\
+1 & 1 & 1 \\
+\end{matrix}\right]
+$$
+
+$$
+A^{[4]} = A \odot A^{[3]} =
+\left[\begin{matrix}
+1 & 1 & 1 \\
+1 & 0 & 1 \\
+1 & 1 & 1 \\
+\end{matrix}\right]
+$$
+
+$$
+A^{[5]} = A \odot A^{[4]} =
+\left[\begin{matrix}
+1 & 1 & 1 \\
+1 & 1 & 1 \\
+1 & 1 & 1 \\
+\end{matrix}\right]
+$$
+
+그러므로, $n \ge 5$ 일 때 $A^{[n]} = A^{[5]}$이다
