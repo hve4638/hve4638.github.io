@@ -89,7 +89,7 @@ tags: []
 
 ## 쌍조건문 (Biconditional)
 
-| p | q | p → q |
+| p | q | p ↔ q |
 |---|---|-----|
 | T | T |  T  |
 | T | F |  F  |
