@@ -10,7 +10,7 @@ tags: []
 
 # Beagleplay Labs
 
-`beagleplay` 보드를 이용해 크로스컴파일, 부트로더 등을 학습
+`beagleplay` 보드를 이용해 크로스컴파일, 부트로더 등을 학습하기
 
 # Bootloader
 
@@ -98,7 +98,7 @@ make
 완료후 `$HOME/x-tools/`에 toochain이 설치됨
 
 ```bash
-echo 'export PATH=$PATH:$HOME/x-tools/aarch64-training-linux-musl/bin' >> ~/.bashrc
+export PATH=$PATH:$HOME/x-tools/aarch64-training-linux-musl/bin
 ```
 
 `$HOME/x-tools/aarch64-training-linux-musl/bin/`을 PATH에 추가하여 `aarch64-linux-gcc`를 사용할 수 있다
@@ -425,149 +425,3 @@ sudo cp ~/build_uboot/a53/u-boot.img /media/$USER/boot/
 ```
 
 ---
-
-# Network configuration
-
-## U-boot에서 네트워크 설정
-
-```
-setenv ipaddr 192.168.0.100;
-setenv serverip 192.168.0.1;
-saveenv;
-```
-
-사용중인 ip segment와 겹친다면 다르게 설정한다
-
-## PC Host에서 네트워크 설정
-
-이더넷 포트를 꽂으면 `enxxx`형태로 나타나며, 쉽게 찾을수 있다
-
-```bash
-nmcli con add type ethernet ifname enxxx ip4 192.168.0.1/24
-```
-
-또는
-
-```bash
-sudo ifconfig enxe2015072726b inet 192.168.0.1 netmask 255.255.255.0
-```
-
-이후, 위 명령을 통해 ip을 설정 할 수 있다
-
-## TFTP 서버 세팅
-
-```bash
-sudo apt install tftpd-hpa
-```
-
-워킹스테이션에서 tftp를 설치한다
-
-```bash
-sudo vim /etc/default/tftpd-hpa
-```
-
-```bash
-sudo service tftpd-hpa restart
-```
-
-적절하게 설정한 후 재시작한다
-
-### U-boot에서 FTFP로 파일 가져오기
-
-```
-tftp 0x80000000 textfile.txt;
-```
-
-tftp로 워킹스테이션 파일을 0x80000000으로 가져온다
-
-```
-md 0x80000000;
-```
-
-다음 명령으로 가져온 데이터를 확인한다
-
-## Flash hte bootloader onto eMMC memory
-
-*WIP*
-
-## Fetching Linux kernel sources
-
-```bash
-cd
-git clone https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux
-cd linux
-git remote add stable https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux
-git fetch stable
-```
-
-## 커널 Cross-Compiling
-
-`linux-6.4.x`를 사용할 것이기 때문에 버전을 바꾼다
-
-```bash
-cd ~/linux
-git checkout stable/linux-6.4.y
-```
-
-```
-export PATH=$HOME/x-tools/aarch64-training-linux-musl/bin:$PATH
-```
-
-`PATH`에 해당 경로를 추가한다. 이전 단계에서 추가했다면 다시 추가할 필요는 없다
-
-```bash
-export ARCH=arm64
-export CROSS_COMPILE=aarch64-linux-
-```
-
-다음 환경 변수를 추가한다
-
-```bash
-make defconfig
-```
-
-arm64에 맞는 기본설정으로 초기화한다
-
-```bash
-make menuconfig
-```
-
-- `Platform Selection`
-    - `Texas Instruments Inc. K3 multicore SoC architecture` 를 제외하고 모두 끄기
-- `Device Manager`
-    - `Graphics support`
-        - `Direct Rendering Manager` 끄기
-
-```bash
-make
-```
-
-이후 빌드
-
-빌드가 완료되었으면 다음 경로에서 파일을 복사해 TFTP 디렉토리에 복사한다
-
-- `./arch/arm64/boot/Image.gz`
-- `./arch/arm64/boot/dts/ti/k3-am625-beagleplay.dtb`
-
-해당 경로에 파일이 없다면 `find` 명령어 등으로 다음 파일을 찾아본다
-
-## U-boot 이용해 커널 로드 및 부트
-
-```
-setenv bootargs console=ttyS2,115200n8;
-saveenv;
-```
-
-```
-tftp 0x80000000 Image.gz;
-```
-
-```
-tftp 0x82000000 k3-am625-beagleplay.dtb;
-```
-
-```
-booti 0x80000000 - 0x82000000;
-```
-
-성공시 커널 패닉이 나타난다

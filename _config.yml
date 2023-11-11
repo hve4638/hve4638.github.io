@@ -23,7 +23,7 @@ timezone: Asia/Seoul
 
 title: Hve Blog                          # the main title
 
-tagline: 이것저것 코딩합니다   # it will display as the sub-title
+tagline: "-"   # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
   A minimal, responsive, and powerful Jekyll theme for presenting professional writing.
