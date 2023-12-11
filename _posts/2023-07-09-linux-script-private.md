@@ -83,3 +83,23 @@ alias dockst='docker start -i'
 ```
 
 `~/.bashrc` 에 추가
+
+## 자동 스크립트 레코드
+
+```bash
+if [ -z "$SCRIPT_RECORD_ENABLED" ]; then
+    SP_PATH="$HOME/scripts"
+    SP_DATE=`date +"%y%m%d_%H%M%S"`
+    export SCRIPT_RECORD_ENABLED=1
+    script $SP_PATH/record_`date +"%y%m%d%H%M%S"`_`whoami`_`id -u`.log
+    unset SCRIPT_RECORD_ENABLED
+fi
+```
+
+`.bashrc`의 최하단에 놓는다
+
+## (VirtualBox) 리눅스 공유폴더 마운트
+
+```
+mount -t vboxsf <공유할디렉토리명> <마운트위치>
+```
