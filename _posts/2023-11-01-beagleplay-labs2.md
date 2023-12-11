@@ -53,6 +53,15 @@ sudo service tftpd-hpa restart
 
 적절하게 설정한 후 재시작한다
 
+*예시*
+
+```
+TFTP_USERNAME="tftp"
+TFTP_DIRECTORY="/tftp"
+TFTP_ADDRESS=":69"
+TFTP_OPTIONS="--secure"
+```
+
 ### U-boot에서 TFFP로 파일 가져오기
 
 ```
@@ -215,7 +224,13 @@ saveenv;
 
 ```
 tftp 0x80000000 Image.gz;
+```
+
+```
 tftp 0x82000000 k3-am625-beagleplay.dtb;
+```
+
+```
 booti 0x80000000 - 0x82000000;
 ```
 
