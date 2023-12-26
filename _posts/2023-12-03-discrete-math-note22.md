@@ -1,5 +1,5 @@
 ---
-title: "소수, GCD"
+title: "이산수학 | 소수, GCD"
 author: Hve
 date: 2023-12-03 19:47:39 +0900
 categories: ["공부", "이산수학"]

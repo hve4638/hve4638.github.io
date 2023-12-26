@@ -83,7 +83,7 @@ $n > n_0$일 때마다 $ \mid n^2 \mid  = n^2 \le Cn$ 인 상수 $C$와 $k$가 �
 
 $x > 1$ 이고 
 
-Assume that x > 1 and apply the triangle inequality for complex numbers, then since |x| > 1, so xk > 1 for all k ∈ [n]0, we have??
+> Assume that $x > 1$ and apply the triangle inequality for complex numbers, then since |x| > 1, so xk > 1 for all k ∈ [n]0, we have??
 
 
 ### Big-O 추정 for some important functions
