@@ -20,7 +20,7 @@ tags: []
 
 ## Nirsoft
 
-[nirsoft](https://www.nisoft.com/)
+[nirsoft](https://www.nirsoft.net/)
 
 여러 기본적인 포렌식 도구를 받을 수 있는 사이트이다
 
