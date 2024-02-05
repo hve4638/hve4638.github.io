@@ -1,5 +1,5 @@
 ---
-title: "Linux | 쉘스크립트 if문"
+title: "Linux | 쉘스크립트 if문 & 조건문"
 author: Hve
 date: 2024-01-23 15:35:22 +0900
 categories: ["개발", "Linux"]
