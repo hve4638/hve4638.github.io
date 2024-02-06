@@ -10,7 +10,7 @@ sudo usermod -aG docker $USER
 git clone https://github.com/ZilantRobotics/innopolis_vtol_dynamics.git
 cd innopolis_vtol_dynamics
 git submodule update --init --recursive
-./scripts/docker.sh build
+sudo ./scripts/docker.sh build
 
 cd ~
 
