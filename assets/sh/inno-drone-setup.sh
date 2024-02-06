@@ -7,7 +7,7 @@ sudo apt install build-essential -y
 curl -sSL get.docker.com | sh
 sudo usermod -aG docker $USER
 
-https://github.com/ZilantRobotics/innopolis_vtol_dynamics.git
+git clone https://github.com/ZilantRobotics/innopolis_vtol_dynamics.git
 cd innopolis_vtol_dynamics
 git submodule update --init --recursive
 ./scripts/docker.sh build
