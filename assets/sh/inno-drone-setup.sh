@@ -1,7 +1,11 @@
 #!/bin/bash
 
-apt install git curl wget -y
-apt install build-essential -y
+sudo apt update -y
+sudo apt install git curl wget -y
+sudo apt install build-essential -y
+
+curl -sSL get.docker.com | sh
+sudo usermod -aG docker $USER
 
 https://github.com/ZilantRobotics/innopolis_vtol_dynamics.git
 cd innopolis_vtol_dynamics
