@@ -25,6 +25,9 @@ if [ ! -f "$HOME/.inno-dront-setup-progress" ] ; then
     
     curl -O https://d176tv9ibo4jno.cloudfront.net/latest/QGroundControl.AppImage
     chmod +x ./QGroundControl.AppImage
+
+    echo Work done.
+    echo Please reboot and run this script again.
 else
     cd ~/innopolis_vtol_dynamics
     ./scripts/docker.sh build
