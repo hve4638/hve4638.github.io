@@ -44,10 +44,14 @@ CMD [ "echo", "hello", "world" ]
     - ex. `WORKDIR /root`
     - 여러번 사용될 수 있으며, 상대 경로가 제공되면 이전 명령을 기준으로 수행된다
 
-- `CMD` : 컨테이너 실행시 별도의 실행 인자가 없다면 이 명령을 수행한다
+- `CMD` : 컨테이너 실행시 별도의 실행 인자가 없다면 이 쉘 명령을 수행한다
+    - ex. `CMD "echo hello"` `CMD ["echo", "hello"]`
     - dockerfile에 하나만 존재해야 한다
+    - `CMD` 뒤에 오는 쉘 명령은 문자열또는 리스트 형태로 들어올 수 있는데 일반적으로 리스트 방식을 추천한다
+        - `CMD echo hello` 는 실제 실행시 `/bin/sh -c echo hello`로 변환되지만 리스트 방식은 그대로 실행된다
 
-- `ENTRYPOINT` : 컨테이너 실행시 이 명령을 수행한다. 인자가 지정되었더라도 우선해 수행한다
+- `ENTRYPOINT` : 컨테이너 실행시 이 명령을 수행한다. 인자가 지정되었더라도 우선해 수행한다\
+    - 문법은 `CMD`와 동일하다
 
 - `ENV` : 환경 변수를 지정한다
     - ex. `ENV MYENV=hello MYENV2=world`
@@ -67,7 +71,8 @@ CMD [ "echo", "hello", "world" ]
     - `*`, `?` 등의 와일드 카드를 사용할 수 있다
     - 선택 옵션으로 `[--chown=<user>:<group>] [--chmod=<perms>]`을 소유자 및 파일 권한을 지정할 수 있으며, 지정하지 않는다면 소유자는 0(root)이 된다
 
-- `ADD`
+- `ADD` : `COPY`의 기능에 더해, url로부터 파일을 받아올 수 있다
+    - ex. `ADD www.your.download.site /`
 
 ## 이외 명령 (WIP)
 
@@ -87,31 +92,15 @@ CMD [ "echo", "hello", "world" ]
 - `ONBUILD`
 - `STOPSIGNAL`
 
-## CMD, ENTRYPOINT의 포맷
-
-`CMD`, `ENTRYPOINT`의 명령어 포맷은 문자열 그대로 적는 방법과 리스트로 적는 방법이 있다
-
-```bash
-# 문자열 (shell form)
-CMD "echo hello"
-
-# 리스트 (exec form)
-CMD ["echo", "hello"]
-```
-
-문자열 방식은 "/bin/sh -c `<문자열>`" 로 실행되게 되는 반면 리스트 방식은 명령 그대로 실행되게 된다
-
-docker 공식 문서에서는 리스트 방식을 추천한다
-
 ## Increment build
 
-dockerfile은 increment-build가 적용된다. 즉, 재빌드 시 변경되지 않은 단계는 중복해서 빌드하지 않는다
+dockerfile은 각 명령마다 중간 레이어를 생성하며 increment-build 가 적용된다. 즉, 재빌드 시 변경되지 않은 단계는 중복해서 빌드하지 않는다
 
 따라서, 작성시 변화할 가능성이 거의 없는 작업부터 먼저 수행되어야 빌드 시간을 단축할 수 있다
 
-이 increment build를 위해 각 단계마다 중간 이미지가 생성되는데, 중간 이미지 단계가 많을 수록 최종 이미지의 크기가 커지게 된다
+또, 명령이 많아질 수록 중간 이미지도 많아지고, 최종 이미지의 크기가 커지게 된다
 
-따라서 RUN을 수행시 각 명령마다 명령을 수행하지 말고, 여러 명령을 묶어 실행하는 것이 좋다
+따라서 RUN 명령 수행시 각 쉘 명령마다 각각의 RUN을 사용하는 대신, 여러 명령을 묶어 실행하는 것이 좋다
 
 ```bash
 # 개별 실행
