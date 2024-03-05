@@ -1,8 +1,8 @@
 ---
-title: Docker 설치 및 사용
+title: "Docker 설치 및 사용"
 author: Hve
 date: 2023-06-10 22:53:35 +0900
-categories: [ 개발, 개발환경 ]
+categories: [ "개발", "Docker" ]
 math: false
 mermaid: false
 tags: []

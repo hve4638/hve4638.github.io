@@ -38,6 +38,15 @@ else
 fi
 ```
 
+## while문 문법
+
+```bash
+while [ 조건문 ];
+do
+    실행문
+done
+```
+
 ## 조건문
 
 ### 비교식
