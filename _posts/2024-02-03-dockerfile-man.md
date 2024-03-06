@@ -2,7 +2,7 @@
 title: "Dockerfile"
 author: Hve
 date: 2024-02-03 06:36:11 +0900
-categories: []
+categories: ["개발", "Docker"]
 math: false
 mermaid: false
 tags: []
