@@ -1,5 +1,5 @@
 ---
-title: "Dockerfile"
+title: "Dockerfile 명령어"
 author: Hve
 date: 2024-02-03 06:36:11 +0900
 categories: ["개발", "Docker"]
@@ -8,23 +8,20 @@ mermaid: false
 tags: []
 ---
 
-## Dockerfile
+## Dockerfile 예제
 
-## 예제
-
-```
+```dockerfile
 FROM ubuntu:latest
 
 RUN set -x \
 && apt update \
-&& apt install -y curl \
-&& apt install -y openssh-server
+&& apt install -y curl openssh-server
 
 COPY .aliaslist /home/master/.aliaslist
 
-RUN echo "source ~/.aliaslist" >> /home/master/.bashrc
-
 RUN mkdir /vol
+
+USER master
 
 CMD [ "echo", "hello", "world" ]
 ```
