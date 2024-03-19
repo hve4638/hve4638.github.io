@@ -77,7 +77,6 @@ create-react-app --version
 create-react-app <프로젝트명>
 ```
 
-
 ## Memo
 
 ```bash
@@ -88,4 +87,16 @@ npm run build
 npm test
 
 npm run eject
+```
+
+## 설치 스크립트
+
+```bash
+#!/bin/bash
+curl -O https://nodejs.org/dist/v20.11.0/node-v20.11.0-linux-x64.tar.gz
+tar -xzvf node-v20.11.0-linux-x64.tar.gz
+
+cp node-v20.11.0-linux-x64 /local/usr/ -r
+sudo ln -s /local/usr/node-v20.11.0-linux-x64/bin/node /usr/bin/node
+sudo ln -s /local/usr/node-v20.11.0-linux-x64/bin/npm /usr/bin/npm
 ```

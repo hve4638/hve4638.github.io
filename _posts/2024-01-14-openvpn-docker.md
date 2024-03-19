@@ -5,7 +5,7 @@ date: 2024-01-14 16:47:18 +0900
 categories: ["개발", "개발환경"]
 math: false
 mermaid: false
-tags: []
+tags: ['openvpn', 'ovpn']
 ---
 
 ## 준비

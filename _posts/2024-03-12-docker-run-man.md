@@ -59,6 +59,8 @@ docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
     - `docker update` 명령을 통해 이미 실행중인 컨테이너에도 적용할 수 있다
 - `--rm`
     - 컨테이너 종료시 자동으로 삭제한다
+- `--net`
+    - 인자 : `bridge|host|none`
 
 
 ## 이외 명령어
@@ -72,6 +74,9 @@ docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
 - `-h` `--hostname`
     - 컨테이너의 호스트명을 지정한다
 - `--expose`
+    - *Dockerfile*의 EXPOSE의 기능과 동일하다
+    - 노출할 포트를 명시하지만 바로 호스트에 노출되지는 않는다
+    - `-P` 옵션을 통해 실제로 호스트에 노출한다
 - `-P`, `--Publish-all`
     - dockerfile의 `EXPOSE`나 `--expose`로 명시한 포트를 호스트의 랜덤한 포트에 노출한다
 - `--pull`

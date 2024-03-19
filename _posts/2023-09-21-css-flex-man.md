@@ -26,3 +26,7 @@ tags: []
 - `flex-start` : 최상단 정렬
 - `flex-end` : 최하당 정렬
 - `center` : 중앙 정렬
+
+## 참고
+
+- [flexbox로 만들 수 있는 10가지 레이아웃](https://d2.naver.com/helloworld/8540176)
