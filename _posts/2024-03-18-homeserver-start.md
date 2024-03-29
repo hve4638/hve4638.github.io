@@ -77,7 +77,7 @@ echo "alias dc='docker-compose'" >> ~/.bashrc
 echo "alias dcbuild='docker-compose build'" >> ~/.bashrc
 echo "alias dcup='docker-compose up'" >> ~/.bashrc
 echo "alias dcdown='docker-compose down'" >> ~/.bashrc
-echo "alias dcsart='docker-compose start'" >> ~/.bashrc
+echo "alias dcstart='docker-compose start'" >> ~/.bashrc
 echo "alias dcstop='docker-compose stop'" >> ~/.bashrc
 ```
 

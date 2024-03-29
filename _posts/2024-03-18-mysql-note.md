@@ -1,5 +1,5 @@
 ---
-title: "MySQL | SQL 문 정리"
+title: "MySQL | SQL문 정리"
 author: Hve
 date: 2024-03-18 09:17:53 +0900
 categories: ["공부", "MySQL"]
@@ -66,5 +66,25 @@ select * from 데이터베이스 where 이름 LIKE '김%'
 ```
 select * from 데이터베이스 where 이름 REGEXP '정규식'
 select * from 데이터베이스 where REGEXP_LIKE (이름, '정규식')
+```
+
+## 함수
+
+- `CHAR_LENGTH()`
+    - 문자의 개수 반환
+- `LENGTH()`
+    - 바이트 수 반환
+- `LEFT()`, `RIGHT()`
+
+
+```sql
+SELECT LEFT('Hello World', 3);
+-- Hel 반환
+SELECT RIGHT('Hello World', 3);
+-- rld 반환
+SELECT SUBSTR('ABCDE', 2, 2);
+-- BC 반환
+SELECT SUBSTR('ABCDE', 2);
+-- BCDE 반환
 ```
 
