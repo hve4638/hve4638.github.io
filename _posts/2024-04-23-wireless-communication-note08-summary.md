@@ -1,0 +1,221 @@
+---
+title:  "공부 | 무선 통신 - 8 (키워드 정리)"
+author: Hve
+date: 2024-04-23 05:21:09 +0900
+categories:  ["공부", "무선 통신"]
+math: true
+mermaid: false
+tags: []
+---
+
+- Time-Domain Concept
+    - 진폭
+    - 주파수
+    - 위상
+    - 주기
+    - 파장
+- Frequency-Domain Concept
+    - time-domain을 다른 관점에서 관찰
+- Harmonics
+    - 기본 주파수
+    - 스팩트럼
+    - 홀수배 주파수
+- 아날로그
+    - 노이즈 약함
+    - 감쇠 강함
+    - 증폭기
+        - 왜곡 유발
+- 디지털
+    - 노이즈 강함
+    - 감쇠 약함
+    - Repeater
+        - 데이터 재생성
+- 다중화 (Multiplexing)
+    - 사용 이유
+        - 데이터 속도 증가
+        - 장비 비용 감소
+        - 전송 비용 감소
+    - 종류
+        - FDM : 주파수 분할
+        - TDM : 시분할
+- 다중 접속
+    - 종류
+        - FDMA : 주파수 분할
+        - TDMA : 시분할
+        - CDMA : 코드 분할
+- LAN
+- WAN
+- 스위칭 기술
+    - 서킷 스위칭 (curcuit switching)
+        - 한 통신만 점유
+    - 패킷 스위칭 (packet switching)
+        - 회성 효율성
+        - 데이터 변호나 수행
+        - 혼잡시에도 패킷 허용
+    - 네트워크
+        1. 데이터그램
+            - 각 패킷 독립적 처리
+            - 패킷 순서 바뀔수 있음
+            - 출구노드가 패킷순서 정렬
+        2. 가상 서킷
+            - 미리 가상의 경로 지정
+            - 각 패킷에 대한 노드의 라우팅 결정 필요 X
+            - 긴 메세지의 경우 적합
+- QOS (서비스 품질)
+    - 음성, 오디오
+        - 안정적 전송
+        - 지연 제한
+        - 일부 패킷 손실 허용
+    - 데이터 트래픽
+        - 오류없는 전송
+        - 탄력적
+    - Provisioning
+        - 과제공
+        - 우선순위 제공
+            - 품질 보증 X
+            - 품질 보증 O
+
+- 프로토콜
+- TCPIP Layer
+    - Application Layer
+    - Transport Layer
+        - 세그먼트 단위
+        - 에러 정정 및 패킷 순서 정렬
+        - '새그먼트'
+    - Internet Layer / Network Layer
+        - end-to-end
+        - '패킷'
+    - Netwrok access Layer / Data Link Layer
+        - node-to-node
+        - 네트워크 유형따라 소프트웨어 차이 (패킷 네트워킹 등)
+        - '프레임'
+    - Physical Layer
+- 라우터
+    - 네트워크 간 링크 제공
+    - 서로 다른 네트워크 연결된 ES의 프로세스간 데이터 라우팅 및 전달
+
+- 안테나
+    - 길이
+        - 파장의 1/2, 또는 1/4
+        - $f= c / 2L$
+    - 방사 패턴
+    - 종류
+        - 다이폴 안테나
+        - 지향성 안테나
+        - ...
+- 스펙트럼
+    - 규제기관 통제
+        - 주파수
+        - 신호 전력
+        - 다중 접속 방식
+- 전파 모드
+    - 지상파
+        - 지구 곡률 따라
+        - 최대 3MHz
+    - 공중파
+        - 전리층과 표면사이 오가며
+        - 3MHz ~ 30MHz
+    - 가시거리 전파
+- 전파 메커니즘
+    - 자유공간 전파
+    - 전송
+    - 반사
+    - 회절
+    - 산란
+- 장애 (Impairment)
+    - 감쇠
+    - 자유공간 소실
+    - 잡음
+        - 열 잡음 (화이트 노이즈)
+        - 상호변조 잡읍
+        - 누화 (커플링)
+        - 임펄스 잡음
+    - 대기 흡수
+    - 다중 경로
+        - 여러 복사본이 서로 다른 위상에 도착 가능
+    - 굴절
+- Channel Correction Mechanism
+    - FEC (전진 에러 수정)
+        - 오류 수정 코드 추가
+        - 리던던시가 큼
+        - 수신기가 재요청하지 않음
+    - diversity techinques
+        - 공간 다양성
+        - 주파수 다양성
+        - 시간 다양성
+    - MIMO
+        - diversity
+        - multiple stream : 여러 데이터 병렬로 전송
+        - beamforming : 지향성 안테나
+        - multi-user MIMO : 여러 사용자에게 각각의 지향성 안테나로 사용
+- 무선 전송 과정
+    1. 소스 코딩 : 데이터 디지털화
+    2. 채널 코딩 : 오류 검출 코드 추가
+    3. 변조
+    4. 전송
+- 변조 (Modulation)
+    - 소스 데이터를 반송파로 인코딩하는 과정
+    - 신호 인코딩 기준
+        - 신호대 잡음비
+        - 데이터속도
+        - 대역폭
+    - Shift Keying : 디지털 신호 변조
+        - ASK (Amplitued)
+            - 비트 0일때 반송파 부재로 표시
+        - FSK (Frequency)
+            - BFSK
+                - 다른 주파수로 비트 표현
+            - MFSK
+                - 두개 이상의 주파수
+        - PSK (Phase)
+            - BPSK (Two-level PSK)
+                - 2개의 위상을 사용해 비트 표현
+            - QPSK (Four-level PSK)
+                - 4개의 위상을 사용해 2비트 표현
+        - QAM (직교 진폭 변조)
+            - ASK + PSK
+            - 동일한 반송파 주파수에서 동시에 전송되는 두개의 서로 다른 신호
+- 코딩 및 에러제어
+    - 방식
+        - FEC
+            - 에러 감지, 수정
+        - ARQ 프로토콜
+            - 에러 감지, 폐기
+            - Stop-And-Wait ARQ
+            - Go-Back-N ARQ
+            - Selective-Repeat ARQ
+        - Hybrid ARQ
+            - ARQ + FEC
+    - 패리티 비트
+    - Hamming distance
+        - 두 바이너리 시퀀스에서 서로 다른 비트의 개수
+    - Block Codes
+        - LDPC
+            - 매우 긴 코드 블록 사용
+            - 여러 패리티 사용
+            - 고속 처리
+        - Block Interleaving
+            - 다른 방향으로 읽고 씀
+            - 에러 분산으로 인해 에러 정정 용이
+    - Convolutional Codes
+    - Turbo Code
+        - 3가지 신호가 함께 전송되고 인터리빙됨
+        - 3G, 4G 시스템에 사용가능
+- Flow Control
+    - 수신자 데이터 감당 가능하도록 조절
+    - 윈도우 설정 및 탄력적 조절
+- OFDM
+    - 직교하는 수많은 부반송파에 데이터를 나누어 싣고 다중화해 전송
+    - 장점
+        - ISI에 강함
+            - 느리므로 데이터 순서 바뀌는 것에 강함
+        - 더 많은 데이터 보냄
+        - 더 효율적인 주파수 사용
+- Spread Spectrum
+    - FHSS
+        - 정해진 시간마다 주파수 이동
+        - 겉보기엔 무작위 이동
+        - 연속적인 간격마다 새 반송파 주파수가 선택됨
+    - DHSS
+        - 확산 부호 비트 스트림 xor 결함해 보냄
+    - CDMA

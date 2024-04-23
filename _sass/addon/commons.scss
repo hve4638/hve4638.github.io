@@ -42,7 +42,6 @@ body {
 
 h1 {
   @extend %heading;
-
   font-size: 1.9rem;
 }
 
@@ -51,7 +50,31 @@ h2 {
   @extend %section;
   @extend %anchor;
 
-  font-size: 1.5rem;
+  font-size: 1.6rem;
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 100%;
+  background-color: var(--main-border-color);
+  border-color: var(--main-border-color);
+  position: absolute;
+  color-scheme: dark;
+  font-weight: 400;
+  text-align: left;
+  color: var(--text-color);
+  font-family: "Source Sans Pro","Microsoft Yahei",sans-serif;
+  line-height: 1.75;
+  overflow-wrap: break-word;
+  font-size: 1.03rem;
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 0;
+  border-top: 1px solid rgba(0,0,0,.1);
 }
 
 h3 {
@@ -59,7 +82,8 @@ h3 {
   @extend %section;
   @extend %anchor;
 
-  font-size: 1.2rem;
+  padding-left: 5;
+  font-size: 1.3rem;
 }
 
 h4 {
@@ -846,7 +870,7 @@ $sidebar-display: 'sidebar-display';
           position: relative;
           right: 1px;
           width: $cursor-width;
-          height: $tab-cursor-height;
+          height: 0.5px;
           border-radius: 1px;
           background-color: var(--nav-cursor-color);
           pointer-events: none;

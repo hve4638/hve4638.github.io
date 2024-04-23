@@ -1,8 +1,8 @@
 ---
-title: "Linux | Netcat : 네트워크 통신 유틸리티"
+title: "Linux | netcat : 네트워크 통신 유틸리티"
 author: Hve
 date: 2023-05-27 00:11:05 +0900
-categories: [ 개발, Linux ]
+categories: [ "개발", "Linux 명령어" ]
 math: false
 mermaid: false
 tags: [linux]

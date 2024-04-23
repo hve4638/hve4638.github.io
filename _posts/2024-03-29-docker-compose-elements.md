@@ -1,8 +1,8 @@
 ---
-title: "Docker compose 설정"
+title: "Docker | docker-compose 작성법"
 author: Hve
 date: 2024-03-29 17:47:52 +0900
-categories: []
+categories: ["개발", "Docker"]
 math: false
 mermaid: false
 tags: []
@@ -111,6 +111,16 @@ networks:
     my-network:
         ipv4_address: 10.110.13.2
 ```
+
+## network_mode
+
+```yaml
+network_mode: "host"
+```
+
+*docker run* `--net` 에 대응하는 옵션
+
+`bridge/host/none` 중 선택할 수 있다
 
 ### volumes
 
