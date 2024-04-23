@@ -1,5 +1,5 @@
 ---
-title: "Docker 설치 및 사용"
+title: "Docker | 도커 설치 및 사용"
 author: Hve
 date: 2023-06-10 22:53:35 +0900
 categories: [ "개발", "Docker" ]
@@ -16,7 +16,7 @@ curl -sSL get.docker.com | sh
 
 공식 홈페이지에서 스크립트를 가져와 실행하면 자동으로 설치된다.
 
-WSL의 경우 Docker Desktop을 이용하라는 경고가 나오지만 기다리면 설치가 진행된다.
+WSL의 경우 Docker Desktop을 이용하라는 경고가 나오지만 기다리면 설치가 진행된다
 
 ## 일반 계정에서 Docker 사용하기
 
