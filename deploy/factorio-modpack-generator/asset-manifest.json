@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/deploy/factorio-modpack-generator/static/css/main.16aed37d.css",
-    "main.js": "/deploy/factorio-modpack-generator/static/js/main.783ef4f0.js",
+    "main.js": "/deploy/factorio-modpack-generator/static/js/main.7a8e88bd.js",
     "static/js/453.401e2e0f.chunk.js": "/deploy/factorio-modpack-generator/static/js/453.401e2e0f.chunk.js",
     "index.html": "/deploy/factorio-modpack-generator/index.html",
     "static/media/search.svg": "/deploy/factorio-modpack-generator/static/media/search.0a631a456fa4ad45d552f5bad0d56a4b.svg",
     "static/media/unfold.svg": "/deploy/factorio-modpack-generator/static/media/unfold.2f6433b93e88d1d4e7eae4f4a00b282d.svg",
     "static/media/fold.svg": "/deploy/factorio-modpack-generator/static/media/fold.23da05ad2008fa3bada69c3668380618.svg",
     "main.16aed37d.css.map": "/deploy/factorio-modpack-generator/static/css/main.16aed37d.css.map",
-    "main.783ef4f0.js.map": "/deploy/factorio-modpack-generator/static/js/main.783ef4f0.js.map",
+    "main.7a8e88bd.js.map": "/deploy/factorio-modpack-generator/static/js/main.7a8e88bd.js.map",
     "453.401e2e0f.chunk.js.map": "/deploy/factorio-modpack-generator/static/js/453.401e2e0f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.16aed37d.css",
-    "static/js/main.783ef4f0.js"
+    "static/js/main.7a8e88bd.js"
   ]
 }
