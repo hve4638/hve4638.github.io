@@ -1,0 +1,12 @@
+[
+    {
+        "name" : "없음",
+        "value" : "noprompt"
+    },
+    {   "name" : "번역",
+        "sub" : [
+            { "name" : "범용", "value" : "translate-normal" },
+            { "name" : "소설", "value" : "translate-novel" }
+        ]
+    }
+]
