@@ -21,6 +21,7 @@ mermaid: false
 tags: []
 ---
 ''')
+    print(f'create file : ./{file_name}')
 
 filename:str = ""
 if (len(sys.argv) < 2):
