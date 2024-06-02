@@ -18,7 +18,6 @@ service:
         ...
 ```
 
-
 ## 컨테이너 하위 요소
 
 ### image
@@ -112,7 +111,7 @@ networks:
         ipv4_address: 10.110.13.2
 ```
 
-## network_mode
+### network_mode
 
 ```yaml
 network_mode: "host"
