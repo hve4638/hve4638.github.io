@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/deploy/ai-front/static/css/main.2ebc77cf.css",
+    "main.js": "/deploy/ai-front/static/js/main.563f16d5.js",
+    "static/js/453.e47b120d.chunk.js": "/deploy/ai-front/static/js/453.e47b120d.chunk.js",
+    "static/media/config.svg": "/deploy/ai-front/static/media/config.ca473c4c18df8ef00abe605703771483.svg",
+    "static/media/setting.svg": "/deploy/ai-front/static/media/setting.2fc5dcfec76080ed2b88b3e79a9cefa6.svg",
+    "static/media/test.svg": "/deploy/ai-front/static/media/test.2da412fa30f297118e004fee4654a3e5.svg",
+    "index.html": "/deploy/ai-front/index.html",
+    "static/media/history.svg": "/deploy/ai-front/static/media/history.7c49782db9cbbe67ab7909705cf4bacf.svg",
+    "static/media/copy.svg": "/deploy/ai-front/static/media/copy.a3e35f5bcaf6f47c0aa6b77a2cc38fc0.svg",
+    "static/media/loading.svg": "/deploy/ai-front/static/media/loading.2710fadeb11bcef19bf00153c21c3c37.svg",
+    "static/media/close.svg": "/deploy/ai-front/static/media/close.e669127d4cb5f92d307e6cb014d9857e.svg",
+    "static/media/arrow.svg": "/deploy/ai-front/static/media/arrow.80134741b8550cb2ca030fdd2a394487.svg",
+    "main.2ebc77cf.css.map": "/deploy/ai-front/static/css/main.2ebc77cf.css.map",
+    "main.563f16d5.js.map": "/deploy/ai-front/static/js/main.563f16d5.js.map",
+    "453.e47b120d.chunk.js.map": "/deploy/ai-front/static/js/453.e47b120d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2ebc77cf.css",
+    "static/js/main.563f16d5.js"
+  ]
+}
