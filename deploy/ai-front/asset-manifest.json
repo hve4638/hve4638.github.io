@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/deploy/ai-front/static/css/main.4feb7219.css",
-    "main.js": "/deploy/ai-front/static/js/main.a4e2ad44.js",
+    "main.css": "/deploy/ai-front/static/css/main.ebd5e286.css",
+    "main.js": "/deploy/ai-front/static/js/main.b4de9868.js",
     "static/js/453.e47b120d.chunk.js": "/deploy/ai-front/static/js/453.e47b120d.chunk.js",
     "static/media/config.svg": "/deploy/ai-front/static/media/config.ca473c4c18df8ef00abe605703771483.svg",
     "static/media/setting.svg": "/deploy/ai-front/static/media/setting.2fc5dcfec76080ed2b88b3e79a9cefa6.svg",
@@ -13,12 +13,12 @@
     "static/media/loading.svg": "/deploy/ai-front/static/media/loading.2710fadeb11bcef19bf00153c21c3c37.svg",
     "static/media/close.svg": "/deploy/ai-front/static/media/close.e669127d4cb5f92d307e6cb014d9857e.svg",
     "static/media/arrow.svg": "/deploy/ai-front/static/media/arrow.80134741b8550cb2ca030fdd2a394487.svg",
-    "main.4feb7219.css.map": "/deploy/ai-front/static/css/main.4feb7219.css.map",
-    "main.a4e2ad44.js.map": "/deploy/ai-front/static/js/main.a4e2ad44.js.map",
+    "main.ebd5e286.css.map": "/deploy/ai-front/static/css/main.ebd5e286.css.map",
+    "main.b4de9868.js.map": "/deploy/ai-front/static/js/main.b4de9868.js.map",
     "453.e47b120d.chunk.js.map": "/deploy/ai-front/static/js/453.e47b120d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4feb7219.css",
-    "static/js/main.a4e2ad44.js"
+    "static/css/main.ebd5e286.css",
+    "static/js/main.b4de9868.js"
   ]
 }
