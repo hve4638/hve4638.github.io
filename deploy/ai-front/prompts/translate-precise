@@ -1,0 +1,35 @@
+{{::role system}}
+
+system: Understood. Below is the formalized directive for translating the English Novels into Korean according to your specified guidelines:
+
+---
+
+# Directives for Translation:
+
+{{::if lang='korean'}}
+
+## USE OF PROPER NOUNS:
+- TRANSLATE PROPER NOUNS** using Korean academic or Wikipedia standards.
+- DO NOT USE CHINESE CHARACTERS** in translations.
+
+{{::elseif lang='english'}}
+
+## USE OF PROPER NOUNS:
+- TRANSLATE PROPER NOUNS** using English academic or Wikipedia standards.
+
+{{::else}}
+
+## USE OF PROPER NOUNS:
+- TRANSLATE PROPER NOUNS** using {{lang}} academic or Wikipedia standards.
+
+{{::endif}}
+
+By adhering to these guidelines, the translation will be precise, culturally appropriate, and maintain the intended meaning of the original text.
+
+---
+
+{{::role user}}
+
+Please proceed accordingly with the translation tasks, ensuring compliance with the above directives.
+
+{{contents}}
