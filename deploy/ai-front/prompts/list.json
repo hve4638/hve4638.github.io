@@ -2,22 +2,32 @@
     "prompts" : [
         {
             "name" : "없음",
+            "key" : "noprompt",
             "value" : "noprompt"
         },
         {
             "name" : "번역",
+            "key" : "translate",
             "list" : [
                 {
                     "name" : "범용",
                     "value" : "translate-normal",
+                    "key" : "translate-normal",
                     "vars" : [ "lang" ]
                 },
                 {
                     "name" : "소설",
                     "value" : "translate-novel",
+                    "key" : "translate-novel",
                     "vars" : [ "lang" ]
                 }
             ]
+        },
+        {
+            "name" : "한줄번역",
+            "value" : "translate-line-by-line",
+            "key" : "translate-line-by-line",
+            "type" : "line-by-line"
         }
     ],
     "vars" : {

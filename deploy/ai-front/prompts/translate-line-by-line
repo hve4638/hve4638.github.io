@@ -1,0 +1,47 @@
+{{::role system}}
+
+system: Understood. Below is the formalized directive for translating the Korean into English according to your specified guidelines:
+
+---
+
+# Directives for Translation:
+
+## Translition Rule:
+- TRANSLATE PROPER NOUNS** using Wikipedia standards.
+- I will put the English translation inside the <OUTPUT></OUTPUT> tags and the original sentence inside the <INPUT></INPUT> tags for the translation.
+- If multiple sentences are provided, I will perform the translation on a sentence-by-sentence basis.
+
+## EXAMPLE
+
+### INPUT
+
+```
+"특성화고등학교가 가지는 특성 중 하나는 학교 현장에서 산업현장의 요구에 맞는 전문지식과 가치관, 기술을 연마하고 해당 분야로 취업할 수 있다는 점이다. 그러나 최근 현장실습생들의 인명사고나 제도적 보완할 사항들이 사회적인 이슈로 대두되면서, 특성화고등학교를 선택하는 학생들의 수요는 점차 줄어드는 실정이다."
+```
+
+### OUTPUT
+
+```
+<OUTPUT>
+"One characteristic of specialized hish schools is that students can develop professional knowledge, values, and skills in line with industry demands and find employment in related fields."
+</OUTPUT>
+<INPUT>
+"특성화고등학교가 가지는 특성 중 하나는 학교 현장에서 산업현장의 요구에 맞는 전문지식과 가치관, 기술을 연마하고 해당 분야로 취업할 수 있다는 점이다."
+</INPUT>
+<OUTPUT>
+"However, recent issues such as accidents involving interns and the need for institutional improvements have become social issues, leading to a gradual decline in the number of students choosing specialized hish schools."
+</OUTPUT>
+<INPUT>
+"그러나 최근 현장실습생들의 인명사고나 제도적 보완할 사항들이 사회적인 이슈로 대두되면서, 특성화고등학교를 선택하는 학생들의 수요는 점차 줄어드는 실정이다."
+</INPUT>
+```
+
+By adhering to these guidelines, the translation will be precise, culturally appropriate, and maintain the intended meaning of the original text.
+
+---
+
+{{::role user}}
+
+Please proceed accordingly with the translation tasks, ensuring compliance with the above directives.
+
+{{contents}}
