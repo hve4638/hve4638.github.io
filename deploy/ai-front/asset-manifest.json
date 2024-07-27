@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/deploy/ai-front/static/css/main.d9bee9ac.css",
-    "main.js": "/deploy/ai-front/static/js/main.7f5f23bf.js",
+    "main.js": "/deploy/ai-front/static/js/main.9951aaf5.js",
     "static/js/206.3e97cf21.chunk.js": "/deploy/ai-front/static/js/206.3e97cf21.chunk.js",
     "static/media/setting.svg": "/deploy/ai-front/static/media/setting.2fc5dcfec76080ed2b88b3e79a9cefa6.svg",
     "static/media/model.svg": "/deploy/ai-front/static/media/model.4ef4e52cd0d4de61f628cf0d2e0e8e57.svg",
@@ -13,6 +13,6 @@
   },
   "entrypoints": [
     "static/css/main.d9bee9ac.css",
-    "static/js/main.7f5f23bf.js"
+    "static/js/main.9951aaf5.js"
   ]
 }

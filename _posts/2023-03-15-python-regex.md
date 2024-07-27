@@ -2,7 +2,7 @@
 title: Python | 정규표현식 문법
 author: Hve
 date: 2023-03-15 10:45:00 +0900
-categories: [프로그래밍, Python]
+categories: ["개발", "Python"]
 math: false
 mermaid: false
 tags: [python]

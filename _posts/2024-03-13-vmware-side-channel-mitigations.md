@@ -1,5 +1,5 @@
 ---
-title: "VMWare \"You are running this virtual machine with side channel mitigations enabled.\""
+title: "트러블슈팅 | VMWare \"You are running this virtual machine with side channel mitigations enabled.\""
 author: Hve
 date: 2024-03-13 10:45:05 +0900
 categories: ["개발", "트러블슈팅"]
