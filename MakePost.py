@@ -9,8 +9,8 @@ def create_markdown_file(filename):
 
     filedate = now.strftime('%Y-%m-%d')
 
-    file_name = f'_posts/{filedate}-{filename}.md'
-    with open(file_name, 'w', encoding='utf-8') as f:
+    fullpath = f'_posts/{filedate}-{filename}.md'
+    with open(fullpath, 'w', encoding='utf-8') as f:
         f.write(f'''---
 title: 
 author: Hve
@@ -21,12 +21,18 @@ mermaid: false
 tags: []
 ---
 ''')
-    print(f'create file : ./{file_name}')
+    print(f'create file : ./{fullpath}')
 
-filename:str = ""
-if (len(sys.argv) < 2):
-    filename = input("FILENAME (without Date) : ")
-else:
-    filename = sys.argv[1]
+if __name__ == '__main__':
 
-create_markdown_file(filename)
+    filename:str = ''
+    try:
+        if (len(sys.argv) < 2):
+            filename = input('FILENAME (without Date) : ')
+        else:
+            filename = sys.argv[1]
+    except KeyboardInterrupt:
+        print("")
+        exit()
+
+    create_markdown_file(filename)
