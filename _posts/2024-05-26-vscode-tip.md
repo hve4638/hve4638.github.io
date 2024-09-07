@@ -14,6 +14,7 @@ tags: []
 - `CTRL + K` + `CTRL + S` : 단축키 설정 열기
 - `CTRL + K` + `F` : 현재 폴더 닫기
 - `CTRL + SHIFT + P` : 명령 표시
+- `SHIFT + ALT + F` : 자동 들여쓰기 정렬
 
 ## 단축키 재지정
 
@@ -21,6 +22,7 @@ tags: []
 
 *추천하는 단축키*
 - 아래에 줄 복사 : `CTRL + D` 로 지정
+
 
 ## 유용한 익스텐션
 
@@ -45,5 +47,4 @@ tags: []
     - `'가상환경_디렉토리'/lib/python3.10/site-packages/pylint`
 
 4. 이후 vscode를 재실행 해 pylint가 제대로 적용되었는지 확인한다. 
-
 

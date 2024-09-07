@@ -8,7 +8,7 @@ mermaid: false
 tags: []
 ---
 
-## 설명
+## MKFIFO
 
 ```bash
 mkfifo file
