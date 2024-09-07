@@ -1,8 +1,8 @@
 ---
-title: Python | 파이썬 코드 뭉치 - 1
+title: "Python | 파이썬 코드 뭉치 - 1"
 author: Hve
 date: 2023-01-18 12:14:00 +0900
-categories: [Dev, Python]
+categories: [개발, python]
 math: false
 mermaid: false
 tags: [python]

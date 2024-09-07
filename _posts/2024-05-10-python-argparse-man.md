@@ -2,7 +2,7 @@
 title: "Python | argparse - 명령줄 옵션 처리 파서"
 author: Hve
 date: 2024-05-10 08:12:36 +0900
-categories: []
+categories: ["개발", "python"]
 math: false
 mermaid: false
 tags: []

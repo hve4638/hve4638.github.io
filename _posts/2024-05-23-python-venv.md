@@ -2,7 +2,7 @@
 title: "Python | 가상 환경 (venv)"
 author: Hve
 date: 2024-05-23 14:08:04 +0900
-categories: ["개발", "Python"]
+categories: ["개발", "python"]
 math: false
 mermaid: false
 tags: []

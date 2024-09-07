@@ -1,8 +1,8 @@
 ---
-title: react.js 환경 설치 (node.js, npm)
+title: "Node.js | 리눅스 개발 환경 구축"
 author: Hve
 date: 2024-01-23 12:51:31 +0900
-categories: ["개발", "개발환경"]
+categories: ["개발", "node.js"]
 math: false
 mermaid: false
 tags: ["리액트"]
