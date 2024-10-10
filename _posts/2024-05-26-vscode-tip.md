@@ -15,6 +15,8 @@ tags: []
 - `CTRL + K` + `F` : 현재 폴더 닫기
 - `CTRL + SHIFT + P` : 명령 표시
 - `SHIFT + ALT + F` : 자동 들여쓰기 정렬
+- `CTRL + /` : 주석 토글
+- `CTRL + K` + `CTRL + U` : 주석 해제
 
 ## 단축키 재지정
 
