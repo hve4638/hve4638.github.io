@@ -2,7 +2,7 @@
 title: "Python | 단위 테스트 모듈 (unittest)"
 author: Hve
 date: 2024-05-23 14:08:09 +0900
-categories: ["개발", "Python"]
+categories: ["개발", "python"]
 math: false
 mermaid: false
 tags: []

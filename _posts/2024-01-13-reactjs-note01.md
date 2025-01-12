@@ -1,8 +1,8 @@
 ---
-title: "React.js | 공부"
+title: "React.js | 튜토리얼 - 1"
 author: Hve
 date: 2024-01-13 16:21:08 +0900
-categories: ["공부", "React.js"]
+categories: ["개발", "react.js"]
 math: false
 mermaid: false
 tags: []
@@ -10,9 +10,8 @@ tags: []
 
 ## 개발 환경 설치
 
-[Node.js](https://nodejs.org)
-
-[VSCode](https://code.visualstudio.com)
+- [Node.js](https://nodejs.org)
+- [VSCode](https://code.visualstudio.com)
 
 ## 프로젝트 생성
 
@@ -73,7 +72,7 @@ html에 데이터 바인딩(`{variable}` 문법)을 통해 `상태` 값을 넣�
 
 ## Component
 
-```js
+```jsx
 function Post({title, contents}) {
   return (
     <div>
@@ -90,14 +89,14 @@ function Post({title, contents}) {
 
 컴포넌트는 다른 컴포넌트에서 아래와 같이 사용할 수 있다
 
-```js
+```jsx
 function App() {
-    return {
+    return (
         <div>
             <Post title="일기" contents="내용"/>
             <Post title="일기2" contents="내용"/>
         </div>
-    }
+    );
 }
 ```
 
