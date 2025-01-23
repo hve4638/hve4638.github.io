@@ -2,7 +2,7 @@
 title: "Electron | 프로젝트 세팅"
 author: Hve
 date: 2024-06-29 20:27:00 +0900
-categories: ["개발", "Electron"]
+categories: ["개발", "electron"]
 math: false
 mermaid: false
 tags: []
@@ -25,7 +25,7 @@ npm init
 ### electron 패키지 설치
 
 ```bash
-npm install --save-dev electron
+yarn add -D electron
 ```
 
 ### package.json 편집
@@ -65,7 +65,7 @@ app.on('window-all-closed', function () {
 
 ### index.html 추가
 
-```js
+```html
 <!DOCTYPE html>
 <html>
   <head>
@@ -80,7 +80,7 @@ app.on('window-all-closed', function () {
 </html>
 ```
 
-### 실행 및 결과확인
+### 실행 및 결과 확인
 
 ```bash
 npm start
@@ -109,3 +109,21 @@ npm run make
 ```
 
 실행 파일은 `out/프로젝트명-win32-x64/`에서 확인할 수 있다.
+
+## 데스크톱 앱 배포
+
+### electron-builder 설치
+
+```bash
+# npm
+npm install --save-dev electron-builder
+
+# yarn
+yarn add --dev electron-builder
+```
+
+### package.json에 script 추가
+
+```
+electron-builder -c.extraMetadata.main=./dist/main.js
+```

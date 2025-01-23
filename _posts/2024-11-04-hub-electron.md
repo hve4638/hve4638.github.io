@@ -14,10 +14,9 @@ tags: []
 
 ## 세팅
 
-- [프로젝트 세팅](/posts/electron-tutorial-01)
-- [데스크톱 앱 배포](/posts/electron-builder)
+- [프로젝트 세팅](/posts/electron-setup)
 - [리액트 기반 프로젝트 세팅](/posts/electron-tutorial-02) (비권장)
 
 ## 트러블슈팅
 
-- [...was compiled against a different Node.js version using 오류](/posts/ts-nodejs-diffver)
+- [...was compiled against a different Node.js version 오류](/posts/ts-nodejs-diffver)

@@ -10,7 +10,7 @@ tags: []
 
 ## Iterable, Iterator 타입
 
-짧게 정리를 하면 다음과 같다.
+선정리를 하면 다음과 같다.
 
 - `Iterable`은 `Symbol.iterator` 필드에 `()=>Iterator`을 가진 객체
 - `Iterator`는 `next` 필드에 `()=>IteratorResult`을 가진 객체
@@ -28,7 +28,7 @@ interface Iterable<T, TReturn = any, TNext = any> {
 
 `Iterable`은 *반복 가능한 객체*를 의미한다. `[Symbol.iterator]` 필드에 `Iterator<T, TReturn, TNext>` 형식의 함수가 있다면 `Iterable`을 충족한다.
 
-`Iterable` 이라면 `for of` 구문이나 스프레드 연산자 `...`를 통해 반복할 수 있다. 배열, 문자열 등이 Iterable하다.
+`Iterable` 이라면 `for of` 구문이나 `...` 스프레드 연산자를 통해 반복할 수 있다. 배열, 문자열 등이 Iterable하다.
 
 ```ts
 const iterable1 = [1, 2, 3]; // Iterable함 
@@ -70,9 +70,7 @@ const iter:Iterator<number> = {
 }
 ```
 
-`Iterable`과 `Iterator`가 혼동된다면 글 처음의 정리를 확인하면 좋다.
-
-짧게 요약하면, `Iterable`은 `Iterator`를 만들 수 있어야 한다.
+`Iterator` 자체는 `for of` 구문이나 `...` 스프레드 연산자에 직접 사용할 수 없다. 이러한 문법을 사용해야 한다면 Iterable로 객체로 만들어야 한다.
 
 ## 제네릭 타입 T, TReturn, TNext
 
@@ -87,8 +85,6 @@ interface Iterator<T, TReturn = any, TNext = any> {
 ```
 
 `Iterable` 및 `Iterator`에는 제네릭 타입 `<T, TReturn = any, TNext = any>`이 존재한다.
-
-Iterable이 가지는 Iterator의 제네릭 타입을 동일해야 한다.
 
 각 타입의 용도를 정리하면 다음과 같다.
 - `T` : *done: false* 일 때의 value 타입.
@@ -114,6 +110,8 @@ console.log(iter.next()) // { value : 0, done : false }
 console.log(iter.next()) // { value : 1, done : false }
 console.log(iter.next()) // { value : 'done!', done : true }
 ```
+
+`T`는 반복 중 일 때(done: false) 값 타입, `TReturn`는 반복이 끝났을 때(done: true) 값 타입을 의미한다.
 
 위 코드에서 iterable을 반복했을 때 number 타입으로 받고, 종료 시 string 타입을 받게 된다.
 
