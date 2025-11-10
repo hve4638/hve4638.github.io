@@ -2,7 +2,7 @@
 title: "Linux | 명령어"
 author: Hve
 date: 2024-02-06 14:26:01 +0900
-categories: ["개발", "Linux"]
+categories: ["개발", "linux"]
 math: false
 mermaid: false
 tags: []

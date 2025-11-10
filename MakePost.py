@@ -14,6 +14,7 @@ def create_markdown_file(filename):
         f.write(f'''---
 title: 
 author: Hve
+slug: {filename}
 date: {date_str} +0900
 categories: []
 math: false

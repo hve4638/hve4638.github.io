@@ -18,13 +18,33 @@ curl -sSL get.docker.com | sh
 
 WSL의 경우 Docker Desktop을 이용하라는 경고가 나오지만 기다리면 설치가 진행된다
 
-## 일반 계정에서 Docker 사용하기
+<!-- ## 일반 계정해서 도커 사용 -->
+
+<!-- 도커를 루트 권한 없이 사용하기 위해서는 `1. 루트리스 모드에서 사용`을 하고 -->
+
+## (선택) 루트리스 모드에서 사용하기
+
+```bash
+dockerd-rootless-setuptool.sh install
+```
+
+도커 설치 이후 위 명령을 입력한다
+
+```bash
+sudo apt-get install -y uidmap
+```
+
+설치 실패 시 로그에 나온 것처럼 uidmap 패키지를 설치한다
+
+## (선택) 일반 계정에서 루트 권한의 Docker 사용하기
 
 ```bash
 sudo usermod -aG docker $USER
 ```
 
-docker 명령을 루트 권한 없이 일반 계정에서 사용하도록 해준다.
+docker 명령을 루트 권한 없이 일반 계정에서 사용하도록 해준다
+
+재부팅이 필요할 수 있다
 
 ## 컨테이너 생성
 
