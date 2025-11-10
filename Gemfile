@@ -2,6 +2,10 @@
 
 source "https://rubygems.org"
 
+gem "csv"
+gem "logger"
+gem "bigdecimal"
+gem "base64"
 gem "jekyll-seo-tag"
 gem "jekyll-theme-chirpy", "~> 5.4", ">= 5.4.0"
 
