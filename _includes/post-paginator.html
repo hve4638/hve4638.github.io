@@ -5,16 +5,18 @@
 <ul class="pagination align-items-center mt-4 pl-lg-2">
   <!-- left arrow -->
   {% if paginator.previous_page %}
-    {% assign prev_url = paginator.previous_page_path | relative_url %}
+    <li class="page-item">
+      <a class="page-link btn-box-shadow" href="{{ paginator.previous_page_path | relative_url }}" aria-label="previous-page">
+        <i class="fas fa-angle-left"></i>
+      </a>
+    </li>
   {% else %}
-    {% assign prev_url = "#" %}
+    <li class="page-item disabled">
+      <span class="page-link btn-box-shadow" aria-label="previous-page">
+        <i class="fas fa-angle-left"></i>
+      </span>
+    </li>
   {% endif %}
-
-  <li class="page-item {% unless paginator.previous_page %}disabled{% endunless %}">
-    <a class="page-link btn-box-shadow" href="{{ prev_url }}" aria-label="previous-page">
-      <i class="fas fa-angle-left"></i>
-    </a>
-  </li>
 
   <!-- page numbers -->
   {% assign left_ellipsis = false %}
@@ -74,15 +76,17 @@
 
   <!-- right arrow -->
   {% if paginator.next_page_path %}
-    {% assign next_url = paginator.next_page_path | relative_url %}
+    <li class="page-item">
+      <a class="page-link btn-box-shadow" href="{{ paginator.next_page_path | relative_url }}" aria-label="next-page">
+        <i class="fas fa-angle-right"></i>
+      </a>
+    </li>
   {% else %}
-    {% assign next_url = "#" %}
+    <li class="page-item disabled">
+      <span class="page-link btn-box-shadow" aria-label="next-page">
+        <i class="fas fa-angle-right"></i>
+      </span>
+    </li>
   {% endif %}
-
-  <li class="page-item {% unless paginator.next_page_path %}disabled{% endunless %}">
-    <a class="page-link btn-box-shadow" href="{{ next_url }}" aria-label="next-page">
-      <i class="fas fa-angle-right"></i>
-    </a>
-  </li>
 
 </ul> <!-- .pagination -->
