@@ -1,5 +1,5 @@
 ---
-title: "경로, 파일 관련 함수"
+title: "Python | 경로 관련 함수 (os.path)"
 author: Hve
 date: 2024-05-05 05:57:03 +0900
 categories: ["개발", "python"]

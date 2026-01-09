@@ -1,9 +1,9 @@
 ---
-title: "JS | funciton을 사용하지 말것"
+title: "JS | function을 사용하지 말것"
 author: Hve
 slug: js-dont-use-function
 date: 2025-10-09 11:10:23 +0900
-categories: ["js"]
+categories: ["개발", "JS"]
 math: false
 mermaid: false
 tags: []

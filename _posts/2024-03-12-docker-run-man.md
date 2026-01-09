@@ -8,8 +8,6 @@ mermaid: false
 tags: []
 ---
 
-# docker run
-
 ## 사용법
 
 ```

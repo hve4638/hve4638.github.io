@@ -3,10 +3,10 @@ title: "트러블슈팅 | VSCode에서 vim과 copilot 키 충돌"
 author: Hve
 slug: vscode-vim-copilot-shortcut
 date: 2025-11-07 02:35:40 +0900
-categories: []
+categories: ["개발", "VSCode"]
 math: false
 mermaid: false
-tags: []
+tags: ["vscode"]
 ---
 
 ## VSCode에서 vim과 copilot 키 충돌

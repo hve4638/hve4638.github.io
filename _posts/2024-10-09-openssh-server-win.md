@@ -1,5 +1,5 @@
 ---
-title: "윈도우 openssh 서버 설치"
+title: "개발 환경 | 윈도우 openssh 서버 설치"
 author: Hve
 date: 2024-10-09 07:38:04 +0900
 categories: ["개발", "etc"]

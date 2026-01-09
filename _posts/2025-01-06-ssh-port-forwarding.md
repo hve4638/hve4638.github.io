@@ -2,10 +2,10 @@
 title: "SSH | SSH 리버스 터널링"
 author: Hve
 date: 2025-01-06 14:55:27 +0900
-categories: []
+categories: ["개발", "Linux"]
 math: false
 mermaid: false
-tags: []
+tags: ["ssh"]
 ---
 
 ## SSH 리버스 터널링 (SSH 포트포워딩)
