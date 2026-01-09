@@ -99,3 +99,7 @@ docker context use default
 `docker context show`로 현재 모드를 확인할 수 있다.
 
 'rootless'라면 루트리스 도커 상태, 'default'는 기본(rootful) 도커 상태를 의미한다.
+
+모드를 변경하더라도 이미 실행 중이거나 restart 옵션에 따라 자동 실행되는 컨테이너는 각 모드에서 유지된다.
+
+rootless docker를 기본적으로 사용하면서, rootless 환경에서 사용이 제한되는 작업만 rootful docker를 쓰는 식으로 병행할 수 있다.
