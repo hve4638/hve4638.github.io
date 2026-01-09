@@ -7,7 +7,14 @@ math: false
 mermaid: false
 tags: ["class"]
 assets: "/assets/img"
+publish: false
 ---
+
+<!--
+archived 사유:
+- 블로그 스타일과 맞지 않음
+- 작성 당시 정말 내 판단인지 다른 기술 서적이나 글을 보고 영향을 받은건지 애매함
+-->
 
 # 언제 함수화, 클래스화 해야 하는가?
 
