@@ -2,7 +2,7 @@
 title: "Python | 경로 관련 함수 (os.path)"
 author: Hve
 date: 2024-05-05 05:57:03 +0900
-categories: ["개발", "레퍼런스"]
+categories: ["개발", "언어"]
 math: false
 mermaid: false
 tags: ["python"]

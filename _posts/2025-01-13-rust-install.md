@@ -2,7 +2,7 @@
 title: "RUST | rust 리눅스 환경 구축"
 author: Hve
 date: 2025-01-13 11:03:40 +0900
-categories: ["개발", "레퍼런스"]
+categories: ["개발", "언어"]
 math: false
 mermaid: false
 tags: ["rust"]

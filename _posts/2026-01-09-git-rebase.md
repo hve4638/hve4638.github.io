@@ -2,7 +2,7 @@
 title: "Git | rebase - 커밋 명칭 수정 및 합치기"
 author: Hve
 date: 2026-01-09 23:30:00 +0900
-categories: ["개발", "레퍼런스"]
+categories: ["개발", "도구"]
 math: false
 mermaid: false
 tags: ["git"]

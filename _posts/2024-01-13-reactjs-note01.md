@@ -2,7 +2,7 @@
 title: "React.js | 튜토리얼 - 1"
 author: Hve
 date: 2024-01-13 16:21:08 +0900
-categories: ["개발", "레퍼런스"]
+categories: ["개발", "도구"]
 math: false
 mermaid: false
 tags: ["react"]

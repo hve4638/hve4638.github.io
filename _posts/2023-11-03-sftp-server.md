@@ -2,7 +2,7 @@
 title: Linux | SFTP 서버
 author: Hve
 date: 2023-11-03 13:00:12 +0900
-categories: ["개발", "레퍼런스"]
+categories: ["개발", "시스템"]
 math: false
 mermaid: false
 tags: ["linux"]

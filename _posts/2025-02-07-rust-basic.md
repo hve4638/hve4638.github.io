@@ -2,7 +2,7 @@
 title: "Rust | rust 개념 정리 - 기본 정리"
 author: Hve
 date: 2025-02-07 14:58:49 +0900
-categories: ["개발", "레퍼런스"]
+categories: ["개발", "언어"]
 math: false
 mermaid: false
 tags: ["rust"]

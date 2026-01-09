@@ -2,7 +2,7 @@
 title: "Docker | docker-compose 설치 및 사용법"
 author: Hve
 date: 2024-03-13 12:15:45 +0900
-categories: ["개발", "레퍼런스"]
+categories: ["개발", "도구"]
 math: false
 mermaid: false
 tags: ["docker"]

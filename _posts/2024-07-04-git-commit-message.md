@@ -2,7 +2,7 @@
 title: "Git | 커밋 메시지 (WIP)"
 author: Hve
 date: 2024-07-04 23:30:26 +0900
-categories: ["개발", "레퍼런스"]
+categories: ["개발", "도구"]
 math: false
 mermaid: false
 tags: ["git"]

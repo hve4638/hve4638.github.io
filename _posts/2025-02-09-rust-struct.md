@@ -2,7 +2,7 @@
 title: "Rust | rust 개념 정리 - 구조체"
 author: Hve
 date: 2025-02-09 22:51:37 +0900
-categories: ["개발", "레퍼런스"]
+categories: ["개발", "언어"]
 math: false
 mermaid: false
 tags: ["rust"]

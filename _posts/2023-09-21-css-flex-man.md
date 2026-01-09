@@ -2,7 +2,7 @@
 title: "웹 프론트엔드 | CSS flex"
 author: Hve
 date: 2023-09-21 15:40:57 +0900
-categories: ["개발", "레퍼런스"]
+categories: ["개발", "메모"]
 math: false
 mermaid: false
 tags: ["css", "web"]

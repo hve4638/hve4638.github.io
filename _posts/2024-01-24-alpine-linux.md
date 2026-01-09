@@ -2,7 +2,7 @@
 title: "리눅스 | 알파인 리눅스"
 author: Hve
 date: 2024-01-24 13:00:22 +0900
-categories: ["개발", "레퍼런스"]
+categories: ["개발", "시스템"]
 math: false
 mermaid: false
 tags: ["alpine", "docker", "linux"]

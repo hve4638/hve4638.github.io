@@ -2,7 +2,7 @@
 title: "nignx | docker에서 nignx 설치 및 사용하기"
 author: Hve
 date: 2024-05-22 23:19:10 +0900
-categories: ["개발", "레퍼런스"]
+categories: ["개발", "도구"]
 math: false
 mermaid: false
 tags: ["nginx"]

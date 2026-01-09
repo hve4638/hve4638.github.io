@@ -2,7 +2,7 @@
 title: "nignx | nginx 기본 가이드"
 author: Hve
 date: 2024-05-23 00:24:17 +0900
-categories: ["개발", "레퍼런스"]
+categories: ["개발", "도구"]
 math: false
 mermaid: false
 tags: ["nginx"]

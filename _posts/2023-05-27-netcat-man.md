@@ -2,7 +2,7 @@
 title: "Linux | netcat : 네트워크 통신 유틸리티"
 author: Hve
 date: 2023-05-27 00:11:05 +0900
-categories: ["개발", "레퍼런스"]
+categories: ["개발", "시스템"]
 math: false
 mermaid: false
 tags: ["linux"]

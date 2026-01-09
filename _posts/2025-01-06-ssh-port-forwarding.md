@@ -2,7 +2,7 @@
 title: "SSH | SSH 리버스 터널링"
 author: Hve
 date: 2025-01-06 14:55:27 +0900
-categories: ["개발", "레퍼런스"]
+categories: ["개발", "시스템"]
 math: false
 mermaid: false
 tags: ["ssh", "linux"]

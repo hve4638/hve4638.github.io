@@ -2,7 +2,7 @@
 title: "Docker | docker-compose 작성법"
 author: Hve
 date: 2024-03-29 17:47:52 +0900
-categories: ["개발", "레퍼런스"]
+categories: ["개발", "도구"]
 math: false
 mermaid: false
 tags: ["docker"]

@@ -2,7 +2,7 @@
 title: "Node.js | 리눅스 개발 환경 구축"
 author: Hve
 date: 2024-01-23 12:51:31 +0900
-categories: ["개발", "레퍼런스"]
+categories: ["개발", "도구"]
 math: false
 mermaid: false
 tags: ["리액트", "nodejs"]

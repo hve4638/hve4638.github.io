@@ -2,7 +2,7 @@
 title: "Typescript | type, interface 문법"
 author: Hve
 date: 2024-08-26 02:26:51 +0900
-categories: ["개발", "레퍼런스"]
+categories: ["개발", "언어"]
 math: false
 mermaid: false
 tags: ["javascript", "typescript"]

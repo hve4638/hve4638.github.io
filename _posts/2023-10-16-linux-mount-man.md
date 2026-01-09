@@ -2,7 +2,7 @@
 title: "Linux 명령어 | 마운트 관련 명령어"
 author: Hve
 date: 2023-10-16 11:50:41 +0900
-categories: ["개발", "레퍼런스"]
+categories: ["개발", "시스템"]
 math: false
 mermaid: false
 tags: ["fstab", "mount", "fdisk", "linux"]

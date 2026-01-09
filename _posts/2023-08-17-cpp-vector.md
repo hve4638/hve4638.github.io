@@ -2,7 +2,7 @@
 title: "C++ | vector 정리"
 author: Hve
 date: 2023-08-17 20:35:04 +0900
-categories: ["개발", "레퍼런스"]
+categories: ["개발", "언어"]
 math: false
 mermaid: false
 tags: ["cpp"]

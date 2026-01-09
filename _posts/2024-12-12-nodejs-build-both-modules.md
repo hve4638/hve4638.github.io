@@ -2,7 +2,7 @@
 title: "Node.js | npm 패키지 개발시 ESM, CommonJS 모두 대응하기"
 author: Hve
 date: 2024-12-12 00:01:01 +0900
-categories: ["개발", "레퍼런스"]
+categories: ["개발", "도구"]
 math: false
 mermaid: false
 tags: ["nodejs"]

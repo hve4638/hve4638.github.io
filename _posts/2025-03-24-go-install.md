@@ -2,7 +2,7 @@
 title: "Go | 설치"
 author: Hve
 date: 2025-03-24 16:01:36 +0900
-categories: ["개발", "레퍼런스"]
+categories: ["개발", "언어"]
 math: false
 mermaid: false
 tags: ["go"]

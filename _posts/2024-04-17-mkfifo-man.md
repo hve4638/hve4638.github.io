@@ -2,7 +2,7 @@
 title: "Linux 명령어 | mkfifo - 명명된 파이프라인"
 author: Hve
 date: 2024-04-17 11:42:51 +0900
-categories: ["개발", "레퍼런스"]
+categories: ["개발", "시스템"]
 math: false
 mermaid: false
 tags: ["linux"]

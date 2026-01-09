@@ -2,7 +2,7 @@
 title: "Docker | docker run 옵션 목록"
 author: Hve
 date: 2024-03-12 12:14:42 +0900
-categories: ["개발", "레퍼런스"]
+categories: ["개발", "도구"]
 math: false
 mermaid: false
 tags: ["docker"]
