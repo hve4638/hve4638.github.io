@@ -5,7 +5,7 @@ date: 2023-08-17 20:35:04 +0900
 categories: [프로그래밍, C++]
 math: false
 mermaid: false
-tags: ["c++"]
+tags: ["cpp"]
 ---
 
 # Vector

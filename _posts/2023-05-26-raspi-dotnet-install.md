@@ -5,7 +5,7 @@ date: 2023-05-26 15:45:47 +0900
 categories: [ 개발, 개발환경 ]
 math: false
 mermaid: false
-tags: [rasberry-pi4, c#]
+tags: [rasberry-pi4, csharp]
 ---
 
 라즈베리파이4 환경을 기준으로 작성되었다.

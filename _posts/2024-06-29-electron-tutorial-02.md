@@ -2,7 +2,7 @@
 title: "Electron | 리액트 기반 프로젝트 세팅"
 author: Hve
 date: 2024-06-29 23:57:34 +0900
-categories: ["개발", "Electron"]
+categories: ["개발", "electron"]
 math: false
 mermaid: false
 tags: []

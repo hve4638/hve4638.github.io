@@ -2,7 +2,7 @@
 title: "NodeJS | SQLite 라이브러리"
 author: Hve
 date: 2024-07-17 01:23:13 +0900
-categories: ["개발", "node.js"]
+categories: ["개발", "nodejs"]
 math: false
 mermaid: false
 tags: []

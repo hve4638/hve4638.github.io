@@ -5,7 +5,7 @@ date: 2023-02-06 07:11:00 +0900
 categories: [프로젝트]
 math: false
 mermaid: false
-tags: [c#]
+tags: [csharp]
 img_path: /assets/img/
 ---
 
