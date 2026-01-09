@@ -1,11 +1,11 @@
 ---
-title: "프론트엔드 | flex"
+title: "웹 프론트엔드 | CSS flex"
 author: Hve
 date: 2023-09-21 15:40:57 +0900
 categories: [프로그래밍, 웹]
 math: false
 mermaid: false
-tags: []
+tags: ["css"]
 ---
 
 ## 가로, 세로 정렬 속성

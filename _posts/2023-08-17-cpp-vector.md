@@ -2,7 +2,7 @@
 title: "C++ | vector 정리"
 author: Hve
 date: 2023-08-17 20:35:04 +0900
-categories: [프로그래밍, C++]
+categories: ["개발", "C++"]
 math: false
 mermaid: false
 tags: ["cpp"]
@@ -102,9 +102,7 @@ value = vec[2];
 
 *`at()` 의 경우 범위 체크를 하여 예외처리를 해준다.*
 
-*반면 `operator[]`의 경우 범위 체크를 하지 않으며, 범위를 벗어난 곳을 접근하는 경우는 정의되지 않은 동작 (undefined behavior) 이다.*
-
-*`at()`이 좀더 안전한 방법이지만 범위를 벗어난 접근은 일반적으로 정상적인 상황은 아니기 때문에 `at()`을 쓰는 대신 먼저 범위를 확인하고 `operator[]`를 쓰는 것이 좋다.*
+*반면 `operator[]`의 경우 범위 체크를 하지 않으며, 범위를 벗어난 곳을 접근하는 경우는 정의되지 않은 동작 (undefined behavior)이다.*
 
 ## 기타
 
