@@ -2,10 +2,10 @@
 title:  "Beagleplay Labs 2"
 author: Hve
 date: 2023-11-01 21:28:54 +0900
-categories: ["공부", "BeaglePlay"]
+categories: ["학습", "강의노트"]
 math: false
 mermaid: false
-tags: []
+tags: ["beagleplay"]
 ---
 
 ## TFTP를 이용한 통신

@@ -2,10 +2,10 @@
 title: "이산수학 | 베이즈 정리"
 author: Hve
 date: 2023-12-17 14:07:56 +0900
-categories: ["공부", "이산수학"]
+categories: ["학습", "강의노트"]
 math: true
 mermaid: false
-tags: []
+tags: ["이산수학"]
 ---
 
 ## 베이즈 정리 (Bayes' Theorem)

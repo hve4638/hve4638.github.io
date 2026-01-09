@@ -2,10 +2,10 @@
 title: "국제거래(교양) | 정리 - 2"
 author: Hve
 date: 2024-04-11 17:04:51 +0900
-categories: ["공부", "국제거래"]
+categories: ["학습", "강의노트"]
 math: false
 mermaid: false
-tags: []
+tags: ["국제거래"]
 ---
 
 ## 키워드

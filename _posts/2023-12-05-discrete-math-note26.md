@@ -2,10 +2,10 @@
 title: "이산수학 | 재귀적 정의 및 구조적 유도"
 author: Hve
 date: 2023-12-05 16:26:03 +0900
-categories: ["공부", "이산수학"]
+categories: ["학습", "강의노트"]
 math: true
 mermaid: false
-tags: []
+tags: ["이산수학"]
 ---
 
 ## 재귀적 정의된 함수

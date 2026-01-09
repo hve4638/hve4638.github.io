@@ -2,10 +2,10 @@
 title: "공부 | 무선 통신 - 11"
 author: Hve
 date: 2024-06-03 05:30:36 +0900
-categories: ["공부", "무선 통신"]
+categories: ["학습", "강의노트"]
 math: false
 mermaid: false
-tags: []
+tags: ["무선통신"]
 ---
 
 ## 802.15 : Wireless Personal Area Network (WPAN)

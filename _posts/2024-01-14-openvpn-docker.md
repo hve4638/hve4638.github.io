@@ -2,10 +2,10 @@
 title: "Docker에서 openvpn 서버 실행 및 연결"
 author: Hve
 date: 2024-01-14 16:47:18 +0900
-categories: ["개발", "개발환경"]
+categories: ["개발", "가이드"]
 math: false
 mermaid: false
-tags: ['openvpn', 'ovpn']
+tags: ["openvpn", "ovpn"]
 ---
 
 ## 준비

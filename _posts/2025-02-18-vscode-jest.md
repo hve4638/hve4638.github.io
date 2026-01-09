@@ -2,7 +2,7 @@
 title: "VSCode | jest 확장 자동실행 방지"
 author: Hve
 date: 2025-02-18 17:41:14 +0900
-categories: []
+categories: ["개발", "메모"]
 math: false
 mermaid: false
 tags: []

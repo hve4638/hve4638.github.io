@@ -2,10 +2,10 @@
 title: "Git | Branch 관련 명령어"
 author: Hve
 date: 2024-09-06 05:32:25 +0900
-categories: ["개발", "Git"]
+categories: ["개발", "레퍼런스"]
 math: false
 mermaid: false
-tags: []
+tags: ["git"]
 ---
 
 ## Branch 확인

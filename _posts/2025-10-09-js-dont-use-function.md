@@ -3,10 +3,10 @@ title: "JS | function을 사용하지 말것"
 author: Hve
 slug: js-dont-use-function
 date: 2025-10-09 11:10:23 +0900
-categories: ["개발", "JS"]
+categories: ["개발", "레퍼런스"]
 math: false
 mermaid: false
-tags: []
+tags: ["javascript"]
 ---
 
 ## 기존 function의 특징

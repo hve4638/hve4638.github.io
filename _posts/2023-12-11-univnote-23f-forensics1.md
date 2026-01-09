@@ -2,10 +2,10 @@
 title: "포렌식 정리 - 1"
 author: Hve
 date: 2023-12-11 09:12:12 +0900
-categories: ["공부", "포렌식"]
+categories: ["학습", "강의노트"]
 math: false
 mermaid: false
-tags: []
+tags: ["포렌식"]
 ---
 
 ## 분석 목적에 따른 분류

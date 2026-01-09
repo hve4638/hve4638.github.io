@@ -2,10 +2,10 @@
 title: "MySQL | 정리"
 author: Hve
 date: 2024-06-09 05:19:19 +0900
-categories: [ "공부", "MySQL" ]
+categories: ["학습", "강의노트"]
 math: false
 mermaid: false
-tags: []
+tags: ["mysql"]
 ---
 
 ## DML

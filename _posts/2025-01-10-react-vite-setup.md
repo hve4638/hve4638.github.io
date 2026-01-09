@@ -2,10 +2,10 @@
 title: "React.js | vite 기반 React 프로젝트 생성"
 author: Hve
 date: 2025-01-10 22:12:35 +0900
-categories: ["개발", "react.js"]
+categories: ["개발", "레퍼런스"]
 math: false
 mermaid: false
-tags: []
+tags: ["react"]
 ---
 
 

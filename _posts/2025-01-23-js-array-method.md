@@ -2,10 +2,10 @@
 title: "JS/TS | 배열 메서드"
 author: Hve
 date: 2025-01-23 11:50:56 +0900
-categories: ["개발", "javascript/typescript"]
+categories: ["개발", "레퍼런스"]
 math: false
 mermaid: false
-tags: []
+tags: ["javascript", "typescript"]
 ---
 
 # 배열 메서드

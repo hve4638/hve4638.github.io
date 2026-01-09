@@ -3,7 +3,7 @@ title: "MAC | 초기 세팅"
 author: Hve
 slug: mac-tutorial
 date: 2025-08-31 18:55:29 +0900
-categories: []
+categories: ["개발", "메모"]
 math: false
 mermaid: false
 tags: []

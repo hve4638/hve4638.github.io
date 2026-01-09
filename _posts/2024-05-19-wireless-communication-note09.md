@@ -2,10 +2,10 @@
 title:  "공부 | 무선 통신 - 9"
 author: Hve
 date: 2024-05-19 14:16:27 +0900
-categories: ["공부", "무선 통신"]
+categories: ["학습", "강의노트"]
 math: false
 mermaid: false
-tags: []
+tags: ["무선통신"]
 ---
 
 # Security Threats (보안 위협)

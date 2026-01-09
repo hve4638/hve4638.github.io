@@ -2,10 +2,10 @@
 title: "이산수학 | 술어 논리, 양화사"
 author: Hve
 date: 2023-09-21 03:56:57 +0900
-categories: ["공부", 이산수학]
+categories: ["학습", "강의노트"]
 math: false
 mermaid: false
-tags: []
+tags: ["이산수학"]
 ---
 
 ## Predicate logic (술어 논리)

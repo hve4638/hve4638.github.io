@@ -2,10 +2,10 @@
 title: "이산수학 | 강한 귀납법과  Well-Ordering"
 author: Hve
 date: 2023-12-05 10:50:18 +0900
-categories: ["공부", "이산수학"]
+categories: ["학습", "강의노트"]
 math: true
 mermaid: false
-tags: []
+tags: ["이산수학"]
 ---
 
 ## 강한 귀납법 (String Inductio)

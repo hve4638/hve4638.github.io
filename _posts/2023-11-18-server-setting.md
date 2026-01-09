@@ -2,7 +2,7 @@
 title: 서버 세팅 저장용
 author: Hve
 date: 2023-11-18 00:09:00 +0900
-categories: [ "개발" ]
+categories: ["개발", "메모"]
 math: false
 mermaid: false
 tags: []

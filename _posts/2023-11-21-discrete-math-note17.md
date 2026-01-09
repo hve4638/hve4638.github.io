@@ -2,10 +2,10 @@
 title: "이산수학 | The Big-O Notationn"
 author: Hve
 date: 2023-11-21 10:22:38 +0900
-categories: ["공부", "이산수학"]
+categories: ["학습", "강의노트"]
 math: true
 mermaid: false
-tags: []
+tags: ["이산수학"]
 ---
 
 # The Growth of Functions

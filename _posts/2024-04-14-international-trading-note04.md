@@ -2,10 +2,10 @@
 title: "국제거래(교양) | Letter of Credit (L/C, 신용장)"
 author: Hve
 date: 2024-04-14 20:10:22 +0900
-categories: ["공부", "국제거래"]
+categories: ["학습", "강의노트"]
 math: false
 mermaid: false
-tags: []
+tags: ["국제거래"]
 ---
 
 # 신용장의 정의 및 특성

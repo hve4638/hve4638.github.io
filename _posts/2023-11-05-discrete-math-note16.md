@@ -2,10 +2,10 @@
 title: "이산수학 | 알고리즘 (Algorithms)"
 author: Hve
 date: 2023-11-05 18:36:43 +0900
-categories: ["공부", "이산수학"]
+categories: ["학습", "강의노트"]
 math: true
 mermaid: false
-tags: []
+tags: ["이산수학"]
 ---
 
 ## 알고리즘

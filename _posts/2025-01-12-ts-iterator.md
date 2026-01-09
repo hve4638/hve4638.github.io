@@ -2,10 +2,10 @@
 title: "Typescript | Iterator 이해"
 author: Hve
 date: 2025-01-12 04:23:10 +0900
-categories: ["개발", "javascript/typescript"]
+categories: ["개발", "레퍼런스"]
 math: false
 mermaid: false
-tags: []
+tags: ["javascript", "typescript"]
 ---
 
 ## Iterable, Iterator 타입

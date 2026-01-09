@@ -2,10 +2,10 @@
 title: "이산수학 | 계산복잡도 (Complexity of Algorithm)"
 author: Hve
 date: 2023-11-21 15:58:24 +0900
-categories: ["공부", "이산수학"]
+categories: ["학습", "강의노트"]
 math: true
 mermaid: false
-tags: []
+tags: ["이산수학"]
 ---
 
 # 시간 복잡도 (Time Complexity)

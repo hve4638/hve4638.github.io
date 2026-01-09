@@ -2,7 +2,7 @@
 title: "Typescript | tsconfig.json - compilerOptions"
 author: Hve
 date: 2024-09-17 21:58:59 +0900
-categories: []
+categories: ["개발", "메모"]
 math: false
 mermaid: false
 tags: []

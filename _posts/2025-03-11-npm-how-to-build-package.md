@@ -2,7 +2,7 @@
 title: "Node.js | npm 패키지 프로젝트 세팅"
 author: Hve
 date: 2025-03-11 05:29:44 +0900
-categories: []
+categories: ["개발", "메모"]
 math: false
 mermaid: false
 tags: []

@@ -2,10 +2,10 @@
 title: "Linux 명령어 | screen : 가상 터미널 세션 도구"
 author: Hve
 date: 2023-06-23 13:17:39 +0900
-categories: [ "개발", "Linux 명령어" ]
+categories: ["개발", "레퍼런스"]
 math: false
 mermaid: false
-tags: []
+tags: ["linux"]
 ---
 
 # Screen

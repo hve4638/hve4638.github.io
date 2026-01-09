@@ -2,10 +2,10 @@
 title: "Python | 가상 환경 (venv)"
 author: Hve
 date: 2024-05-23 14:08:04 +0900
-categories: ["개발", "python"]
+categories: ["개발", "레퍼런스"]
 math: false
 mermaid: false
-tags: []
+tags: ["python"]
 ---
 
 ## venv

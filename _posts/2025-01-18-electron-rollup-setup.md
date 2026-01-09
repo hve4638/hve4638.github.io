@@ -2,7 +2,7 @@
 title: "Node.js | rollup + typescript 환경 구성"
 author: Hve
 date: 2025-01-18 14:11:55 +0900
-categories: []
+categories: ["개발", "메모"]
 math: false
 mermaid: false
 tags: []

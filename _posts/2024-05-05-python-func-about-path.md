@@ -2,10 +2,10 @@
 title: "Python | 경로 관련 함수 (os.path)"
 author: Hve
 date: 2024-05-05 05:57:03 +0900
-categories: ["개발", "python"]
+categories: ["개발", "레퍼런스"]
 math: false
 mermaid: false
-tags: []
+tags: ["python"]
 ---
 
 ## 절대 경로 구하기

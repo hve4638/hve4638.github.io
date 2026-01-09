@@ -2,10 +2,10 @@
 title: "국제거래(교양) | 특정 형태의 수출입"
 author: Hve
 date: 2024-06-14 04:02:35 +0900
-categories: ["공부", "국제거래"]
+categories: ["학습", "강의노트"]
 math: false
 mermaid: false
-tags: []
+tags: ["국제거래"]
 ---
 
 ## 위탁 및 수탁 판매 방식 수출입

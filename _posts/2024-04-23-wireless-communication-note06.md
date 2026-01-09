@@ -2,10 +2,10 @@
 title:  "공부 | 무선 통신 - 6"
 author: Hve
 date: 2024-04-23 03:19:15 +0900
-categories: ["공부", "무선 통신"]
+categories: ["학습", "강의노트"]
 math: false
 mermaid: false
-tags: []
+tags: ["무선통신"]
 ---
 
 ## 코딩 및 에러 제어

@@ -2,7 +2,7 @@
 title: "VSCode | 팁"
 author: Hve
 date: 2024-05-26 01:06:07 +0900
-categories: ["개발", "개발환경"]
+categories: ["개발", "가이드"]
 math: false
 mermaid: false
 tags: []

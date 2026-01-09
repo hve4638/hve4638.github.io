@@ -2,10 +2,10 @@
 title: "정보처리기사 | 노트 정리"
 author: Hve
 date: 2024-07-22 12:06:56 +0900
-categories: ["공부", "정보처리기사"]
+categories: ["학습", "자격증"]
 math: false
 mermaid: false
-tags: []
+tags: ["정보처리기사"]
 ---
 
 # 테스트

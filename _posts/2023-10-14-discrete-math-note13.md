@@ -2,10 +2,10 @@
 title: "이산수학 | 수열과 합 (Sequences and Summations)"
 author: Hve
 date: 2023-10-14 01:59:28 +0900
-categories: [ "공부", "이산수학" ]
+categories: ["학습", "강의노트"]
 math: true
 mermaid: false
-tags: []
+tags: ["이산수학"]
 ---
 
 ## 수열 (Sequence)

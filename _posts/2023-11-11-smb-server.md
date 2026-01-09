@@ -2,10 +2,10 @@
 title: Linux | SMB 서버 설치 (Samba)
 author: Hve
 date: 2023-11-11 22:21:53 +0900
-categories: [ "개발", "Linux" ]
+categories: ["개발", "레퍼런스"]
 math: false
 mermaid: false
-tags: []
+tags: ["linux"]
 ---
 
 ## samba 설치

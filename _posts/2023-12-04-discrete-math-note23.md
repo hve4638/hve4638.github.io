@@ -2,10 +2,10 @@
 title: "이산수학 | Solving Congruences"
 author: Hve
 date: 2023-12-04 13:35:32 +0900
-categories: ["공부", "이산수학"]
+categories: ["학습", "강의노트"]
 math: true
 mermaid: false
-tags: []
+tags: ["이산수학"]
 ---
 
 ## 선형 합동 (Linear Congruences)

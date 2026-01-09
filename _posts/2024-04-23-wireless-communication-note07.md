@@ -2,10 +2,10 @@
 title:  "공부 | 무선 통신 - 7"
 author: Hve
 date: 2024-04-23 04:08:40 +0900
-categories: ["공부", "무선 통신"]
+categories: ["학습", "강의노트"]
 math: true
 mermaid: false
-tags: []
+tags: ["무선통신"]
 ---
 
 ## ARQ (Automatic Repeat Reqeust)

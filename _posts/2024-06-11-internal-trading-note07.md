@@ -2,10 +2,10 @@
 title: "국제거래(교양) | 무역관련서류"
 author: Hve
 date: 2024-06-11 19:56:07 +0900
-categories: ["공부", "국제거래"]
+categories: ["학습", "강의노트"]
 math: false
 mermaid: false
-tags: []
+tags: ["국제거래"]
 ---
 
 ## Bill of Lading (B/L) : 선화 증권

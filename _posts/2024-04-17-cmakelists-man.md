@@ -2,10 +2,10 @@
 title: "CMake | CMakeLists.txt 작성 (WIP)"
 author: Hve
 date: 2024-04-17 10:08:11 +0900
-categories: ["개발", "CMake"]
+categories: ["개발", "레퍼런스"]
 math: false
 mermaid: false
-tags: []
+tags: ["cmake"]
 ---
 
 ## 예시

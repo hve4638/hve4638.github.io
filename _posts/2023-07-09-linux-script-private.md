@@ -2,10 +2,10 @@
 title: "Linux | 스크립트 저장용"
 author: Hve
 date: 2023-07-09 18:17:53 +0900
-categories: [개발, Linux]
+categories: ["개발", "레퍼런스"]
 math: false
 mermaid: false
-tags: []
+tags: ["linux"]
 ---
 
 ## python 설치

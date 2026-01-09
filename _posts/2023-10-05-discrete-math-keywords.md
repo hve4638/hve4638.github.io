@@ -2,10 +2,10 @@
 title: "이산수학 | 키워드 정리"
 author: Hve
 date: 2023-10-05 22:12:22 +0900
-categories: ["공부", "이산수학" ]
+categories: ["학습", "강의노트"]
 math: true
 mermaid: false
-tags: []
+tags: ["이산수학"]
 ---
 
 ## 기본 I [#](/posts/discrete-math-note1/)

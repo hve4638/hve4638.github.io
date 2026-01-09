@@ -2,10 +2,10 @@
 title: "Linux | 쉘스크립트 if문 & 조건문"
 author: Hve
 date: 2024-01-23 15:35:22 +0900
-categories: ["개발", "Linux"]
+categories: ["개발", "레퍼런스"]
 math: false
 mermaid: false
-tags: ["shell", "쉘스크립트"]
+tags: ["shell", "쉘스크립트", "linux"]
 ---
 
 ## if문 문법

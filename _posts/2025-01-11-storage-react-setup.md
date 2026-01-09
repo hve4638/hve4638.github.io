@@ -2,7 +2,7 @@
 title: "저장용 | React.js 프로젝트 세팅"
 author: Hve
 date: 2025-01-11 00:32:18 +0900
-categories: ["저장용"]
+categories: ["개발", "메모"]
 math: false
 mermaid: false
 tags: []

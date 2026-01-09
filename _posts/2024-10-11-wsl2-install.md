@@ -2,7 +2,7 @@
 title: "개발 환경 | WSL2 설치"
 author: Hve
 date: 2024-10-11 01:22:53 +0900
-categories: []
+categories: ["개발", "메모"]
 math: false
 mermaid: false
 tags: []

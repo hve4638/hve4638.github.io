@@ -2,10 +2,10 @@
 title: "국제거래(교양) | 신용장의 종류"
 author: Hve
 date: 2024-04-17 17:11:21 +0900
-categories: ["공부", "국제거래"]
+categories: ["학습", "강의노트"]
 math: false
 mermaid: false
-tags: []
+tags: ["국제거래"]
 ---
 
 # 신용장의 종류

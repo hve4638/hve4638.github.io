@@ -2,10 +2,10 @@
 title: "Vue.js | 설치 방법"
 author: Hve
 date: 2024-05-20 17:54:16 +0900
-categories: ["공부", "vue.js"]
+categories: ["학습", "강의노트"]
 math: false
 mermaid: false
-tags: []
+tags: ["vuejs"]
 ---
 
 ## Node.js 설치

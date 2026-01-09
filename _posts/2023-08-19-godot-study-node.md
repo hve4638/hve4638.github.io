@@ -2,10 +2,10 @@
 title: Godot | 노드
 author: Hve
 date: 2023-08-19 05:00:31 +0900
-categories: [공부, Godot]
+categories: ["학습", "강의노트"]
 math: false
 mermaid: false
-tags: [ godot ]
+tags: ["godot"]
 ---
 
 ## 노드 종류

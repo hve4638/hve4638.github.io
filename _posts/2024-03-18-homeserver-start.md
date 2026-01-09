@@ -2,7 +2,7 @@
 title: "리눅스 서버 세팅"
 author: Hve
 date: 2024-03-18 11:00:24 +0900
-categories: ["개발", "홈서버"]
+categories: ["인프라", "홈서버"]
 math: false
 mermaid: false
 tags: []

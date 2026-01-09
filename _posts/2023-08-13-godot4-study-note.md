@@ -2,10 +2,10 @@
 title: Godot | 공부 정리
 author: Hve
 date: 2023-08-13 02:59:37 +0900
-categories: [ 공부, Godot ]
+categories: ["학습", "강의노트"]
 math: false
 mermaid: false
-tags: [ godot, study ]
+tags: ["godot", "study"]
 ---
 
 ## Collision

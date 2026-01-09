@@ -2,10 +2,10 @@
 title: "Python | 정규표현식 문법"
 author: Hve
 date: 2023-03-15 10:45:00 +0900
-categories: ["개발", "python"]
+categories: ["개발", "레퍼런스"]
 math: false
 mermaid: false
-tags: [python]
+tags: ["python"]
 ---
 
 pyhton의 regex를 기준으로 작성되었다

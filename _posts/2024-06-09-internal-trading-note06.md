@@ -2,10 +2,10 @@
 title: "국제거래(교양) | 대금 결제"
 author: Hve
 date: 2024-06-09 17:46:09 +0900
-categories: ["공부", "국제거래"]
+categories: ["학습", "강의노트"]
 math: false
 mermaid: false
-tags: []
+tags: ["국제거래"]
 ---
 
 ## Bill of Exchangde 환어음

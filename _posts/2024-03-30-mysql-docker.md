@@ -2,10 +2,10 @@
 title: "MySQL | MySQL Docker 설치"
 author: Hve
 date: 2024-03-30 14:26:00 +0900
-categories: ["공부", "MySQL"]
+categories: ["학습", "강의노트"]
 math: false
 mermaid: false
-tags: ["sql"]
+tags: ["sql", "mysql"]
 ---
 
 ## 1. docker, docker-compose 설치

@@ -2,10 +2,10 @@
 title: "컴퓨터 기술 정리 - 2"
 author: Hve
 date: 2023-12-11 09:32:32 +0900
-categories: ["공부", "컴퓨터 시스템"]
+categories: ["학습", "이론"]
 math: false
 mermaid: false
-tags: []
+tags: ["컴퓨터시스템"]
 ---
 
 ## 시스템 종류

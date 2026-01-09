@@ -2,10 +2,10 @@
 title: "홈서버 | 유투브 다운로드 서버"
 author: Hve
 date: 2024-05-30 01:31:17 +0900
-categories: ["홈서버", "docker 세팅"]
+categories: ["인프라", "홈서버"]
 math: false
 mermaid: false
-tags: [""]
+tags: ["docker"]
 ---
 
 ## 설명

@@ -2,10 +2,10 @@
 title: "홈서버 | transmission 토렌트"
 author: Hve
 date: 2024-05-30 00:46:26 +0900
-categories: ["홈서버", "docker 세팅"]
+categories: ["인프라", "홈서버"]
 math: false
 mermaid: false
-tags: []
+tags: ["docker"]
 ---
 
 ## 설명

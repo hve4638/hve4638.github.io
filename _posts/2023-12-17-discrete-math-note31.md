@@ -2,10 +2,10 @@
 title: "이산수학 | EXPECTED VALUE AND VARIANCE (完)"
 author: Hve
 date: 2023-12-17 18:26:26 +0900
-categories: ["공부", "이산수학"]
+categories: ["학습", "강의노트"]
 math: true
 mermaid: false
-tags: []
+tags: ["이산수학"]
 ---
 
 ## 기댓값 (Expected Value)

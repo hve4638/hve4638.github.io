@@ -2,10 +2,10 @@
 title: "nignx | nginx 기본 가이드"
 author: Hve
 date: 2024-05-23 00:24:17 +0900
-categories: ["개발", "nginx"]
+categories: ["개발", "레퍼런스"]
 math: false
 mermaid: false
-tags: []
+tags: ["nginx"]
 ---
 
 [nginx.org의 Beginner's Guide](https://nginx.org/en/docs/beginners_guide.html)를 참고해 작성하였다.

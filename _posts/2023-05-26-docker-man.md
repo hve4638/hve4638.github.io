@@ -2,10 +2,10 @@
 title: "Docker | 도커 설치 및 사용"
 author: Hve
 date: 2023-06-10 22:53:35 +0900
-categories: [ "개발", "Docker" ]
+categories: ["개발", "레퍼런스"]
 math: false
 mermaid: false
-tags: []
+tags: ["docker"]
 ---
 
 ## Docker 설치

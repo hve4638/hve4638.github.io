@@ -2,7 +2,7 @@
 title: "저장용 | jest 설치"
 author: Hve
 date: 2024-11-12 21:26:45 +0900
-categories: ["저장용"]
+categories: ["개발", "메모"]
 math: false
 mermaid: false
 tags: []

@@ -2,10 +2,10 @@
 title: "이산수학 | 행렬 (Matrix)"
 author: Hve
 date: 2023-10-15 03:26:16 +0900
-categories: ["공부", "이산수학"]
+categories: ["학습", "강의노트"]
 math: true
 mermaid: false
-tags: []
+tags: ["이산수학"]
 ---
 
 # 행렬 (Matrix)

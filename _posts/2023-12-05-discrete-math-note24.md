@@ -2,10 +2,10 @@
 title: "이산수학 | 수학적 귀납법"
 author: Hve
 date: 2023-12-05 04:57:35 +0900
-categories: ["공부", "이산수학"]
+categories: ["학습", "강의노트"]
 math: true
 mermaid: false
-tags: []
+tags: ["이산수학"]
 ---
 
 ## 수학적 귀납법

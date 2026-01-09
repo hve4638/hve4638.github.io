@@ -2,10 +2,10 @@
 title: "공부 | 무선 통신 - 12"
 author: Hve
 date: 2024-06-04 00:21:53 +0900
-categories: ["공부", "무선 통신"]
+categories: ["학습", "강의노트"]
 math: false
 mermaid: false
-tags: []
+tags: ["무선통신"]
 ---
 
 ## 셀룰러 네트워크

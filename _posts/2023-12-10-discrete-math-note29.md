@@ -2,10 +2,10 @@
 title: "이산수학 | 이산 확률 (Discrete Probability)"
 author: Hve
 date: 2023-12-10 17:46:40 +0900
-categories: ["공부", "이산수학"]
+categories: ["학습", "강의노트"]
 math: true
 mermaid: false
-tags: []
+tags: ["이산수학"]
 ---
 
 ## Laplace의 정의 

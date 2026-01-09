@@ -2,10 +2,10 @@
 title: "이산수학 | 일관성, 논리적 동등, 드모르간 법칙 등"
 author: Hve
 date: 2023-09-20 14:21:13 +0900
-categories: [ "공부", "이산수학" ]
+categories: ["학습", "강의노트"]
 math: false
 mermaid: false
-tags: []
+tags: ["이산수학"]
 ---
 
 ## 일관성 (Consistent)

@@ -2,10 +2,10 @@
 title: Project | AES Encryptor
 author: Hve
 date: 2023-02-06 07:11:00 +0900
-categories: [프로젝트]
+categories: ["프로젝트", "기록"]
 math: false
 mermaid: false
-tags: [csharp]
+tags: ["csharp"]
 img_path: /assets/img/
 ---
 

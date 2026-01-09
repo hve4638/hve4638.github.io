@@ -2,10 +2,10 @@
 title: "Beagleplay Labs 3"
 author: Hve
 date: 2023-11-08 22:18:21 +0900
-categories: ["공부", "BeaglePlay"]
+categories: ["학습", "강의노트"]
 math: false
 mermaid: false
-tags: []
+tags: ["beagleplay"]
 ---
 
 ## 파일 정보 탐색

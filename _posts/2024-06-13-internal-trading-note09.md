@@ -2,10 +2,10 @@
 title: "국제거래(교양) | 해상보험"
 author: Hve
 date: 2024-06-13 01:22:52 +0900
-categories: ["공부", "국제거래"]
+categories: ["학습", "강의노트"]
 math: false
 mermaid: false
-tags: []
+tags: ["국제거래"]
 ---
 
 ## 해상보험의 당사자

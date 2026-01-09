@@ -3,7 +3,7 @@ title: "Claude Code | 팁"
 author: Hve
 slug: how-to-use-claude-code
 date: 2025-08-29 22:40:24 +0900
-categories: []
+categories: ["개발", "메모"]
 math: false
 mermaid: false
 tags: []

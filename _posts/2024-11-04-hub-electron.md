@@ -2,7 +2,7 @@
 title: "Hub | Electron 프레임워크"
 author: Hve
 date: 2024-11-04 09:35:53 +0900
-categories: ["Hub"]
+categories: ["메타", "인덱스"]
 math: false
 mermaid: false
 tags: []

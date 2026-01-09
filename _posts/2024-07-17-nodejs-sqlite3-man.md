@@ -2,10 +2,10 @@
 title: "NodeJS | SQLite 라이브러리"
 author: Hve
 date: 2024-07-17 01:23:13 +0900
-categories: ["개발", "nodejs"]
+categories: ["개발", "레퍼런스"]
 math: false
 mermaid: false
-tags: []
+tags: ["nodejs"]
 ---
 
 ## DB 생성

@@ -2,10 +2,10 @@
 title:  "공부 | 무선 통신 - 4"
 author: Hve
 date: 2024-04-21 20:15:23 +0900
-categories: ["공부", "무선 통신"]
+categories: ["학습", "강의노트"]
 math: true
 mermaid: false
-tags: []
+tags: ["무선통신"]
 ---
 
 ## 안테나

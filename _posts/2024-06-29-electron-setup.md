@@ -2,10 +2,10 @@
 title: "Electron | 프로젝트 세팅"
 author: Hve
 date: 2024-06-29 20:27:00 +0900
-categories: ["개발", "electron"]
+categories: ["개발", "레퍼런스"]
 math: false
 mermaid: false
-tags: []
+tags: ["electron"]
 ---
 
 ## node.js, npm 설치

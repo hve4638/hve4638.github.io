@@ -3,7 +3,7 @@ title: "트러블슈팅 | \"동일한 사용자가 둘 이상의 사용자 이�
 author: Hve
 slug: tb-net-use-delete
 date: 2025-08-14 14:16:11 +0900
-categories: []
+categories: ["개발", "메모"]
 math: false
 mermaid: false
 tags: []

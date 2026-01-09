@@ -2,10 +2,10 @@
 title: "국제거래(교양) | 국제운송"
 author: Hve
 date: 2024-06-12 04:41:51 +0900
-categories: ["공부", "국제거래"]
+categories: ["학습", "강의노트"]
 math: false
 mermaid: false
-tags: []
+tags: ["국제거래"]
 ---
 
 # 해상운송

@@ -2,10 +2,10 @@
 title: "이산수학 | 추론 규칙(Rules of Inference) - 1"
 author: Hve
 date: 2023-10-02 14:25:25 +0900
-categories: [ "공부", "이산수학" ]
+categories: ["학습", "강의노트"]
 math: true
 mermaid: false
-tags: []
+tags: ["이산수학"]
 ---
 
 ## 논증 (The Argument)

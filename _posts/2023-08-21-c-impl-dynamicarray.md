@@ -2,10 +2,10 @@
 title: "C언어 | 동적 배열 구현"
 author: Hve
 date: 2023-08-21 03:43:20 +0900
-categories: ["개발", "C 자료구조"]
+categories: ["개발", "레퍼런스"]
 math: false
 mermaid: false
-tags: []
+tags: ["c"]
 ---
 
 # 동적 배열

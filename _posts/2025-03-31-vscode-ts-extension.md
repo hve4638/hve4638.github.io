@@ -2,7 +2,7 @@
 title: "VSCode | typescript 설정"
 author: Hve
 date: 2025-03-31 21:51:53 +0900
-categories: []
+categories: ["개발", "메모"]
 math: false
 mermaid: false
 tags: []

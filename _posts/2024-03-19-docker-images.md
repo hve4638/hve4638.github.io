@@ -2,10 +2,10 @@
 title: "Docker | 도커 이미지 목록"
 author: Hve
 date: 2024-03-19 08:42:24 +0900
-categories: ["개발", "Docker"]
+categories: ["개발", "레퍼런스"]
 math: false
 mermaid: false
-tags: []
+tags: ["docker"]
 ---
 
 ## 도커 이미지

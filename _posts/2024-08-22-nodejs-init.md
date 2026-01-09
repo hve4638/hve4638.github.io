@@ -2,10 +2,10 @@
 title: "Node.js | 설치 및 프로젝트 세팅"
 author: Hve
 date: 2024-08-22 14:29:55 +0900
-categories: ["개발", "nodejs"]
+categories: ["개발", "레퍼런스"]
 math: false
 mermaid: false
-tags: []
+tags: ["nodejs"]
 ---
 
 ## Node.js 환경 세팅

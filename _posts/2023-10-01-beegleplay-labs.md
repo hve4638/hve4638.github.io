@@ -2,10 +2,10 @@
 title: "Beagleplay Labs"
 author: Hve
 date: 2023-10-01 01:42:27 +0900
-categories: [ "공부", "BeaglePlay" ]
+categories: ["학습", "강의노트"]
 math: false
 mermaid: false
-tags: []
+tags: ["beagleplay"]
 ---
 
 # Beagleplay Labs

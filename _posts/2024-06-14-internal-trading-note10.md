@@ -2,10 +2,10 @@
 title: "국제거래(교양) | 부록"
 author: Hve
 date: 2024-06-14 00:42:39 +0900
-categories: ["공부", "국제거래"]
+categories: ["학습", "강의노트"]
 math: false
 mermaid: false
-tags: []
+tags: ["국제거래"]
 ---
 
 ## 해외 진입에 영향을 미치는 요소

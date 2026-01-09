@@ -2,10 +2,10 @@
 title:  "공부 | 무선 통신 - 5"
 author: Hve
 date: 2024-04-23 00:28:08 +0900
-categories: ["공부", "무선 통신"]
+categories: ["학습", "강의노트"]
 math: true
 mermaid: false
-tags: []
+tags: ["무선통신"]
 ---
 
 ## 변복조
