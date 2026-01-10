@@ -2,8 +2,10 @@
 import sys
 import datetime
 
+KST = datetime.timezone(datetime.timedelta(hours=9))
+
 def create_markdown_file(filename):
-    now = datetime.datetime.now()
+    now = datetime.datetime.now(tz=KST)
     date_format = '%Y-%m-%d %H:%M:%S'
     date_str = now.strftime(date_format)
 
