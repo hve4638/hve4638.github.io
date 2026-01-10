@@ -24,3 +24,9 @@ package-lock.json
 
 # custom
 upload.sh
+
+# llm documentation
+AGENTS.md
+CATEGORY.md
+CONVENTION.md
+REVIEW_CRITERIA.md
