@@ -12,9 +12,12 @@ swcache: true
     "tags": {{ post.tags | join: ', ' | jsonify }},
     "date": "{{ post.date }}",
     {% include no-linenos.html content=post.content %}
-    {% assign _content = content | strip_html | strip_newlines %}
-    "snippet": {{ _content | truncate: 200 | jsonify }},
-    "content": {{ _content | jsonify }}
+    {% assign _content = content | markdownify | strip_html %}
+    {% assign _lines = _content | split: '\n' %}
+    {% assign _excerpt_lines = _lines | slice: 0, 200 %}
+    {% assign _excerpt = _excerpt_lines | join: ' ' | strip_newlines %}
+    "snippet": {{ _excerpt | truncate: 200 | prepend: '__snippet__' | jsonify }},
+    "content": {{ _excerpt | jsonify }}
   }{% unless forloop.last %},{% endunless %}
   {% endfor %}
 ]
