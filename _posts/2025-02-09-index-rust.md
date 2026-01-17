@@ -1,5 +1,5 @@
 ---
-title: "Hub | Rust 언어 정리"
+title: "Index | Rust 언어 정리"
 author: Hve
 date: 2025-02-09 22:45:00 +0900
 categories: ["메타", "인덱스"]

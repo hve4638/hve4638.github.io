@@ -1,5 +1,5 @@
 ---
-title: "Hub | Electron 프레임워크"
+title: "Index | Electron 프레임워크"
 author: Hve
 date: 2024-11-04 09:35:53 +0900
 categories: ["메타", "인덱스"]
@@ -10,7 +10,7 @@ tags: []
 
 ## 관련 정보
 
-- [자료 허브 : 타입스크립트](/posts/hub-ts)
+- [자료 허브 : 타입스크립트](/posts/index-ts)
 
 ## 세팅
 
