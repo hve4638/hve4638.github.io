@@ -4,8 +4,6 @@ import { getCollection } from 'astro:content';
 
 const posts = await getCollection('blog');
 
-// 상위 → 하위 카테고리 맵 구성
-// 예: { "개발": Set(["도구", "언어", "메모"]), "학습": Set(["강의노트", "이론"]) }
 const categoryMap = new Map<string, Set<string>>();
 
 for (const post of posts) {
@@ -15,32 +13,41 @@ for (const post of posts) {
   const top = cats[0];
   if (!categoryMap.has(top)) categoryMap.set(top, new Set());
 
-  // 하위 카테고리들 추가 (2단계 이상)
   for (let i = 1; i < cats.length; i++) {
     categoryMap.get(top)!.add(cats[i]);
   }
 }
 
-// 상위 카테고리 알파벳 정렬
 const sortedTop = [...categoryMap.keys()].sort();
 ---
 
 <Base title="카테고리">
   <h1>카테고리</h1>
-  {sortedTop.map(top => (
-    <section>
-      <h2>
-        <a href={`/categories/${top}`}>{top}</a>
-        {' '}({posts.filter(p => p.data.categories[0] === top).length})
-      </h2>
-      <ul>
-        {[...categoryMap.get(top)!].sort().map(sub => (
-          <li>
-            <a href={`/categories/${top}/${sub}`}>{sub}</a>
-            {' '}({posts.filter(p => p.data.categories[0] === top && p.data.categories[1] === sub).length})
-          </li>
-        ))}
-      </ul>
-    </section>
-  ))}
+  {sortedTop.map(top => {
+    const topCount = posts.filter(p => p.data.categories[0] === top).length;
+    const subs = [...categoryMap.get(top)!].sort();
+    return (
+      <div class="card categories">
+        <div class="card-header">
+          <span>
+            <a href={`/categories/${top}`}>{top}</a>
+            <span class="text-muted">{topCount} posts</span>
+          </span>
+        </div>
+        {subs.length > 0 && (
+          <ul class="list-group">
+            {subs.map(sub => {
+              const subCount = posts.filter(p => p.data.categories[0] === top && p.data.categories[1] === sub).length;
+              return (
+                <li class="list-group-item">
+                  <a href={`/categories/${top}/${sub}`}>{sub}</a>
+                  <span class="text-muted">{subCount} posts</span>
+                </li>
+              );
+            })}
+          </ul>
+        )}
+      </div>
+    );
+  })}
 </Base>
