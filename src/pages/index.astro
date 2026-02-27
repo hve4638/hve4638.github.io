@@ -8,28 +8,58 @@ const posts = (await getCollection("blog")).sort(
 );
 
 const page = getPage(posts, 1);
+
+function getExcerpt(body: string, length = 200) {
+  const plain = body
+    .replace(/```[\s\S]*?```/g, '')
+    .replace(/!?\[.*?\]\(.*?\)/g, '')
+    .replace(/[#*>`~_\-]/g, '')
+    .replace(/\n+/g, ' ')
+    .trim();
+  return plain.length > length ? plain.slice(0, length) + '...' : plain;
+}
 ---
 
 <Base title="블로그">
-  <h1>포스트 목록</h1>
-  <p class="text-red-500 text-3xl font-bold">Tailwind 테스트</p>
-  <ul>
-    {
-      page.data.map((post) => (
-        <li>
-          <time datetime={post.data.date.toISOString()}>
-            {post.data.date.toLocaleDateString("ko-KR")}
-          </time>
-          {" - "}
-          <a href={`/posts/${post.id}`}>{post.data.title}</a>
-        </li>
-      ))
-    }
-  </ul>
+  <div id="post-list">
+    {page.data.map((post) => (
+      <div class="post-preview">
+        <a href={`/posts/${post.id}`}>
+          <div class="card-body">
+            <h1 class="card-title">{post.data.title}</h1>
 
-  <nav>
-    {page.prevUrl && <a href={page.prevUrl}>&larr; 이전</a>}
-    <span> {page.currentPage} / {page.totalPages} </span>
-    {page.nextUrl && <a href={page.nextUrl}>다음 &rarr;</a>}
+            <div class="post-content">
+              <p>{getExcerpt(post.body ?? '')}</p>
+            </div>
+
+            <div class="post-meta">
+              <div class="meta-left">
+                <time datetime={post.data.date.toISOString()}>
+                  {post.data.date.toLocaleDateString("ko-KR")}
+                </time>
+                {post.data.categories && post.data.categories.length > 0 && (
+                  <span class="categories">
+                    {post.data.categories.join(", ")}
+                  </span>
+                )}
+              </div>
+              {post.data.pin && (
+                <div class="pin">📌</div>
+              )}
+            </div>
+          </div>
+        </a>
+      </div>
+    ))}
+  </div>
+
+  <nav class="pagination">
+    {page.prevUrl && (
+      <a class="page-link" href={page.prevUrl}>&larr;</a>
+    )}
+    <span class="page-index">{page.currentPage} / {page.totalPages}</span>
+    {page.nextUrl && (
+      <a class="page-link" href={page.nextUrl}>&rarr;</a>
+    )}
   </nav>
 </Base>
