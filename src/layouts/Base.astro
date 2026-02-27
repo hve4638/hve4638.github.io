@@ -1,0 +1,23 @@
+---
+// [Astro] --- 사이가 "frontmatter 영역". 여기는 서버(빌드 시점)에서 실행되는 JS.
+// 브라우저에는 전달되지 않는다. Jekyll의 Liquid와 비슷하지만, 온전한 JS를 쓸 수 있다.
+
+// [Astro] Astro.props: 이 레이아웃을 사용하는 페이지에서 넘겨준 속성을 받는다.
+// 예: <Base title="홈"> → { title: "홈" }
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- [Astro] {title}: JSX 스타일로 JS 변수를 HTML에 삽입. Liquid의 {{ title }}에 해당 -->
+  <title>{title}</title>
+</head>
+<body>
+  <!-- [Astro] <slot />: 이 레이아웃을 사용하는 페이지의 콘텐츠가 여기에 삽입된다.
+       Jekyll의 {{ content }}와 동일한 역할 -->
+  <slot />
+</body>
+</html>

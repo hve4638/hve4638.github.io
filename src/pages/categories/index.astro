@@ -1,0 +1,46 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('blog');
+
+// 상위 → 하위 카테고리 맵 구성
+// 예: { "개발": Set(["도구", "언어", "메모"]), "학습": Set(["강의노트", "이론"]) }
+const categoryMap = new Map<string, Set<string>>();
+
+for (const post of posts) {
+  const cats = post.data.categories;
+  if (cats.length === 0) continue;
+
+  const top = cats[0];
+  if (!categoryMap.has(top)) categoryMap.set(top, new Set());
+
+  // 하위 카테고리들 추가 (2단계 이상)
+  for (let i = 1; i < cats.length; i++) {
+    categoryMap.get(top)!.add(cats[i]);
+  }
+}
+
+// 상위 카테고리 알파벳 정렬
+const sortedTop = [...categoryMap.keys()].sort();
+---
+
+<Base title="카테고리">
+  <h1>카테고리</h1>
+  {sortedTop.map(top => (
+    <section>
+      <h2>
+        <a href={`/categories/${top}`}>{top}</a>
+        {' '}({posts.filter(p => p.data.categories[0] === top).length})
+      </h2>
+      <ul>
+        {[...categoryMap.get(top)!].sort().map(sub => (
+          <li>
+            <a href={`/categories/${top}/${sub}`}>{sub}</a>
+            {' '}({posts.filter(p => p.data.categories[0] === top && p.data.categories[1] === sub).length})
+          </li>
+        ))}
+      </ul>
+    </section>
+  ))}
+</Base>

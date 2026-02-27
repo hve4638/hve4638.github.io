@@ -1,0 +1,23 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('blog');
+
+// [Astro] 모든 포스트의 tags를 하나로 펼치고(flatMap), Set으로 중복 제거, 알파벳 정렬
+const allTags = [...new Set(posts.flatMap(post => post.data.tags))].sort();
+---
+
+<Base title="태그 목록">
+  <h1>태그 목록</h1>
+  <ul>
+    {allTags.map(tag => {
+      const count = posts.filter(post => post.data.tags.includes(tag)).length;
+      return (
+        <li>
+          <a href={`/tags/${tag}`}>{tag}</a> ({count})
+        </li>
+      );
+    })}
+  </ul>
+</Base>

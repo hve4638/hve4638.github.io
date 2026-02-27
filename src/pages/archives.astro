@@ -1,0 +1,39 @@
+---
+import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog'))
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+// 연도별로 그룹핑
+const postsByYear = new Map<number, typeof posts>();
+for (const post of posts) {
+  const year = post.data.date.getFullYear();
+  if (!postsByYear.has(year)) postsByYear.set(year, []);
+  postsByYear.get(year)!.push(post);
+}
+
+// 연도 내림차순 정렬
+const sortedYears = [...postsByYear.keys()].sort((a, b) => b - a);
+---
+
+<Base title="아카이브">
+  <h1>아카이브</h1>
+  <p>총 {posts.length}개의 포스트</p>
+  {sortedYears.map(year => (
+    <section>
+      <h2>{year} ({postsByYear.get(year)!.length})</h2>
+      <ul>
+        {postsByYear.get(year)!.map(post => (
+          <li>
+            <time datetime={post.data.date.toISOString()}>
+              {post.data.date.toLocaleDateString('ko-KR')}
+            </time>
+            {' - '}
+            <a href={`/blog/${post.id}`}>{post.data.title}</a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  ))}
+</Base>
