@@ -1,5 +1,4 @@
 ---
-// props 없음 — 모든 페이지에서 동일한 내용을 표시
 const navLinks = [
   { href: '/', label: '포스트' },
   { href: '/tags', label: '태그' },
@@ -8,13 +7,30 @@ const navLinks = [
 ];
 ---
 
-<aside>
-  <h2><a href="/">Hve 블로그</a></h2>
-  <nav>
-    <ul>
-      {navLinks.map(link => (
-        <li><a href={link.href}>{link.label}</a></li>
-      ))}
-    </ul>
-  </nav>
+<aside id="sidebar">
+  <div class="profile-wrapper">
+    <div id="avatar">
+      <a href="/">
+        <img src="/avatar.png" alt="avatar" />
+      </a>
+    </div>
+    <div class="site-title">
+      <a href="/">Hve</a>
+    </div>
+    <p class="site-subtitle">개발 블로그</p>
+  </div>
+
+  <ul>
+    {navLinks.map(link => (
+      <li class="nav-item">
+        <a class="nav-link" href={link.href}>
+          <span>{link.label}</span>
+        </a>
+      </li>
+    ))}
+  </ul>
+
+  <div class="sidebar-bottom">
+    <a href="https://github.com/hve4638" aria-label="GitHub">GitHub</a>
+  </div>
 </aside>
