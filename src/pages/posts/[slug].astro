@@ -17,7 +17,7 @@ export async function getStaticPaths() {
 }
 
 const { post, prevPost, nextPost } = Astro.props;
-const { Content } = await render(post);
+const { Content, headings } = await render(post);
 
 // [SEO] 본문에서 발췌문 생성 (메타 description용)
 function getExcerpt(body: string, length = 150) {
@@ -42,6 +42,7 @@ const description = getExcerpt(post.body ?? '');
   prevPost={prevPost}
   nextPost={nextPost}
   description={description}
+  headings={headings}
 >
   <Content />
 </PostLayout>

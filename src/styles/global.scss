@@ -992,8 +992,103 @@ footer {
    포스트 상세 레이아웃
    ======================================== */
 
+.post-wrapper {
+  display: flex;
+  gap: 0;
+}
+
 .post {
   padding: 0 1rem;
+  flex: 1;
+  min-width: 0;
+}
+
+/* --- TOC 사이드바 (오른쪽 패널) --- */
+
+#panel-wrapper {
+  width: 250px;
+  flex-shrink: 0;
+  padding-left: 1rem;
+}
+
+#toc-wrapper {
+  border-left: 1px solid rgba(158, 158, 158, 0.17);
+  position: sticky;
+  top: 4rem;
+  transition: top 0.2s ease-in-out;
+  animation: fade-up 0.8s;
+  max-height: calc(100vh - 6rem);
+  overflow-y: auto;
+
+  .panel-heading {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-muted-color);
+    padding-left: 1.25rem;
+    padding-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  ul {
+    list-style: none;
+    font-size: 0.85rem;
+    line-height: 1.25;
+    padding-left: 0;
+    margin: 0;
+
+    li {
+      &:not(:last-child) {
+        margin: 0.4rem 0;
+      }
+
+      &.toc-h3 a {
+        padding-left: 2rem;
+      }
+    }
+
+    .toc-link {
+      display: block;
+      padding: 0.2rem 0 0.2rem 1.25rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: var(--text-muted-color);
+      text-decoration: none;
+      border-left: 1px solid transparent;
+      margin-left: -1px;
+
+      &:hover {
+        color: var(--toc-highlight);
+      }
+    }
+
+    .is-active-link {
+      color: var(--toc-highlight) !important;
+      font-weight: 600;
+      border-left-color: var(--toc-highlight);
+    }
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    position: relative;
+    top: 2rem;
+  }
+
+  to {
+    opacity: 1;
+    position: relative;
+    top: 0;
+  }
+}
+
+/* TOC 숨김: 1200px 이하 */
+@media all and (max-width: 1199px) {
+  #panel-wrapper {
+    display: none;
+  }
 }
 
 .post-title {

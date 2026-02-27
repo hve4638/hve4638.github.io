@@ -1,0 +1,85 @@
+---
+interface Heading {
+  depth: number;
+  slug: string;
+  text: string;
+}
+
+const { headings } = Astro.props as { headings: Heading[] };
+
+// h2, h3만 사용
+const tocItems = headings.filter(h => h.depth === 2 || h.depth === 3);
+---
+
+{tocItems.length > 0 && (
+  <div id="toc-wrapper">
+    <div class="panel-heading">Contents</div>
+    <nav id="toc">
+      <ul>
+        {tocItems.map(item => (
+          <li class={item.depth === 3 ? 'toc-h3' : ''}>
+            <a class="toc-link" href={`#${item.slug}`} data-target={item.slug}>
+              {item.text}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  </div>
+)}
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const tocLinks = document.querySelectorAll<HTMLAnchorElement>('.toc-link');
+    if (tocLinks.length === 0) return;
+
+    const headingEls = Array.from(tocLinks).map(link => {
+      const id = link.getAttribute('data-target');
+      return id ? document.getElementById(id) : null;
+    }).filter((el): el is HTMLElement => el !== null);
+
+    if (headingEls.length === 0) return;
+
+    let currentActive: HTMLAnchorElement | null = null;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        // 화면에 보이는 헤딩 중 가장 위에 있는 것을 찾음
+        const visibleEntries = entries.filter(e => e.isIntersecting);
+
+        if (visibleEntries.length > 0) {
+          const topEntry = visibleEntries.reduce((a, b) =>
+            a.boundingClientRect.top < b.boundingClientRect.top ? a : b
+          );
+          setActive(topEntry.target.id);
+        } else {
+          // 보이는 헤딩이 없으면 스크롤 위치로 판단
+          const scrollY = window.scrollY + 100;
+          let closest: HTMLElement | null = null;
+          for (const el of headingEls) {
+            if (el.offsetTop <= scrollY) {
+              closest = el;
+            }
+          }
+          if (closest) {
+            setActive(closest.id);
+          }
+        }
+      },
+      { rootMargin: '-80px 0px -60% 0px' }
+    );
+
+    headingEls.forEach(el => observer.observe(el));
+
+    function setActive(id: string) {
+      if (currentActive) {
+        currentActive.classList.remove('is-active-link');
+      }
+      const link = document.querySelector<HTMLAnchorElement>(`.toc-link[data-target="${id}"]`);
+      if (link) {
+        link.classList.add('is-active-link');
+        currentActive = link;
+      }
+    }
+  });
+</script>
