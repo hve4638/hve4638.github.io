@@ -1,0 +1,33 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="검색">
+  <div id="search-page">
+    <h1 id="search-page-title">검색</h1>
+    <div id="search-page-results"></div>
+  </div>
+</Base>
+
+<script>
+  import { fetchSearchData, searchPosts, renderResultItem } from '../scripts/search';
+
+  const params = new URLSearchParams(window.location.search);
+  const query = params.get('q') || '';
+  const titleEl = document.getElementById('search-page-title')!;
+  const resultsEl = document.getElementById('search-page-results')!;
+
+  if (query) {
+    titleEl.textContent = `"${query}" 검색 결과`;
+
+    fetchSearchData().then(data => {
+      const results = searchPosts(data, query);
+
+      if (results.length === 0) {
+        resultsEl.innerHTML = '<p class="search-no-result">검색 결과가 없습니다</p>';
+      } else {
+        resultsEl.innerHTML = results.map(renderResultItem).join('');
+      }
+    });
+  }
+</script>

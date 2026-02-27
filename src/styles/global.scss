@@ -402,6 +402,113 @@ body {
   border: 1px solid var(--search-wrapper-border-color);
   background: var(--search-wrapper-bg);
   padding: 0 0.5rem;
+  position: relative;
+}
+
+#search-results {
+  display: none;
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  width: 400px;
+  max-height: 400px;
+  overflow-y: auto;
+  background: var(--card-bg);
+  border: 1px solid var(--search-wrapper-border-color);
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 100;
+
+  .search-item {
+    display: block;
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+    color: var(--text-color);
+    border-bottom: 1px solid var(--btn-border-color);
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &:hover {
+      background: var(--tag-bg);
+    }
+  }
+
+  .search-item-title {
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .search-item-snippet {
+    font-size: 0.8rem;
+    color: var(--text-muted-color);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .search-no-result {
+    padding: 1.5rem;
+    text-align: center;
+    color: var(--text-muted-color);
+  }
+
+  .search-more {
+    display: block;
+    padding: 0.75rem 1rem;
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--link-color);
+    text-decoration: none;
+    border-top: 1px solid var(--btn-border-color);
+
+    &:hover {
+      background: var(--tag-bg);
+    }
+  }
+}
+
+/* 검색 결과 페이지 */
+#search-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .search-item {
+    display: block;
+    padding: 1rem 0;
+    text-decoration: none;
+    color: var(--text-color);
+    border-bottom: 1px solid var(--btn-border-color);
+
+    &:hover .search-item-title {
+      color: var(--link-color);
+    }
+  }
+
+  .search-item-title {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .search-item-snippet {
+    font-size: 0.85rem;
+    color: var(--text-muted-color);
+  }
+
+  .search-no-result {
+    text-align: center;
+    color: var(--text-muted-color);
+    margin-top: 3rem;
+  }
 }
 
 #search-input {
