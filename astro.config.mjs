@@ -2,9 +2,11 @@
 import { defineConfig } from 'astro/config';
 
 import tailwindcss from '@tailwindcss/vite';
+import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
+  integrations: [sitemap()],
   server: { port: 8700, host: '0.0.0.0' },
   site: 'https://hve4638.github.io',
   output: 'static',
