@@ -11,7 +11,14 @@ import "../styles/global.scss";
 
 // [Astro] Astro.props: 이 레이아웃을 사용하는 페이지에서 넘겨준 속성을 받는다.
 // 예: <Base title="홈"> → { title: "홈" }
-const { title } = Astro.props;
+const { title, description, image, type = 'website' } = Astro.props;
+
+// [SEO] canonical URL: Astro.site(astro.config.mjs의 site) + 현재 경로
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const siteTitle = '블로그';
+const fullTitle = title === siteTitle ? siteTitle : `${title} | ${siteTitle}`;
+const metaDescription = description || '개발 블로그';
+const ogImage = image ? new URL(image, Astro.site).href : undefined;
 ---
 
 <!doctype html>
@@ -20,7 +27,24 @@ const { title } = Astro.props;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- [Astro] {title}: JSX 스타일로 JS 변수를 HTML에 삽입. Liquid의 {{ title }}에 해당 -->
-    <title>{title}</title>
+    <title>{fullTitle}</title>
+
+    {/* [SEO] 검색엔진이 읽는 설명. 검색 결과 제목 아래에 표시됨 */}
+    <meta name="description" content={metaDescription} />
+    <link rel="canonical" href={canonicalURL.href} />
+
+    {/* [SEO] Open Graph: 카카오톡, 슬랙, 페이스북 등에서 링크 공유 시 미리보기 카드 */}
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={metaDescription} />
+    <meta property="og:url" content={canonicalURL.href} />
+    <meta property="og:type" content={type} />
+    <meta property="og:site_name" content={siteTitle} />
+    {ogImage && <meta property="og:image" content={ogImage} />}
+
+    {/* [SEO] Twitter 카드 */}
+    <meta name="twitter:card" content={ogImage ? 'summary_large_image' : 'summary'} />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={metaDescription} />
     <script is:inline>
       (function () {
         const saved = localStorage.getItem('theme');
