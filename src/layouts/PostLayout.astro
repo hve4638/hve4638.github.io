@@ -1,0 +1,61 @@
+---
+import Base from './Base.astro';
+
+// [Astro] 포스트 전용 레이아웃. Base를 감싸서 포스트 메타 정보를 추가한다.
+// 레이아웃 체이닝: PostLayout → Base → HTML
+const { title, date, categories, tags, prevPost, nextPost } = Astro.props;
+---
+
+<Base title={title}>
+  <article>
+    <h1>{title}</h1>
+
+    {/* 날짜 */}
+    <time datetime={date.toISOString()}>
+      {date.toLocaleDateString('ko-KR')}
+    </time>
+
+    {/* 카테고리 (계층 링크) */}
+    {categories.length > 0 && (
+      <nav>
+        카테고리:
+        {categories.map((cat: string, i: number) => {
+          const href = '/categories/' + categories.slice(0, i + 1).join('/');
+          return (
+            <span>
+              {i > 0 && ' > '}
+              <a href={href}>{cat}</a>
+            </span>
+          );
+        })}
+      </nav>
+    )}
+
+    {/* 태그 */}
+    {tags.length > 0 && (
+      <nav>
+        태그: {tags.map((tag: string) => (
+          <a href={`/tags/${tag}`}>{tag}</a>
+        )).reduce((acc: any, el: any) => [acc, ', ', el])}
+      </nav>
+    )}
+
+    <hr />
+
+    {/* 본문 — slot으로 삽입 */}
+    <slot />
+
+    <hr />
+
+    {/* 이전/다음 포스트 네비게이션 */}
+    <nav>
+      {prevPost && (
+        <a href={`/blog/${prevPost.id}`}>&larr; {prevPost.data.title}</a>
+      )}
+      {prevPost && nextPost && ' | '}
+      {nextPost && (
+        <a href={`/blog/${nextPost.id}`}>{nextPost.data.title} &rarr;</a>
+      )}
+    </nav>
+  </article>
+</Base>

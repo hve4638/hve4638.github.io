@@ -2,6 +2,12 @@
 // [Astro] --- 사이가 "frontmatter 영역". 여기는 서버(빌드 시점)에서 실행되는 JS.
 // 브라우저에는 전달되지 않는다. Jekyll의 Liquid와 비슷하지만, 온전한 JS를 쓸 수 있다.
 
+// [Astro] 컴포넌트를 import해서 HTML 영역에서 태그처럼 사용한다.
+// Jekyll의 {% include sidebar.html %}에 해당하지만, props 전달과 타입 체크가 가능.
+import Sidebar from '../components/Sidebar.astro';
+import Topbar from '../components/Topbar.astro';
+import Footer from '../components/Footer.astro';
+
 // [Astro] Astro.props: 이 레이아웃을 사용하는 페이지에서 넘겨준 속성을 받는다.
 // 예: <Base title="홈"> → { title: "홈" }
 const { title } = Astro.props;
@@ -16,8 +22,13 @@ const { title } = Astro.props;
   <title>{title}</title>
 </head>
 <body>
-  <!-- [Astro] <slot />: 이 레이아웃을 사용하는 페이지의 콘텐츠가 여기에 삽입된다.
-       Jekyll의 {{ content }}와 동일한 역할 -->
-  <slot />
+  <Sidebar />
+  <Topbar title={title} />
+  <main>
+    <!-- [Astro] <slot />: 이 레이아웃을 사용하는 페이지의 콘텐츠가 여기에 삽입된다.
+         Jekyll의 {{ content }}와 동일한 역할 -->
+    <slot />
+  </main>
+  <Footer />
 </body>
 </html>

@@ -1,37 +1,33 @@
 ---
-import Base from "../../layouts/Base.astro";
-// [Astro] render: Markdown 본문을 HTML 컴포넌트로 변환하는 함수.
-// v5에서는 엔트리 메서드가 아닌 별도 함수로 분리되었다.
+import PostLayout from "../../layouts/PostLayout.astro";
 import { getCollection, render } from "astro:content";
 
-// [Astro] getStaticPaths: 동적 라우팅([slug])에서 빌드할 모든 경로를 미리 선언한다.
-// Jekyll은 _posts/에 파일만 놓으면 자동으로 URL이 생기지만,
-// Astro는 "어떤 slug로 어떤 페이지를 만들지" 직접 코드로 명시해야 한다.
 export async function getStaticPaths() {
-  const posts = await getCollection("blog");
-  return posts.map((post) => ({
-    params: { slug: post.id },   // [slug] 자리에 들어갈 값
-    props: { post },             // 이 페이지에서 사용할 데이터
+  const posts = (await getCollection("blog"))
+    .sort((a, b) => a.data.date.getTime() - b.data.date.getTime());
+
+  return posts.map((post, i) => ({
+    params: { slug: post.id },
+    props: {
+      post,
+      // 날짜순 정렬 기준으로 이전/다음 포스트
+      prevPost: posts[i - 1] ?? null,
+      nextPost: posts[i + 1] ?? null,
+    },
   }));
 }
 
-// [Astro] Astro.props: getStaticPaths()에서 넘긴 props를 받는다.
-const { post } = Astro.props;
-
-// [Astro] render(post): Markdown → <Content /> 컴포넌트로 변환.
-// 이 함수 호출이 있어야 본문을 HTML로 렌더링할 수 있다.
+const { post, prevPost, nextPost } = Astro.props;
 const { Content } = await render(post);
 ---
 
-<Base title={post.data.title}>
-  <article>
-    <h1>{post.data.title}</h1>
-    <time datetime={post.data.date.toISOString()}>
-      {post.data.date.toLocaleDateString("ko-KR")}
-    </time>
-    <hr />
-    <!-- [Astro] <Content />: render()로 변환된 Markdown 본문이 여기에 렌더링된다.
-         Jekyll에서 {{ content }}로 본문을 삽입하는 것과 동일 -->
-    <Content />
-  </article>
-</Base>
+<PostLayout
+  title={post.data.title}
+  date={post.data.date}
+  categories={post.data.categories}
+  tags={post.data.tags}
+  prevPost={prevPost}
+  nextPost={nextPost}
+>
+  <Content />
+</PostLayout>

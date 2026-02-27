@@ -1,0 +1,20 @@
+---
+// props 없음 — 모든 페이지에서 동일한 내용을 표시
+const navLinks = [
+  { href: '/blog', label: '포스트' },
+  { href: '/tags', label: '태그' },
+  { href: '/categories', label: '카테고리' },
+  { href: '/archives', label: '아카이브' },
+];
+---
+
+<aside>
+  <h2><a href="/">Hve 블로그</a></h2>
+  <nav>
+    <ul>
+      {navLinks.map(link => (
+        <li><a href={link.href}>{link.label}</a></li>
+      ))}
+    </ul>
+  </nav>
+</aside>
