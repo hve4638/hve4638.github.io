@@ -5,6 +5,13 @@ const navLinks = [
   { href: '/categories', label: '카테고리' },
   { href: '/archives', label: '아카이브' },
 ];
+
+const currentPath = Astro.url.pathname;
+
+function isActive(href: string) {
+  if (href === '/') return currentPath === '/' || currentPath.startsWith('/page/');
+  return currentPath.startsWith(href);
+}
 ---
 
 <aside id="sidebar">
@@ -22,7 +29,7 @@ const navLinks = [
 
   <ul>
     {navLinks.map(link => (
-      <li class="nav-item">
+      <li class={`nav-item${isActive(link.href) ? ' active' : ''}`}>
         <a class="nav-link" href={link.href}>
           <span>{link.label}</span>
         </a>

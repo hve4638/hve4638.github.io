@@ -9,6 +9,15 @@ export default defineConfig({
   site: 'https://hve4638.github.io',
   output: 'static',
 
+  markdown: {
+    shikiConfig: {
+      themes: {
+        light: 'github-light',
+        dark: 'github-dark',
+      },
+    },
+  },
+
   vite: {
     plugins: [tailwindcss()],
   },
