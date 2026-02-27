@@ -10,7 +10,6 @@ export async function getStaticPaths() {
     params: { slug: post.id },
     props: {
       post,
-      // 날짜순 정렬 기준으로 이전/다음 포스트
       prevPost: posts[i - 1] ?? null,
       nextPost: posts[i + 1] ?? null,
     },

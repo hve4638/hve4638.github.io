@@ -30,7 +30,7 @@ const sortedYears = [...postsByYear.keys()].sort((a, b) => b - a);
               {post.data.date.toLocaleDateString('ko-KR')}
             </time>
             {' - '}
-            <a href={`/blog/${post.id}`}>{post.data.title}</a>
+            <a href={`/posts/${post.id}`}>{post.data.title}</a>
           </li>
         ))}
       </ul>

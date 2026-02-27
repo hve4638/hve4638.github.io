@@ -58,7 +58,7 @@ const breadcrumb = segments.map((seg, i) => ({
           {post.data.date.toLocaleDateString('ko-KR')}
         </time>
         {' - '}
-        <a href={`/blog/${post.id}`}>{post.data.title}</a>
+        <a href={`/posts/${post.id}`}>{post.data.title}</a>
       </li>
     ))}
   </ul>

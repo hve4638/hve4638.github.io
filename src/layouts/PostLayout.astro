@@ -50,11 +50,11 @@ const { title, date, categories, tags, prevPost, nextPost } = Astro.props;
     {/* 이전/다음 포스트 네비게이션 */}
     <nav>
       {prevPost && (
-        <a href={`/blog/${prevPost.id}`}>&larr; {prevPost.data.title}</a>
+        <a href={`/posts/${prevPost.id}`}>&larr; {prevPost.data.title}</a>
       )}
       {prevPost && nextPost && ' | '}
       {nextPost && (
-        <a href={`/blog/${nextPost.id}`}>{nextPost.data.title} &rarr;</a>
+        <a href={`/posts/${nextPost.id}`}>{nextPost.data.title} &rarr;</a>
       )}
     </nav>
   </article>

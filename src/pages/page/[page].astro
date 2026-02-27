@@ -1,15 +1,25 @@
 ---
-import Base from '../layouts/Base.astro';
+import Base from '../../layouts/Base.astro';
 import { getCollection } from 'astro:content';
-import { getPage } from '../utils/pagination';
+import { getPage, getPageNumbers } from '../../utils/pagination';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  const pageNumbers = getPageNumbers(posts.length);
+
+  return pageNumbers.map(num => ({
+    params: { page: String(num) },
+  }));
+}
 
 const posts = (await getCollection('blog'))
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 
-const page = getPage(posts, 1);
+const pageNum = Number(Astro.params.page);
+const page = getPage(posts, pageNum);
 ---
 
-<Base title="블로그">
+<Base title={`포스트 목록 - ${page.currentPage}페이지`}>
   <h1>포스트 목록</h1>
   <ul>
     {page.data.map(post => (
