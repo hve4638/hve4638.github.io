@@ -45,6 +45,16 @@ const ogImage = image ? new URL(image, Astro.site).href : undefined;
     <meta name="twitter:card" content={ogImage ? 'summary_large_image' : 'summary'} />
     <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={metaDescription} />
+
+    {/* Google Analytics */}
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FW5937R15T"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-FW5937R15T');
+    </script>
+
     <script is:inline>
       (function () {
         const saved = localStorage.getItem('theme');
