@@ -3,7 +3,7 @@ import Base from './Base.astro';
 import TocSidebar from '../components/TocSidebar.astro';
 import Comments from '../components/Comments.astro';
 
-const { title, date, categories, tags, prevPost, nextPost, description, headings, comments = true } = Astro.props;
+const { title, date, categories, tags, prevPost, nextPost, description, headings, comments = true, math = false, mermaid = false } = Astro.props;
 ---
 
 <Base title={title} description={description} type="article">
@@ -70,4 +70,68 @@ const { title, date, categories, tags, prevPost, nextPost, description, headings
       <TocSidebar headings={headings} />
     </aside>
   </div>
+
+  {/* MathJax: math: true인 포스트에서만 로드 */}
+  {math && (
+    <Fragment>
+      <script is:inline>
+        MathJax = {
+          tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']],
+          },
+        };
+      </script>
+      <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    </Fragment>
+  )}
+
+  {/* Mermaid: mermaid: true인 포스트에서만 로드 */}
+  {mermaid && (
+    <script is:inline>
+      (function () {
+        function getTheme() {
+          return document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default';
+        }
+
+        function initMermaid() {
+          // language-mermaid 코드 블록을 mermaid용 <pre>로 변환
+          document.querySelectorAll('pre > code.language-mermaid').forEach(function (code) {
+            var pre = code.parentElement;
+            var mermaidPre = document.createElement('pre');
+            mermaidPre.className = 'mermaid';
+            mermaidPre.textContent = code.textContent;
+            pre.style.display = 'none';
+            pre.parentNode.insertBefore(mermaidPre, pre.nextSibling);
+          });
+
+          window.mermaid.initialize({ startOnLoad: false, theme: getTheme() });
+          window.mermaid.run();
+        }
+
+        // Mermaid 스크립트 로드
+        var s = document.createElement('script');
+        s.src = 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js';
+        s.onload = initMermaid;
+        document.head.appendChild(s);
+
+        // 테마 전환 시 재렌더링
+        var toggle = document.getElementById('theme-toggle');
+        if (toggle) {
+          toggle.addEventListener('click', function () {
+            setTimeout(function () {
+              if (typeof window.mermaid === 'undefined') return;
+              document.querySelectorAll('pre.mermaid[data-processed]').forEach(function (el) {
+                el.removeAttribute('data-processed');
+                var source = el.previousElementSibling;
+                if (source) el.textContent = source.querySelector('code').textContent;
+              });
+              window.mermaid.initialize({ startOnLoad: false, theme: getTheme() });
+              window.mermaid.run();
+            }, 100);
+          });
+        }
+      })();
+    </script>
+  )}
 </Base>
