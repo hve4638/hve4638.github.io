@@ -19,6 +19,7 @@ pnpm-debug.log*
 
 # 임시 제외: 마이그레이션 완료 후 이 줄 제거
 src/content/blog/*.md
+public/assets/img/*
 
 # macOS-specific files
 .DS_Store
@@ -32,3 +33,5 @@ src/content/blog/*.md
 
 .playwright*/
 .screenshots
+
+!.gitkeep

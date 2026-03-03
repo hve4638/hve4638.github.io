@@ -1270,3 +1270,30 @@ footer {
     font-style: normal;
   }
 }
+
+/* ========================================
+   라이트박스
+   ======================================== */
+
+#lightbox-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(0, 0, 0, 0.85);
+  justify-content: center;
+  align-items: center;
+  cursor: zoom-out;
+
+  &.active {
+    display: flex;
+  }
+
+  #lightbox-img {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 0.25rem;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  }
+}

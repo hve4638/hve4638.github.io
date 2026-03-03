@@ -134,4 +134,32 @@ const { title, date, categories, tags, prevPost, nextPost, description, headings
       })();
     </script>
   )}
+
+  {/* 라이트박스: 포스트 이미지 클릭 시 확대 */}
+  <div id="lightbox-overlay">
+    <img id="lightbox-img" />
+  </div>
+  <script is:inline>
+    (function () {
+      var overlay = document.getElementById('lightbox-overlay');
+      var lbImg = document.getElementById('lightbox-img');
+
+      document.querySelectorAll('.post-content img').forEach(function (img) {
+        img.style.cursor = 'zoom-in';
+        img.addEventListener('click', function () {
+          lbImg.src = img.src;
+          lbImg.alt = img.alt;
+          overlay.classList.add('active');
+        });
+      });
+
+      overlay.addEventListener('click', function () {
+        overlay.classList.remove('active');
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') overlay.classList.remove('active');
+      });
+    })();
+  </script>
 </Base>

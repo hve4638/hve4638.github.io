@@ -3,6 +3,7 @@ import { defineConfig } from 'astro/config';
 
 import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
+import rehypeLazyImages from './src/plugins/rehype-lazy-images.mjs';
 
 // https://astro.build/config
 export default defineConfig({
@@ -12,6 +13,7 @@ export default defineConfig({
   output: 'static',
 
   markdown: {
+    rehypePlugins: [rehypeLazyImages],
     shikiConfig: {
       themes: {
         light: 'github-light',
