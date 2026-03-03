@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@use "tailwindcss";
 
 /* ========================================
    Chirpy 테마 색상 (typography)
@@ -550,6 +550,15 @@ footer {
   justify-content: center;
 }
 
+/* 페이지 제목 (카테고리, 태그, 검색 등 공통) */
+.page-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--heading-color);
+  margin: 0.5rem 0 1.5rem;
+  padding: 0 1rem;
+}
+
 /* ========================================
    포스트 목록 (Home)
    ======================================== */
@@ -575,7 +584,7 @@ footer {
     }
 
     &:not(:last-child) {
-      margin-bottom: 1.75rem;
+      margin-bottom: 1rem;
     }
 
     .card-title {
@@ -606,10 +615,15 @@ footer {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      margin-bottom: 0;
 
       .meta-left {
         display: flex;
         gap: 1.2rem;
+
+        .categories {
+          margin-bottom: 0;
+        }
       }
 
       .pin {

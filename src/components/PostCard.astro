@@ -1,0 +1,54 @@
+---
+interface Props {
+  post: {
+    id: string;
+    body?: string;
+    data: {
+      title: string;
+      date: Date;
+      categories?: string[];
+      pin?: boolean;
+    };
+  };
+}
+
+const { post } = Astro.props;
+
+function getExcerpt(body: string, length = 200) {
+  const plain = body
+    .replace(/```[\s\S]*?```/g, '')
+    .replace(/!?\[.*?\]\(.*?\)/g, '')
+    .replace(/[#*>`~_\-]/g, '')
+    .replace(/\n+/g, ' ')
+    .trim();
+  return plain.length > length ? plain.slice(0, length) + '...' : plain;
+}
+---
+
+<div class="post-preview">
+  <a href={`/posts/${post.id}`}>
+    <div class="card-body">
+      <h1 class="card-title">{post.data.title}</h1>
+
+      <div class="post-content">
+        <p>{getExcerpt(post.body ?? '')}</p>
+      </div>
+
+      <div class="post-meta">
+        <div class="meta-left">
+          <time datetime={post.data.date.toISOString()}>
+            {post.data.date.toLocaleDateString("ko-KR")}
+          </time>
+          {post.data.categories && post.data.categories.length > 0 && (
+            <span class="categories">
+              {post.data.categories.join(", ")}
+            </span>
+          )}
+        </div>
+        {post.data.pin && (
+          <div class="pin">📌</div>
+        )}
+      </div>
+    </div>
+  </a>
+</div>

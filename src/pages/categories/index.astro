@@ -22,7 +22,7 @@ const sortedTop = [...categoryMap.keys()].sort();
 ---
 
 <Base title="카테고리">
-  <h1>카테고리</h1>
+  <h1 class="page-title">카테고리</h1>
   {sortedTop.map(top => {
     const topCount = posts.filter(p => p.data.categories[0] === top).length;
     const subs = [...categoryMap.get(top)!].sort();

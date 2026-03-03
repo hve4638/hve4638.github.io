@@ -1,5 +1,6 @@
 ## TODO
 
+- [ ] 이미지 불러와지는지 확인 필요
 - [ ] TOC 부드러운 스크롤
 - [ ] 모바일 TOC UI
 - [ ] 전반적인 UI 재배치
@@ -14,3 +15,4 @@
 - [ ] Github Action 검증
 - [ ] Google Analytics 추가
 - [ ] 댓글 기능 추가 (Chirpy utterances)
+

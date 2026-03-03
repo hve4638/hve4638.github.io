@@ -29,3 +29,6 @@ src/content/blog/*.md
 # Coding Agent
 .omc/
 .omx/
+
+.playwright*/
+.screenshots

@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import PostCard from '../../components/PostCard.astro';
 import { getCollection } from 'astro:content';
 
 // [Astro] [...slug]: catch-all 동적 라우팅. 슬래시를 포함한 여러 세그먼트를 하나로 받는다.
@@ -33,33 +34,37 @@ export async function getStaticPaths() {
 }
 
 const { segments, posts } = Astro.props;
-const title = segments[segments.length - 1]; // 마지막 세그먼트가 현재 카테고리 이름
-const breadcrumb = segments.map((seg, i) => ({
-  name: seg,
-  href: '/categories/' + segments.slice(0, i + 1).join('/'),
-}));
+const title = segments[segments.length - 1];
 ---
 
 <Base title={`카테고리: ${title}`}>
-  {/* 브레드크럼: 카테고리 > 하위카테고리 */}
-  <nav>
-    <a href="/categories">카테고리</a>
-    {breadcrumb.map(b => (
-      <span> &gt; <a href={b.href}>{b.name}</a></span>
-    ))}
-  </nav>
+  <div class="category-header">
+    <h1 class="category-title">{title}</h1>
+    <span class="category-count">{posts.length} posts</span>
+  </div>
 
-  <h1>{title}</h1>
-  <p>{posts.length}개의 포스트</p>
-  <ul>
+  <div id="post-list">
     {posts.map(post => (
-      <li>
-        <time datetime={post.data.date.toISOString()}>
-          {post.data.date.toLocaleDateString('ko-KR')}
-        </time>
-        {' - '}
-        <a href={`/posts/${post.id}`}>{post.data.title}</a>
-      </li>
+      <PostCard post={post} />
     ))}
-  </ul>
+  </div>
 </Base>
+
+<style>
+  .category-header {
+    padding: 0 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .category-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--heading-color);
+    margin: 0;
+  }
+
+  .category-count {
+    font-size: 0.9rem;
+    color: var(--text-muted-color);
+  }
+</style>
