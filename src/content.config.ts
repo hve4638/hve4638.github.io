@@ -18,6 +18,7 @@ const blog = defineCollection({
     mermaid: z.boolean().default(false),
     pin: z.boolean().default(false),
     toc: z.boolean().default(true),
+    comments: z.boolean().default(true),
     img_path: z.string().optional(),
   }),
 });

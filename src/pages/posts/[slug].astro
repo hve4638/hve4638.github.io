@@ -43,6 +43,7 @@ const description = getExcerpt(post.body ?? '');
   nextPost={nextPost}
   description={description}
   headings={headings}
+  comments={post.data.comments}
 >
   <Content />
 </PostLayout>

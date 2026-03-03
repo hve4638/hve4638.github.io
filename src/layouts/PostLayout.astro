@@ -1,8 +1,9 @@
 ---
 import Base from './Base.astro';
 import TocSidebar from '../components/TocSidebar.astro';
+import Comments from '../components/Comments.astro';
 
-const { title, date, categories, tags, prevPost, nextPost, description, headings } = Astro.props;
+const { title, date, categories, tags, prevPost, nextPost, description, headings, comments = true } = Astro.props;
 ---
 
 <Base title={title} description={description} type="article">
@@ -61,6 +62,8 @@ const { title, date, categories, tags, prevPost, nextPost, description, headings
           </a>
         ) : <span class="btn btn-next disabled" />}
       </nav>
+
+      {comments && <Comments />}
     </article>
 
     <aside id="panel-wrapper">
