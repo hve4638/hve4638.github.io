@@ -1,6 +1,7 @@
 ---
 import PostLayout from "../../layouts/PostLayout.astro";
 import { getCollection, render } from "astro:content";
+import { getRelatedPosts } from "../../utils/related-posts";
 
 export async function getStaticPaths() {
   const posts = (await getCollection("blog"))
@@ -12,11 +13,12 @@ export async function getStaticPaths() {
       post,
       prevPost: posts[i - 1] ?? null,
       nextPost: posts[i + 1] ?? null,
+      relatedPosts: getRelatedPosts(post, posts),
     },
   }));
 }
 
-const { post, prevPost, nextPost } = Astro.props;
+const { post, prevPost, nextPost, relatedPosts } = Astro.props;
 const { Content, headings } = await render(post);
 
 // [SEO] 본문에서 발췌문 생성 (메타 description용)
@@ -46,6 +48,7 @@ const description = getExcerpt(post.body ?? '');
   comments={post.data.comments}
   math={post.data.math}
   mermaid={post.data.mermaid}
+  relatedPosts={relatedPosts}
 >
   <Content />
 </PostLayout>

@@ -3,7 +3,7 @@ import Base from './Base.astro';
 import TocSidebar from '../components/TocSidebar.astro';
 import Comments from '../components/Comments.astro';
 
-const { title, date, categories, tags, prevPost, nextPost, description, headings, comments = true, math = false, mermaid = false } = Astro.props;
+const { title, date, categories, tags, prevPost, nextPost, description, headings, comments = true, math = false, mermaid = false, relatedPosts = [] } = Astro.props;
 ---
 
 <Base title={title} description={description} type="article">
@@ -67,6 +67,18 @@ const { title, date, categories, tags, prevPost, nextPost, description, headings
     </article>
 
     <aside id="panel-wrapper">
+      {relatedPosts.length > 0 && (
+        <div id="related-wrapper">
+          <div class="panel-heading">관련 포스트</div>
+          <ul class="related-list">
+            {relatedPosts.map((post: any) => (
+              <li>
+                <a href={`/posts/${post.id}`}>{post.data.title}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
       <TocSidebar headings={headings} />
     </aside>
   </div>
