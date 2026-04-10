@@ -105,6 +105,31 @@ const ogImage = image ? new URL(image, Astro.site).href : undefined;
         trigger.addEventListener('click', openSidebar);
         overlay.addEventListener('click', closeSidebar);
       })();
+
+      // Topbar 숨김/표시: 아래로 스크롤 → 숨김, 위로 스크롤 → 표시
+      (function () {
+        var lastScrollY = 0;
+        var topbarHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--topbar-height')) || 48;
+        var ticking = false;
+
+        window.addEventListener('scroll', function () {
+          if (!ticking) {
+            ticking = true;
+            setTimeout(function () {
+              var currentY = window.scrollY;
+              if (Math.abs(currentY - lastScrollY) > topbarHeight) {
+                if (currentY > lastScrollY) {
+                  document.body.setAttribute('data-topbar-visible', 'false');
+                } else {
+                  document.body.setAttribute('data-topbar-visible', 'true');
+                }
+                lastScrollY = currentY;
+              }
+              ticking = false;
+            }, 250);
+          }
+        });
+      })();
     </script>
   </body>
 </html>

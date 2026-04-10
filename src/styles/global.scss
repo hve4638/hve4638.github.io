@@ -372,6 +372,11 @@ body {
   z-index: 50;
   border-bottom: 1px solid rgba(0, 0, 0, 0.07);
   background-color: var(--topbar-wrapper-bg);
+  transition: top 0.2s ease-in-out;
+
+  [data-topbar-visible='false'] & {
+    top: calc(-1 * var(--topbar-height));
+  }
 }
 
 #topbar {
