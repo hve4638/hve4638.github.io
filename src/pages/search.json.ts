@@ -1,14 +1,5 @@
 import { getCollection } from 'astro:content';
-
-function getExcerpt(body: string, length = 200) {
-  const plain = body
-    .replace(/```[\s\S]*?```/g, '')
-    .replace(/!?\[.*?\]\(.*?\)/g, '')
-    .replace(/[#*>`~_\-]/g, '')
-    .replace(/\n+/g, ' ')
-    .trim();
-  return plain.length > length ? plain.slice(0, length) + '...' : plain;
-}
+import { getExcerpt } from '../utils/excerpt';
 
 export async function GET() {
   const posts = (await getCollection('blog'))
@@ -20,7 +11,7 @@ export async function GET() {
     categories: post.data.categories?.join(', ') ?? '',
     tags: post.data.tags?.join(', ') ?? '',
     date: post.data.date.toISOString(),
-    snippet: getExcerpt(post.body ?? ''),
+    snippet: getExcerpt(post.body ?? '', 200),
   }));
 
   return new Response(JSON.stringify(data), {

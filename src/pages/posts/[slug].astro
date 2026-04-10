@@ -2,6 +2,7 @@
 import PostLayout from "../../layouts/PostLayout.astro";
 import { getCollection, render } from "astro:content";
 import { getRelatedPosts } from "../../utils/related-posts";
+import { getExcerpt } from "../../utils/excerpt";
 
 export async function getStaticPaths() {
   const posts = (await getCollection("blog"))
@@ -21,18 +22,6 @@ export async function getStaticPaths() {
 const { post, prevPost, nextPost, relatedPosts } = Astro.props;
 const { Content, headings } = await render(post);
 
-// [SEO] 본문에서 발췌문 생성 (메타 description용)
-function getExcerpt(body: string, length = 150) {
-  const plain = body
-    .replace(/```[\s\S]*?```/g, '')       // 펜스 코드 블록 제거
-    .replace(/`[^`]+`/g, '')              // 인라인 코드 제거
-    .replace(/^#{1,6}\s+.*$/gm, '')       // 헤더 라인 전체 제거
-    .replace(/!?\[.*?\]\(.*?\)/g, '')     // 이미지/링크 제거
-    .replace(/[*>`~_\-]/g, '')            // 마크다운 기호 제거
-    .replace(/\n+/g, ' ')
-    .trim();
-  return plain.length > length ? plain.slice(0, length) + '...' : plain;
-}
 const description = getExcerpt(post.body ?? '');
 ---
 
