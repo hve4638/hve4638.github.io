@@ -1105,14 +1105,9 @@ footer {
   padding-left: 1rem;
 }
 
-#toc-wrapper {
+/* 우측 패널 공통 스타일 */
+.panel-section {
   border-left: 1px solid rgba(158, 158, 158, 0.17);
-  position: sticky;
-  top: 4rem;
-  transition: top 0.2s ease-in-out;
-  animation: fade-up 0.8s;
-  max-height: calc(100vh - 6rem);
-  overflow-y: auto;
 
   .panel-heading {
     font-size: 0.85rem;
@@ -1123,24 +1118,18 @@ footer {
     margin-bottom: 0.5rem;
   }
 
-  ul {
+  .panel-list {
     list-style: none;
     font-size: 0.85rem;
     line-height: 1.25;
     padding-left: 0;
     margin: 0;
 
-    li {
-      &:not(:last-child) {
-        margin: 0.4rem 0;
-      }
-
-      &.toc-h3 a {
-        padding-left: 2rem;
-      }
+    li:not(:last-child) {
+      margin: 0.4rem 0;
     }
 
-    .toc-link {
+    a {
       display: block;
       padding: 0.2rem 0 0.2rem 1.25rem;
       white-space: nowrap;
@@ -1148,12 +1137,35 @@ footer {
       text-overflow: ellipsis;
       color: var(--text-muted-color);
       text-decoration: none;
-      border-left: 1px solid transparent;
-      margin-left: -1px;
 
       &:hover {
         color: var(--toc-highlight);
       }
+    }
+  }
+}
+
+/* 관련 포스트 */
+#related-wrapper {
+  margin-top: 3em;
+  margin-bottom: 4em;
+}
+
+/* TOC */
+#toc-wrapper {
+  position: sticky;
+  top: 4rem;
+  transition: top 0.2s ease-in-out;
+  animation: fade-up 0.8s;
+
+  .panel-list {
+    li.toc-h3 a {
+      padding-left: 2rem;
+    }
+
+    .toc-link {
+      border-left: 1px solid transparent;
+      margin-left: -1px;
     }
 
     .is-active-link {

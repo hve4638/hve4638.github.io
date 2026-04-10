@@ -68,9 +68,9 @@ const { title, date, categories, tags, prevPost, nextPost, description, headings
 
     <aside id="panel-wrapper">
       {relatedPosts.length > 0 && (
-        <div id="related-wrapper">
+        <div id="related-wrapper" class="panel-section">
           <div class="panel-heading">관련 포스트</div>
-          <ul class="related-list">
+          <ul class="panel-list">
             {relatedPosts.map((post: any) => (
               <li>
                 <a href={`/posts/${post.id}`}>{post.data.title}</a>

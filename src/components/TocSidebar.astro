@@ -12,10 +12,10 @@ const tocItems = headings.filter(h => h.depth === 2 || h.depth === 3);
 ---
 
 {tocItems.length > 0 && (
-  <div id="toc-wrapper">
+  <div id="toc-wrapper" class="panel-section">
     <div class="panel-heading">Contents</div>
     <nav id="toc">
-      <ul>
+      <ul class="panel-list">
         {tocItems.map(item => (
           <li class={item.depth === 3 ? 'toc-h3' : ''}>
             <a class="toc-link" href={`#${item.slug}`} data-target={item.slug}>
