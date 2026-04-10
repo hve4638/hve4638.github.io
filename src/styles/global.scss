@@ -81,6 +81,13 @@
   --prompt-danger-bg: rgb(248, 215, 218, 0.56);
   --prompt-danger-icon-color: #df3c30;
 
+  /* Code Header */
+  --code-header-bg: #e8e8e8;
+  --code-header-muted-color: #c0c0c0;
+  --code-header-icon-color: #a0a0a0;
+  --code-header-text-color: #777;
+  --clipboard-checked-color: #2ecc71;
+
   /* Categories */
   --categories-hover-bg: var(--btn-border-color);
   --categories-icon-hover-color: darkslategray;
@@ -176,6 +183,13 @@
   --prompt-danger-icon-color: #cd0202;
   --search-tag-bg: var(--tag-bg);
   --dash-color: rgb(63, 65, 68);
+
+  /* Code Header */
+  --code-header-bg: rgb(45, 45, 50);
+  --code-header-muted-color: rgb(75, 75, 80);
+  --code-header-icon-color: rgb(100, 100, 105);
+  --code-header-text-color: rgb(140, 140, 145);
+  --clipboard-checked-color: #2ecc71;
 
   /* Categories */
   --categories-border: rgb(64, 66, 69);
@@ -901,6 +915,72 @@ footer {
     color: var(--text-color);
   }
 
+  /* 코드 헤더 (언어 라벨 + 복사 버튼) */
+  .code-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 2.25rem;
+    background: var(--code-header-bg);
+    border-radius: 0.5rem 0.5rem 0 0;
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+    user-select: none;
+
+    &::before {
+      content: '';
+      display: inline-block;
+      margin-left: 1rem;
+      width: 0.75rem;
+      height: 0.75rem;
+      border-radius: 50%;
+      background-color: var(--code-header-muted-color);
+      box-shadow:
+        1.25rem 0 0 var(--code-header-muted-color),
+        2.5rem 0 0 var(--code-header-muted-color);
+    }
+
+    span::after {
+      content: attr(data-label-text);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--code-header-text-color);
+    }
+
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid transparent;
+      height: 2.25rem;
+      width: 2.25rem;
+      padding: 0;
+      background: transparent;
+      color: var(--code-header-icon-color);
+      cursor: pointer;
+      border-radius: 0.25rem;
+
+      &:hover {
+        background-color: rgba(128, 128, 128, 0.37);
+        color: white;
+      }
+
+      &[data-copied] {
+        color: var(--clipboard-checked-color);
+
+        &:hover {
+          border-color: var(--clipboard-checked-color);
+        }
+      }
+    }
+  }
+
+  /* .code-header 바로 다음 pre는 상단 radius 제거 */
+  .code-header + pre {
+    border-radius: 0 0 0.5rem 0.5rem;
+    margin-top: 0;
+  }
+
   /* 코드 블록 */
   pre {
     border-radius: 0.5rem;
@@ -1095,6 +1175,26 @@ footer {
     opacity: 1;
     position: relative;
     top: 0;
+  }
+}
+
+/* 중간 화면: 사이드바 축소 (850px ~ 1199px) */
+@media all and (min-width: 850px) and (max-width: 1199px) {
+  :root {
+    --sidebar-width: 210px;
+  }
+
+  #sidebar {
+    .site-subtitle {
+      display: none;
+    }
+  }
+}
+
+/* 대형 화면: 사이드바 확대 (1650px 이상) */
+@media all and (min-width: 1650px) {
+  :root {
+    --sidebar-width: 350px;
   }
 }
 
