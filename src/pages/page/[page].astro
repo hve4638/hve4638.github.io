@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import PostCard from '../../components/PostCard.astro';
 import { getCollection } from 'astro:content';
 import { getPage, getPageNumbers } from '../../utils/pagination';
 
@@ -19,23 +20,20 @@ const pageNum = Number(Astro.params.page);
 const page = getPage(posts, pageNum);
 ---
 
-<Base title={`포스트 목록 - ${page.currentPage}페이지`}>
-  <h1>포스트 목록</h1>
-  <ul>
-    {page.data.map(post => (
-      <li>
-        <time datetime={post.data.date.toISOString()}>
-          {post.data.date.toLocaleDateString('ko-KR')}
-        </time>
-        {' - '}
-        <a href={`/posts/${post.id}`}>{post.data.title}</a>
-      </li>
+<Base title="블로그">
+  <div id="post-list">
+    {page.data.map((post) => (
+      <PostCard post={post} />
     ))}
-  </ul>
+  </div>
 
-  <nav>
-    {page.prevUrl && <a href={page.prevUrl}>&larr; 이전</a>}
-    <span> {page.currentPage} / {page.totalPages} </span>
-    {page.nextUrl && <a href={page.nextUrl}>다음 &rarr;</a>}
+  <nav class="pagination">
+    {page.prevUrl && (
+      <a class="page-link" href={page.prevUrl}>&larr;</a>
+    )}
+    <span class="page-index">{page.currentPage} / {page.totalPages}</span>
+    {page.nextUrl && (
+      <a class="page-link" href={page.nextUrl}>&rarr;</a>
+    )}
   </nav>
 </Base>

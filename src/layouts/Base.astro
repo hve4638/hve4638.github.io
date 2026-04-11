@@ -72,7 +72,9 @@ const ogImage = image ? new URL(image, Astro.site).href : undefined;
       <!-- [Astro] <slot />: 이 레이아웃을 사용하는 페이지의 콘텐츠가 여기에 삽입된다.
          Jekyll의 {{ content }}와 동일한 역할 -->
       <Topbar title={title} />
-      <slot />
+      <div id="core-wrapper">
+        <slot />
+      </div>
     </main>
     <Footer />
     <script is:inline>

@@ -15,7 +15,7 @@ const isHome = path === '/' || path.startsWith('/page/');
     </span>
 
     <i id="sidebar-trigger"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="1em" height="1em" fill="currentColor"><path d="M0 96C0 78.3 14.3 64 32 64h384c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zm0 160c0-17.7 14.3-32 32-32h384c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zm448 160c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32h384c17.7 0 32 14.3 32 32z"/></svg></i>
-    <div id="topbar-title">{title}</div>
+    <div id="topbar-title">{!isHome && title}</div>
     <i id="search-trigger"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="1em" height="1em" fill="currentColor"><path d="M416 208c0 45.9-14.9 88.3-40 122.7l126.6 126.7c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0s208 93.1 208 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg></i>
 
     <span id="search-wrapper">
@@ -59,8 +59,31 @@ const isHome = path === '/' || path.startsWith('/page/');
     searchResults.style.display = 'block';
   });
 
+  // 모바일 검색 모드 토글
+  const searchTrigger = document.getElementById('search-trigger')!;
+  const topbar = document.getElementById('topbar')!;
+  const searchSvgPath = 'M416 208c0 45.9-14.9 88.3-40 122.7l126.6 126.7c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0s208 93.1 208 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z';
+  const backSvgPath = 'M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z';
+  const triggerSvg = searchTrigger.querySelector('svg')!;
+  const triggerPath = triggerSvg.querySelector('path')!;
+
+  searchTrigger.addEventListener('click', () => {
+    const isSearchMode = topbar.classList.toggle('search-mode');
+    if (isSearchMode) {
+      triggerSvg.setAttribute('viewBox', '0 0 448 512');
+      triggerPath.setAttribute('d', backSvgPath);
+      searchInput.focus();
+    } else {
+      triggerSvg.setAttribute('viewBox', '0 0 512 512');
+      triggerPath.setAttribute('d', searchSvgPath);
+      searchInput.value = '';
+      searchResults.innerHTML = '';
+      searchResults.style.display = 'none';
+    }
+  });
+
   document.addEventListener('click', (e) => {
-    if (!(e.target as HTMLElement).closest('#search-wrapper')) {
+    if (!(e.target as HTMLElement).closest('#search-wrapper') && !(e.target as HTMLElement).closest('#search-trigger')) {
       searchResults.style.display = 'none';
     }
   });

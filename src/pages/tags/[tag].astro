@@ -24,17 +24,24 @@ const { posts } = Astro.props;
 ---
 
 <Base title={`태그: ${tag}`}>
-  <h1>태그: {tag}</h1>
-  <p>{posts.length}개의 포스트</p>
-  <ul>
-    {posts.map(post => (
-      <li>
-        <time datetime={post.data.date.toISOString()}>
-          {post.data.date.toLocaleDateString('ko-KR')}
-        </time>
-        {' - '}
-        <a href={`/posts/${post.id}`}>{post.data.title}</a>
-      </li>
-    ))}
-  </ul>
+  <div id="page-tag">
+    <h1>
+      <i class="fa fa-tag fa-fw"></i>
+      {tag}
+      <span class="lead text-muted">{posts.length}</span>
+    </h1>
+    <ul class="post-list">
+      {posts.map(post => {
+        const d = post.data.date;
+        const dateStr = `${d.getFullYear()}/${String(d.getMonth() + 1).padStart(2, '0')}/${String(d.getDate()).padStart(2, '0')}`;
+        return (
+          <li>
+            <a href={`/posts/${post.id}`}>{post.data.title}</a>
+            <span class="dash"></span>
+            <time datetime={d.toISOString()}>{dateStr}</time>
+          </li>
+        );
+      })}
+    </ul>
+  </div>
 </Base>

@@ -1,6 +1,5 @@
 ---
 import Base from '../../layouts/Base.astro';
-import PostCard from '../../components/PostCard.astro';
 import { getCollection } from 'astro:content';
 
 // [Astro] [...slug]: catch-all 동적 라우팅. 슬래시를 포함한 여러 세그먼트를 하나로 받는다.
@@ -38,33 +37,24 @@ const title = segments[segments.length - 1];
 ---
 
 <Base title={`카테고리: ${title}`}>
-  <div class="category-header">
-    <h1 class="category-title">{title}</h1>
-    <span class="category-count">{posts.length} posts</span>
-  </div>
-
-  <div id="post-list">
-    {posts.map(post => (
-      <PostCard post={post} />
-    ))}
+  <div id="page-category">
+    <h1>
+      <i class="fa fa-folder-open fa-fw"></i>
+      {title}
+      <span class="lead text-muted">{posts.length}</span>
+    </h1>
+    <ul class="post-list">
+      {posts.map(post => {
+        const d = post.data.date;
+        const dateStr = `${d.getFullYear()}/${String(d.getMonth() + 1).padStart(2, '0')}/${String(d.getDate()).padStart(2, '0')}`;
+        return (
+          <li>
+            <a href={`/posts/${post.id}`}>{post.data.title}</a>
+            <span class="dash"></span>
+            <time datetime={d.toISOString()}>{dateStr}</time>
+          </li>
+        );
+      })}
+    </ul>
   </div>
 </Base>
-
-<style>
-  .category-header {
-    padding: 0 1rem;
-    margin-bottom: 1rem;
-  }
-
-  .category-title {
-    font-size: 1.8rem;
-    font-weight: 600;
-    color: var(--heading-color);
-    margin: 0;
-  }
-
-  .category-count {
-    font-size: 0.9rem;
-    color: var(--text-muted-color);
-  }
-</style>
