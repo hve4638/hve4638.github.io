@@ -1,0 +1,189 @@
+---
+title: Dev | 팁?
+author: Hve
+date: 2023-04-07 14:17:48 +0900
+categories: ["개발", "메모"]
+math: false
+mermaid: false
+tags: []
+---
+
+# VSCode
+
+## VSCode 단축키 변경
+
+`ctrl+k` `ctrl+s` 를 눌러 단축키 변경 가능
+
+`ctrl+d`를 `아래에 줄 복사` 로 변경하면 코딩할때 좀 편하다
+
+# Windows
+
+## 라우팅 테이블
+
+
+```bash
+# route add (IP주소) mask (서브넷마스크) (게이트웨이) metric 10
+
+route add 192.168.100.0 mask 255.255.255.0 192.168.1.1 metric 10
+# 192.168.100.0/24 로 보내는 패킷을 192.168.1.1로 보냄
+```
+
+## 포트포워딩
+
+```bash
+netsh interface portproxy add v4tov4 listenport=2222 listenaddress=192.168.0.10 connectport=22 connectaddress=192.168.1.1
+# 192.168.0.10:2222 로 들어오는 패킷을 192.168.1.1:22 로 포트포워딩함
+
+netsh interface portproxy delete v4tov4 listenport=2222 listenaddress=192.168.0.10
+# 192.168.0.10:2222 로 들어오는 패킷에 대한 규칙 삭제
+```
+
+한 컴퓨터의 WSL나 가상머신을 다른 컴퓨터에서 접속해야 할때 유용하다
+
+## hosts 파일 수정
+
+```
+C:\Windows\System32\Drivers\etc\hosts
+```
+
+`[IP주소] [호스트이름]` 형식으로 추가하면 되며 둘 사이엔 최소 하나 이상의 공백으로 구분되어야 한다
+
+수정시 관리자 권한이 필요하다
+
+## 파워쉘 UnauthorizedAccess 에러
+
+```powershell
+Set-ExecutionPolicy Unrestricted
+```
+
+powershell을 관리자 권한으로 열고 다음을 입력한다 
+
+## 바탕화면 아이콘 설정 (윈도우11 기준)
+
+1. 바탕화면에서 오른쪽클릭 -> 개인설정
+2. 테마
+3. 바탕 화면 아이콘 설정
+
+## 저장된 와이파이 비밀번호 확인하기
+
+```bash
+# 무선랜 프로필 확인 
+netsh wlan show profile
+
+# 해당 무선랜 프로필 확인
+netsh wlan show profile "와아파이이름" key=clear
+```
+
+## 포맷후 윈도우 세팅시 오프라인으로 세팅
+
+```bash
+OOBE\BYPASSNRO
+```
+
+`SHFIT` + `F10` 을 눌러 터미널 진입후 다음을 입력한다
+
+## KMS 정품 인증
+
+```powershell
+slmgr /ipk TX9XD-98N7V-6WMQ6-BX7FG-H8Q99
+slmgr /skms kms8.msguides.com
+slmgr /ato
+```
+
+powershell을 관리자 권한으로 열고 다음을 입력한다 
+
+개인 사용자에 한해 가능하며 인증 시 약 45일 간 유효하다
+
+*참고*
+
+- [kMS 호스트 만들기](https://learn.microsoft.com/ko-kr/windows-server/get-started/kms-create-host)
+- [KMS 클라이언트 정품 인증](https://learn.microsoft.com/ko-kr/windows-server/get-started/kms-client-activation-keys)
+
+# Linux
+
+## Netcat 사용법
+
+서버 생성
+```bash
+nc -l -p 1234
+```
+
+서버 접속
+```bash
+nc -v 192.168.0.2 1234
+```
+
+## 포트포워딩 (Ubuntu)
+
+현재 테이블 확인
+```bash
+sudo iptables -t nat -L --line-numbers
+```
+
+```bash
+sudo iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 80 -j REDIRECT --to-port 5000
+```
+
+## SSH 설치 (CentOS)
+
+1. ssh 서버 설치
+```bash 
+yum -y install openssh-server
+```
+
+2. network 재시작
+```bash
+systemctl restart network
+```
+
+3. ssh 설정파일 수정
+```bash 
+vim /etc/ssh/sshd_config
+```
+Port 주석 해제
+
+4. ssh 서비스 구동
+```bash
+systemctl start sshd.service
+```
+
+5. 방화벽 열기
+```bash
+firewall-cmd --zone=public --add-port=22/tcp --permanent
+firewall-cmd --reload
+```
+
+
+## Flutter 빌드
+
+```bash
+flutter build apk
+flutter build windows
+```
+
+# 프로그래밍
+
+## 각 언어의 raw 리터럴 문자열 입력 방법
+
+### C++
+
+```cpp
+auto rawstring = R"(raw-string)"
+auto example = R"(\r\n)"
+```
+
+c++11 부터 지원
+
+### Python
+
+```python
+rawstring = r"raw-string"
+example = r"\r\n"
+```
+
+### C#
+
+```cs
+var rawstring = @"raw-string"
+var example = @"\r\n"
+```

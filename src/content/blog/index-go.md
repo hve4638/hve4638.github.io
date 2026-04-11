@@ -1,0 +1,15 @@
+---
+title: "Index | Golang"
+author: Hve
+date: 2025-03-24 15:52:46 +0900
+categories: ["메타", "인덱스"]
+math: false
+mermaid: false
+tags: []
+---
+
+# Go 언어
+
+## 설치
+
+- [설치](/posts/go-install)

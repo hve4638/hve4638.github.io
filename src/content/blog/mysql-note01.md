@@ -1,0 +1,102 @@
+---
+title: "MySQL | 용어 정리 및 기본 쿼리"
+author: Hve
+date: 2024-03-18 09:17:53 +0900
+categories: ["학습", "강의노트"]
+math: false
+mermaid: false
+tags: ["mysql"]
+---
+
+## 관계형 데이터베이스의 단위
+
+아래에 묶인 용어는 동일하게 사용된다.
+
+- 관계형 데이터베이스 (Relation database)
+- 테이블/릴레이션 (Table/Relation)
+- 열/필드/속성 (Column/Field/Attribute)
+- 행/레코드/튜플 (Row/Record/Tuple)
+
+## 언어
+
+- DDL (데이터 정의어)
+    - 데이터 베이스 구조 정의시 사용
+    - `CREATE`, `ALTER`, `DROP`, `TRUNCATE`
+- DML (데이터 조작어)
+    - 데이터 관리시 사용
+    - `SELECT`, `INSERT`, `UPDATE`, `DELETE`
+- DCL (데이터 제어어)
+    - 데이터 엑세스를 제어하기 위해 사용
+    - `GRANT`, `REVOKE`
+- TCL (트렌잭션 제어어)
+    - DML에 의해 발생한 변경 사항을 관리하는데 사용
+    - `COMMIT`, `ROLLBACK`
+
+
+## 데이터베이스 테이블 생성 
+
+```sql
+create database 데이터베이스;
+use 데이터베이스;
+create table 데이터베이스(
+    이름 char(10) primary key,
+    나이 Integer,
+);
+```
+
+## 문법 2
+
+- in
+- between and
+
+## IN
+
+```sql
+select * from 데이터베이스 where 이름 = 'A' OR Name = 'B';
+select * from 데이터베이스 where 이름 IN ('A', 'B');
+```
+
+## BETWEEN ... AND
+
+```sql
+select * from 데이터베이스 where 나이 >= 10 AND 나이 <= 20;
+select * from 데이터베이스 where 나이 BETWEEN 10 AND 20;
+```
+
+## LIKE
+
+- `%`
+- `_`
+
+```
+select * from 데이터베이스 where 이름 LIKE '김___'
+select * from 데이터베이스 where 이름 LIKE '김%'
+```
+
+## REGEXP, REGEXP_LIKE
+
+```
+select * from 데이터베이스 where 이름 REGEXP '정규식'
+select * from 데이터베이스 where REGEXP_LIKE (이름, '정규식')
+```
+
+## 함수
+
+- `CHAR_LENGTH()`
+    - 문자의 개수 반환
+- `LENGTH()`
+    - 바이트 수 반환
+- `LEFT()`, `RIGHT()`
+
+
+```sql
+SELECT LEFT('Hello World', 3);
+-- Hel 반환
+SELECT RIGHT('Hello World', 3);
+-- rld 반환
+SELECT SUBSTR('ABCDE', 2, 2);
+-- BC 반환
+SELECT SUBSTR('ABCDE', 2);
+-- BCDE 반환
+```
+

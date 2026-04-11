@@ -1,0 +1,49 @@
+---
+title: Project | getip - 간편 아이피 확인
+author: Hve
+date: 2023-01-15 23:50:00 +0900
+categories: ["프로젝트", "기록"]
+math: false
+mermaid: false
+tags: ["csharp", "cpp"]
+---
+
+![getip](/assets/img/getip/getip0.png)
+
+# getip
+
+연결된 어댑터의 IP를 표시해주는 프로그램
+
+ipconfig 의 출력을 파싱해서 출력해는 구조라 다른 언어환경에서 제대로 동작하지 않을 수 있다
+
+영문 (chcp 437), 한글 (chcp 949), UTF-8 (chcp 65001) 에서는 정상 동작하는걸 확인
+
+|인자| 설명|
+|--- |------|
+| `-s` | 이름을 표시하지 않고 IP만 표시 |
+
+
+## Download
+
+### 닷넷 비종속 버전 (C++)
+
+[Download][release-link-cpp]
+
+[Github Repository][git-repository-link-cpp]
+
+### 닷넷 종속 버전 (C#)
+
+[Download][release-link-cs]
+
+[Github Repository][git-repository-link-cs]
+
+
+[release-link-cs]: https://github.com/hve4638/getip-cs/releases
+
+[git-repository-link-cs]: https://github.com/hve4638/getip-cs
+
+[release-link-cpp]: https://github.com/hve4638/getip-cpp/releases
+
+[git-repository-link-cpp]: https://github.com/hve4638/getip-cpp
+
+

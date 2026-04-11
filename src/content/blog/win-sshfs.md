@@ -1,0 +1,38 @@
+---
+title: "SSHFS | 윈도우 파일탐색기로 SFTP 연결"
+author: Hve
+date: 2024-01-25 03:35:49 +0900
+categories: ["개발", "가이드"]
+math: false
+mermaid: false
+tags: []
+---
+
+# SSHFS
+
+윈도우에서 sftp 파일 서버에 접속하기 위해선 `sftp` 명령을 통해 CLI로 접속하거나 `xftp` 등의 프로그램을 사용해야 하는데, 이 방법을 이용하면 파일탐색기 환경 그대로 접속할 수 있다
+
+다만 아직 불안정한 부분이 있으므로 별도의 SFTP 접속 프로그램과 함께 사용하는 것을 권장한다
+
+## 필요 파일 설치
+
+- [https://github.com/billziss-gh/winfsp/releases/latest](https://github.com/billziss-gh/winfsp/releases/latest)
+- [https://github.com/billziss-gh/sshfs-win/releases/latest](https://github.com/billziss-gh/sshfs-win/releases/latest)
+
+## 탐색기 연결
+
+**1.**
+
+![winsshfs](/assets/img/winsshfs/winsshfs0.png)
+
+내 PC를 우클릭하고 `네트워크 드라이브 연결`에 들어간다
+
+**2.**
+
+![winsshfs](/assets/img/winsshfs/winsshfs1.png)
+
+`\\sshfs\[유저명]@[호스트]![포트]`의 포맷으로 폴더를 선택한다
+
+예시 : *192.168.0.10* 주소의 *22*번 포트로 열린 sftp 서버에 *ubuntu* 유저명으로 접속하려면
+- `\\sshfs\ubuntu@192.168.0.10!22`
+
