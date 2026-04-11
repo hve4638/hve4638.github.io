@@ -28,8 +28,7 @@ const sortedYears = [...postsByYear.keys()].sort((a, b) => b - a);
             const month = String(d.getMonth() + 1).padStart(2, '0');
             return (
               <li>
-                <span class="date day">{day}</span>
-                <span class="date month">/ {month}</span>
+                <span class="date">{month}/{day}</span>
                 <a href={`/posts/${post.id}`}>{post.data.title}</a>
               </li>
             );

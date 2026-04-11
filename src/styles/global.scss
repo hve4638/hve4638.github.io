@@ -97,7 +97,7 @@
   /* Archive */
   --timeline-color: rgba(0, 0, 0, 0.075);
   --timeline-node-bg: #c2c6cc;
-  --archive-odd-bg: rgba(0, 0, 0, 0.03);
+  --archive-odd-bg: #fbfbfb;
   --timeline-year-dot-color: #ffffff;
 
   /* Layout sizes */
@@ -205,7 +205,7 @@
   --timeline-node-bg: rgb(150, 152, 156);
   --timeline-color: rgb(63, 65, 68);
   --timeline-year-dot-color: var(--timeline-color);
-  --archive-odd-bg: rgba(255, 255, 255, 0.03);
+  --archive-odd-bg: rgb(45, 46, 49);
 
   color-scheme: dark;
 }
@@ -884,31 +884,54 @@ footer {
    ======================================== */
 
 #archives {
-  padding: 0 1rem;
   letter-spacing: 0.03rem;
 
+  $timeline-width: 4px;
+
   .year {
+    height: 3.5rem;
     font-size: 1.5rem;
     font-weight: 600;
-    margin-top: 1.5rem;
-    margin-bottom: 0.5rem;
-    padding-left: 1rem;
-    border-left: 4px solid var(--timeline-color);
-    color: var(--heading-color);
     position: relative;
+    left: 2px;
+    margin-left: -$timeline-width;
+    color: var(--heading-color);
+    line-height: 3.5rem;
 
+    /* 타임라인 선 (연도 위) */
+    &::before {
+      content: '';
+      width: $timeline-width;
+      position: relative;
+      float: left;
+      background-color: var(--timeline-color);
+      height: 72px;
+      left: 79px;
+      bottom: 16px;
+    }
+
+    &:first-child::before {
+      height: 32px;
+      top: 24px;
+      bottom: auto;
+    }
+
+    /* 연도 dot */
     &::after {
       content: '';
       display: block;
       position: absolute;
+      border-radius: 50%;
       width: 12px;
       height: 12px;
-      border-radius: 50%;
-      border: 3px solid var(--timeline-color);
-      background: var(--body-bg);
-      left: -8px;
+      left: 75px;
       top: 50%;
       transform: translateY(-50%);
+      border: 3px solid;
+      background-color: var(--timeline-year-dot-color);
+      border-color: var(--timeline-node-bg);
+      box-shadow: 0 0 2px 0 #c2c6cc;
+      z-index: 1;
     }
   }
 
@@ -916,58 +939,79 @@ footer {
     list-style: none;
     padding: 0;
     margin: 0;
-    border-left: 4px solid var(--timeline-color);
-    padding-left: 1.5rem;
 
     li {
       font-size: 1.1rem;
-      line-height: 2.8rem;
-      position: relative;
+      line-height: 3rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
 
       &:nth-child(odd) {
-        margin-left: -1.5rem;
-        padding-left: 1.5rem;
-        background: linear-gradient(to right, var(--archive-odd-bg), transparent);
+        background-image: linear-gradient(
+          to left,
+          var(--main-bg),
+          var(--archive-odd-bg),
+          var(--archive-odd-bg),
+          var(--archive-odd-bg),
+          var(--main-bg)
+        );
       }
 
-      /* 타임라인 노드 */
+      /* 타임라인 선 */
       &::before {
         content: '';
-        display: inline-block;
-        position: absolute;
-        border-radius: 50%;
-        width: 8px;
-        height: 8px;
-        left: -1.85rem;
-        top: 1.15rem;
-        background-color: var(--timeline-node-bg);
-        box-shadow: 0 0 3px 0 #c2c6cc;
+        width: $timeline-width;
+        position: relative;
+        float: left;
+        background-color: var(--timeline-color);
+        top: 0;
+        left: 77px;
+        height: 3.1rem;
       }
+    }
+
+    &:last-child li:last-child::before {
+      height: 1.5rem;
     }
   }
 
   .date {
+    white-space: nowrap;
     display: inline-block;
+    position: relative;
+    right: 0.5rem;
     color: var(--text-muted-color);
-
-    &.day {
-      width: 1.4rem;
-      text-align: center;
-    }
-
-    &.month {
-      font-size: 85%;
-      margin-right: 0.5rem;
-    }
+    font-size: 85%;
+    font-family: Lato, sans-serif;
   }
 
   a {
     color: var(--text-color);
     text-decoration: none;
-    margin-left: 0.5rem;
+    margin-left: 2.5rem;
+    position: relative;
+    top: 0.1rem;
 
     &:hover {
       color: var(--link-color);
+      text-decoration: none;
+    }
+
+    /* 포스트 dot */
+    &::before {
+      content: '';
+      display: inline-block;
+      position: relative;
+      border-radius: 50%;
+      width: 8px;
+      height: 8px;
+      float: left;
+      top: 1.35rem;
+      left: 71px;
+      background-color: var(--timeline-node-bg);
+      box-shadow: 0 0 3px 0 #c2c6cc;
+      z-index: 1;
     }
   }
 }
