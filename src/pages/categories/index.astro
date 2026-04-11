@@ -30,6 +30,7 @@ const sortedTop = [...categoryMap.keys()].sort();
       <div class="card categories">
         <div class="card-header">
           <span>
+            <i class={`far fa-folder${subs.length > 0 ? '-open' : ''} fa-fw`}></i>
             <a href={`/categories/${top}`}>{top}</a>
             <span class="text-muted">{topCount} posts</span>
           </span>
@@ -40,6 +41,7 @@ const sortedTop = [...categoryMap.keys()].sort();
               const subCount = posts.filter(p => p.data.categories[0] === top && p.data.categories[1] === sub).length;
               return (
                 <li class="list-group-item">
+                  <i class="far fa-folder fa-fw"></i>
                   <a href={`/categories/${top}/${sub}`}>{sub}</a>
                   <span class="text-muted">{subCount} posts</span>
                 </li>

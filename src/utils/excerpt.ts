@@ -5,7 +5,7 @@
 export function getExcerpt(body: string, length = 150): string {
   const plain = body
     .replace(/```[\s\S]*?```/g, '')       // 펜스 코드 블록 제거
-    .replace(/`[^`]+`/g, '')              // 인라인 코드 제거
+    .replace(/`([^`]+)`/g, '$1')           // 백틱만 제거, 내용 보존
     .replace(/^#{1,6}\s+.*$/gm, '')       // 헤더 라인 전체 제거
     .replace(/!?\[.*?\]\(.*?\)/g, '')     // 이미지/링크 제거
     .replace(/[*>`~_\-]/g, '')            // 마크다운 기호 제거
