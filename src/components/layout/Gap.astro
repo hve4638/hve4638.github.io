@@ -1,0 +1,10 @@
+---
+interface Props {
+  w?: string;
+  h?: string;
+}
+
+const { w, h } = Astro.props;
+---
+
+<div style={{ width: w, height: h }}></div>

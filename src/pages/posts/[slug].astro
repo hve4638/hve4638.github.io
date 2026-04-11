@@ -1,0 +1,43 @@
+---
+import PostLayout from "../../layouts/PostLayout.astro";
+import { getCollection, render } from "astro:content";
+import { getRelatedPosts } from "../../utils/related-posts";
+import { getExcerpt } from "../../utils/excerpt";
+
+export async function getStaticPaths() {
+  const posts = (await getCollection("blog"))
+    .sort((a, b) => a.data.date.getTime() - b.data.date.getTime());
+
+  return posts.map((post, i) => ({
+    params: { slug: post.id },
+    props: {
+      post,
+      prevPost: posts[i - 1] ?? null,
+      nextPost: posts[i + 1] ?? null,
+      relatedPosts: getRelatedPosts(post, posts),
+    },
+  }));
+}
+
+const { post, prevPost, nextPost, relatedPosts } = Astro.props;
+const { Content, headings } = await render(post);
+
+const description = getExcerpt(post.body ?? '');
+---
+
+<PostLayout
+  title={post.data.title}
+  date={post.data.date}
+  categories={post.data.categories}
+  tags={post.data.tags}
+  prevPost={prevPost}
+  nextPost={nextPost}
+  description={description}
+  headings={headings}
+  comments={post.data.comments}
+  math={post.data.math}
+  mermaid={post.data.mermaid}
+  relatedPosts={relatedPosts}
+>
+  <Content />
+</PostLayout>

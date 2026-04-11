@@ -1,0 +1,23 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('blog');
+const allTags = [...new Set(posts.flatMap(post => post.data.tags))].sort();
+---
+
+<Base title="태그 목록">
+  <h1>태그 목록</h1>
+  <div id="tags">
+    {allTags.map(tag => {
+      const count = posts.filter(post => post.data.tags.includes(tag)).length;
+      return (
+        <div>
+          <a class="tag" href={`/tags/${tag}`}>
+            {tag}<span class="tag-count">{count}</span>
+          </a>
+        </div>
+      );
+    })}
+  </div>
+</Base>

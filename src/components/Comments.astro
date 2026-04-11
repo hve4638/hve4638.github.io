@@ -1,0 +1,57 @@
+---
+const { repo = 'hve4638/hve4638.github.io', issueTerm = 'pathname' } = Astro.props;
+---
+
+<div id="comments-wrapper">
+  <script
+    src="https://utteranc.es/client.js"
+    repo={repo}
+    issue-term={issueTerm}
+    theme="github-light"
+    crossorigin="anonymous"
+    async
+  ></script>
+</div>
+
+<script is:inline>
+  (function () {
+    const origin = 'https://utteranc.es';
+    const lightTheme = 'github-light';
+    const darkTheme = 'github-dark';
+
+    // 현재 테마에 맞춰 초기 테마 결정
+    function getCurrentTheme() {
+      return document.documentElement.getAttribute('data-theme') === 'dark'
+        ? darkTheme
+        : lightTheme;
+    }
+
+    // utterances iframe에 테마 메시지 전달
+    function setUtterancesTheme(theme) {
+      const iframe = document.querySelector('iframe.utterances-frame');
+      if (iframe) {
+        iframe.contentWindow.postMessage(
+          { type: 'set-theme', theme: theme },
+          origin
+        );
+      }
+    }
+
+    // utterances iframe 로드 시 현재 테마 적용
+    addEventListener('message', function (event) {
+      if (event.origin === origin) {
+        setUtterancesTheme(getCurrentTheme());
+      }
+    });
+
+    // 테마 토글 버튼 감지
+    const themeToggle = document.getElementById('theme-toggle');
+    if (themeToggle) {
+      themeToggle.addEventListener('click', function () {
+        setTimeout(function () {
+          setUtterancesTheme(getCurrentTheme());
+        }, 50);
+      });
+    }
+  })();
+</script>

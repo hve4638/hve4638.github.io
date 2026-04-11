@@ -1,0 +1,23 @@
+{
+  "name": "blog",
+  "packageManager": "pnpm@10.30.3",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/rss": "^4.0.15",
+    "@astrojs/sitemap": "^3.7.0",
+    "@tailwindcss/vite": "^4.2.1",
+    "astro": "^5.17.1",
+    "tailwindcss": "^4.2.1",
+    "unist-util-visit": "^5.1.0"
+  },
+  "devDependencies": {
+    "sass": "^1.97.3"
+  }
+}

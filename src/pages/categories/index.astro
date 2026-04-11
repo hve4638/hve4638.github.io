@@ -1,0 +1,55 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('blog');
+
+const categoryMap = new Map<string, Set<string>>();
+
+for (const post of posts) {
+  const cats = post.data.categories;
+  if (cats.length === 0) continue;
+
+  const top = cats[0];
+  if (!categoryMap.has(top)) categoryMap.set(top, new Set());
+
+  for (let i = 1; i < cats.length; i++) {
+    categoryMap.get(top)!.add(cats[i]);
+  }
+}
+
+const sortedTop = [...categoryMap.keys()].sort();
+---
+
+<Base title="카테고리">
+  <h1 class="page-title">카테고리</h1>
+  {sortedTop.map(top => {
+    const topCount = posts.filter(p => p.data.categories[0] === top).length;
+    const subs = [...categoryMap.get(top)!].sort();
+    return (
+      <div class="card categories">
+        <div class="card-header">
+          <span>
+            <i class={`far fa-folder${subs.length > 0 ? '-open' : ''} fa-fw`}></i>
+            <a href={`/categories/${top}`}>{top}</a>
+            <span class="text-muted">{topCount} posts</span>
+          </span>
+        </div>
+        {subs.length > 0 && (
+          <ul class="list-group">
+            {subs.map(sub => {
+              const subCount = posts.filter(p => p.data.categories[0] === top && p.data.categories[1] === sub).length;
+              return (
+                <li class="list-group-item">
+                  <i class="far fa-folder fa-fw"></i>
+                  <a href={`/categories/${top}/${sub}`}>{sub}</a>
+                  <span class="text-muted">{subCount} posts</span>
+                </li>
+              );
+            })}
+          </ul>
+        )}
+      </div>
+    );
+  })}
+</Base>

@@ -1,0 +1,47 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+// [Astro] getStaticPaths: 태그마다 하나의 페이지를 생성한다.
+// /tags/git, /tags/docker 등 태그 수만큼 페이지가 만들어진다.
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  const allTags = [...new Set(posts.flatMap(post => post.data.tags))];
+
+  return allTags.map(tag => ({
+    params: { tag },
+    props: {
+      // 해당 태그를 가진 포스트만 필터링하여 날짜 내림차순 정렬
+      posts: posts
+        .filter(post => post.data.tags.includes(tag))
+        .sort((a, b) => b.data.date.getTime() - a.data.date.getTime()),
+    },
+  }));
+}
+
+const { tag } = Astro.params;
+const { posts } = Astro.props;
+---
+
+<Base title={`태그: ${tag}`}>
+  <div id="page-tag">
+    <h1>
+      <i class="fa fa-tag fa-fw"></i>
+      {tag}
+      <span class="lead text-muted">{posts.length}</span>
+    </h1>
+    <ul class="post-list">
+      {posts.map(post => {
+        const d = post.data.date;
+        const dateStr = `${d.getFullYear()}/${String(d.getMonth() + 1).padStart(2, '0')}/${String(d.getDate()).padStart(2, '0')}`;
+        return (
+          <li>
+            <a href={`/posts/${post.id}`}>{post.data.title}</a>
+            <span class="dash"></span>
+            <time datetime={d.toISOString()}>{dateStr}</time>
+          </li>
+        );
+      })}
+    </ul>
+  </div>
+</Base>

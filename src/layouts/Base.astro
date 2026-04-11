@@ -1,0 +1,139 @@
+---
+// [Astro] --- 사이가 "frontmatter 영역". 여기는 서버(빌드 시점)에서 실행되는 JS.
+// 브라우저에는 전달되지 않는다. Jekyll의 Liquid와 비슷하지만, 온전한 JS를 쓸 수 있다.
+
+// [Astro] 컴포넌트를 import해서 HTML 영역에서 태그처럼 사용한다.
+// Jekyll의 {% include sidebar.html %}에 해당하지만, props 전달과 타입 체크가 가능.
+import Sidebar from "../components/Sidebar.astro";
+import Topbar from "../components/Topbar.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.scss";
+
+// [Astro] Astro.props: 이 레이아웃을 사용하는 페이지에서 넘겨준 속성을 받는다.
+// 예: <Base title="홈"> → { title: "홈" }
+const { title, description, image, type = 'website' } = Astro.props;
+
+// [SEO] canonical URL: Astro.site(astro.config.mjs의 site) + 현재 경로
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const siteTitle = '블로그';
+const fullTitle = title === siteTitle ? siteTitle : `${title} | ${siteTitle}`;
+const metaDescription = description || '개발 블로그';
+const ogImage = image ? new URL(image, Astro.site).href : undefined;
+---
+
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet" />
+    <!-- [Astro] {title}: JSX 스타일로 JS 변수를 HTML에 삽입. Liquid의 {{ title }}에 해당 -->
+    <title>{fullTitle}</title>
+
+    {/* [SEO] 검색엔진이 읽는 설명. 검색 결과 제목 아래에 표시됨 */}
+    <meta name="description" content={metaDescription} />
+    <link rel="canonical" href={canonicalURL.href} />
+
+    {/* [SEO] Open Graph: 카카오톡, 슬랙, 페이스북 등에서 링크 공유 시 미리보기 카드 */}
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={metaDescription} />
+    <meta property="og:url" content={canonicalURL.href} />
+    <meta property="og:type" content={type} />
+    <meta property="og:site_name" content={siteTitle} />
+    {ogImage && <meta property="og:image" content={ogImage} />}
+
+    {/* [SEO] Twitter 카드 */}
+    <meta name="twitter:card" content={ogImage ? 'summary_large_image' : 'summary'} />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={metaDescription} />
+
+    {/* Google Analytics */}
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FW5937R15T"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-FW5937R15T');
+    </script>
+
+    <script is:inline>
+      (function () {
+        const saved = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = saved || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      })();
+    </script>
+  </head>
+  <body>
+    <Sidebar />
+    <div id="mask-overlay"></div>
+    <main id="main-wrapper">
+      <!-- [Astro] <slot />: 이 레이아웃을 사용하는 페이지의 콘텐츠가 여기에 삽입된다.
+         Jekyll의 {{ content }}와 동일한 역할 -->
+      <Topbar title={title} />
+      <div id="core-wrapper">
+        <slot />
+      </div>
+    </main>
+    <Footer />
+    <script is:inline>
+      document.getElementById('theme-toggle').addEventListener('click', function () {
+        const html = document.documentElement;
+        const current = html.getAttribute('data-theme');
+        const next = current === 'dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        // SVG 아이콘은 그대로 유지
+      });
+
+      // SVG 아이콘은 테마와 무관하게 동일
+
+      // 모바일 사이드바 토글
+      (function () {
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('mask-overlay');
+        const trigger = document.getElementById('sidebar-trigger');
+
+        function openSidebar() {
+          sidebar.classList.add('sidebar-visible');
+          overlay.classList.add('visible');
+        }
+
+        function closeSidebar() {
+          sidebar.classList.remove('sidebar-visible');
+          overlay.classList.remove('visible');
+        }
+
+        trigger.addEventListener('click', openSidebar);
+        overlay.addEventListener('click', closeSidebar);
+      })();
+
+      // Topbar 숨김/표시: 아래로 스크롤 → 숨김, 위로 스크롤 → 표시
+      (function () {
+        var lastScrollY = 0;
+        var topbarHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--topbar-height')) || 48;
+        var ticking = false;
+
+        window.addEventListener('scroll', function () {
+          if (!ticking) {
+            ticking = true;
+            setTimeout(function () {
+              var currentY = window.scrollY;
+              if (Math.abs(currentY - lastScrollY) > topbarHeight) {
+                if (currentY > lastScrollY) {
+                  document.body.setAttribute('data-topbar-visible', 'false');
+                } else {
+                  document.body.setAttribute('data-topbar-visible', 'true');
+                }
+                lastScrollY = currentY;
+              }
+              ticking = false;
+            }, 250);
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>

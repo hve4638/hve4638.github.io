@@ -1,0 +1,40 @@
+---
+import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog'))
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+const postsByYear = new Map<number, typeof posts>();
+for (const post of posts) {
+  const year = post.data.date.getFullYear();
+  if (!postsByYear.has(year)) postsByYear.set(year, []);
+  postsByYear.get(year)!.push(post);
+}
+
+const sortedYears = [...postsByYear.keys()].sort((a, b) => b - a);
+---
+
+<Base title="아카이브">
+  <h1>아카이브</h1>
+  <div id="archives">
+    {sortedYears.map(year => (
+      <Fragment>
+        <div class="year">{year}</div>
+        <ul>
+          {postsByYear.get(year)!.map(post => {
+            const d = post.data.date;
+            const day = String(d.getDate()).padStart(2, '0');
+            const month = String(d.getMonth() + 1).padStart(2, '0');
+            return (
+              <li>
+                <span class="date">{month}/{day}</span>
+                <a href={`/posts/${post.id}`}>{post.data.title}</a>
+              </li>
+            );
+          })}
+        </ul>
+      </Fragment>
+    ))}
+  </div>
+</Base>

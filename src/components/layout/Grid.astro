@@ -1,0 +1,20 @@
+---
+interface Props {
+  class?: string;
+  rows: string;
+  columns: string;
+}
+
+const { class: className = '', rows, columns } = Astro.props;
+---
+
+<div
+  class={className}
+  style={{
+    display: 'grid',
+    gridTemplateRows: rows,
+    gridTemplateColumns: columns,
+  }}
+>
+  <slot />
+</div>

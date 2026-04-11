@@ -1,0 +1,30 @@
+---
+import Base from "../layouts/Base.astro";
+import PostCard from "../components/PostCard.astro";
+import { getCollection } from "astro:content";
+import { getPage } from "../utils/pagination";
+
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime(),
+);
+
+const page = getPage(posts, 1);
+---
+
+<Base title="블로그">
+  <div id="post-list">
+    {page.data.map((post) => (
+      <PostCard post={post} />
+    ))}
+  </div>
+
+  <nav class="pagination">
+    {page.prevUrl && (
+      <a class="page-link" href={page.prevUrl}>&larr;</a>
+    )}
+    <span class="page-index">{page.currentPage} / {page.totalPages}</span>
+    {page.nextUrl && (
+      <a class="page-link" href={page.nextUrl}>&rarr;</a>
+    )}
+  </nav>
+</Base>

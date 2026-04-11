@@ -1,0 +1,60 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+// [Astro] [...slug]: catch-all 동적 라우팅. 슬래시를 포함한 여러 세그먼트를 하나로 받는다.
+// /categories/개발       → slug = "개발"
+// /categories/개발/도구  → slug = "개발/도구"
+// /categories/a/b/c     → slug = "a/b/c"
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+
+  // 모든 카테고리 경로를 수집 (각 깊이별로)
+  // 예: categories: ["개발", "도구"] → 경로 2개 생성: "개발", "개발/도구"
+  const pathMap = new Map<string, typeof posts>();
+
+  for (const post of posts) {
+    const cats = post.data.categories;
+    // 각 깊이별 경로 생성
+    for (let depth = 1; depth <= cats.length; depth++) {
+      const path = cats.slice(0, depth).join('/');
+      if (!pathMap.has(path)) pathMap.set(path, []);
+      pathMap.get(path)!.push(post);
+    }
+  }
+
+  return [...pathMap.entries()].map(([path, matchedPosts]) => ({
+    params: { slug: path },
+    props: {
+      segments: path.split('/'),
+      posts: matchedPosts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime()),
+    },
+  }));
+}
+
+const { segments, posts } = Astro.props;
+const title = segments[segments.length - 1];
+---
+
+<Base title={`카테고리: ${title}`}>
+  <div id="page-category">
+    <h1>
+      <i class="fa fa-folder-open fa-fw"></i>
+      {title}
+      <span class="lead text-muted">{posts.length}</span>
+    </h1>
+    <ul class="post-list">
+      {posts.map(post => {
+        const d = post.data.date;
+        const dateStr = `${d.getFullYear()}/${String(d.getMonth() + 1).padStart(2, '0')}/${String(d.getDate()).padStart(2, '0')}`;
+        return (
+          <li>
+            <a href={`/posts/${post.id}`}>{post.data.title}</a>
+            <span class="dash"></span>
+            <time datetime={d.toISOString()}>{dateStr}</time>
+          </li>
+        );
+      })}
+    </ul>
+  </div>
+</Base>

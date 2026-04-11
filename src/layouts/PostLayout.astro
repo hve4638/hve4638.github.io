@@ -1,0 +1,216 @@
+---
+import Base from './Base.astro';
+import TocSidebar from '../components/TocSidebar.astro';
+import Comments from '../components/Comments.astro';
+
+const { title, date, categories, tags, prevPost, nextPost, description, headings, comments = true, math = false, mermaid = false, relatedPosts = [] } = Astro.props;
+---
+
+<Base title={title} description={description} type="article">
+  <div class="post-wrapper">
+    <article class="post">
+      <h1 class="post-title">{title}</h1>
+
+      <div class="post-meta">
+        <span>
+          <time datetime={date.toISOString()}>
+            {date.toLocaleDateString('ko-KR')}
+          </time>
+        </span>
+
+        {categories.length > 0 && (
+          <span class="post-categories">
+            {categories.map((cat: string, i: number) => {
+              const href = '/categories/' + categories.slice(0, i + 1).join('/');
+              return (
+                <span>
+                  {i > 0 && ' > '}
+                  <a href={href}>{cat}</a>
+                </span>
+              );
+            })}
+          </span>
+        )}
+      </div>
+
+      <div class="post-content">
+        <slot />
+      </div>
+
+      <div class="post-tail-wrapper">
+        {tags.length > 0 && (
+          <div class="post-tags">
+            {tags.map((tag: string) => (
+              <a class="post-tag" href={`/tags/${tag}`}>{tag}</a>
+            ))}
+          </div>
+        )}
+      </div>
+
+      <nav class="post-navigation">
+        {prevPost ? (
+          <a class="btn btn-prev" href={`/posts/${prevPost.id}`}>
+            <span class="btn-label">&larr; 이전</span>
+            <span class="btn-title">{prevPost.data.title}</span>
+          </a>
+        ) : <span class="btn btn-prev disabled" />}
+
+        {nextPost ? (
+          <a class="btn btn-next" href={`/posts/${nextPost.id}`}>
+            <span class="btn-label">다음 &rarr;</span>
+            <span class="btn-title">{nextPost.data.title}</span>
+          </a>
+        ) : <span class="btn btn-next disabled" />}
+      </nav>
+
+      {comments && <Comments />}
+    </article>
+
+    <aside id="panel-wrapper">
+      {relatedPosts.length > 0 && (
+        <div id="related-wrapper" class="panel-section">
+          <div class="panel-heading">관련 포스트</div>
+          <ul class="panel-list">
+            {relatedPosts.map((post: any) => (
+              <li>
+                <a href={`/posts/${post.id}`}>{post.data.title}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+      <TocSidebar headings={headings} />
+    </aside>
+  </div>
+
+  {/* MathJax: math: true인 포스트에서만 로드 */}
+  {math && (
+    <Fragment>
+      <script is:inline>
+        MathJax = {
+          tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']],
+          },
+        };
+      </script>
+      <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    </Fragment>
+  )}
+
+  {/* Mermaid: mermaid: true인 포스트에서만 로드 */}
+  {mermaid && (
+    <script is:inline>
+      (function () {
+        function getTheme() {
+          return document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default';
+        }
+
+        function initMermaid() {
+          // language-mermaid 코드 블록을 mermaid용 <pre>로 변환
+          document.querySelectorAll('pre > code.language-mermaid').forEach(function (code) {
+            var pre = code.parentElement;
+            var mermaidPre = document.createElement('pre');
+            mermaidPre.className = 'mermaid';
+            mermaidPre.textContent = code.textContent;
+            pre.style.display = 'none';
+            pre.parentNode.insertBefore(mermaidPre, pre.nextSibling);
+          });
+
+          window.mermaid.initialize({ startOnLoad: false, theme: getTheme() });
+          window.mermaid.run();
+        }
+
+        // Mermaid 스크립트 로드
+        var s = document.createElement('script');
+        s.src = 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js';
+        s.onload = initMermaid;
+        document.head.appendChild(s);
+
+        // 테마 전환 시 재렌더링
+        var toggle = document.getElementById('theme-toggle');
+        if (toggle) {
+          toggle.addEventListener('click', function () {
+            setTimeout(function () {
+              if (typeof window.mermaid === 'undefined') return;
+              document.querySelectorAll('pre.mermaid[data-processed]').forEach(function (el) {
+                el.removeAttribute('data-processed');
+                var source = el.previousElementSibling;
+                if (source) el.textContent = source.querySelector('code').textContent;
+              });
+              window.mermaid.initialize({ startOnLoad: false, theme: getTheme() });
+              window.mermaid.run();
+            }, 100);
+          });
+        }
+      })();
+    </script>
+  )}
+
+  {/* 코드블록: 언어 라벨 + 복사 버튼 */}
+  <script is:inline>
+    (function () {
+      document.querySelectorAll('.post-content pre[data-language]').forEach(function (pre) {
+        var code = pre.querySelector('code');
+        if (!code) return;
+        var langText = pre.getAttribute('data-language') || 'text';
+        // mermaid 블록은 스킵
+        if (langText === 'mermaid') return;
+        // 이미 헤더가 있으면 스킵
+        if (pre.previousElementSibling && pre.previousElementSibling.classList.contains('code-header')) return;
+
+        var header = document.createElement('div');
+        header.className = 'code-header';
+
+        var label = document.createElement('span');
+        label.setAttribute('data-label-text', langText);
+        header.appendChild(label);
+
+        var btn = document.createElement('button');
+        btn.setAttribute('aria-label', '코드 복사');
+        btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="14" height="14" fill="currentColor"><path d="M384 336H192c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16l140.1 0L384 99.9V320c0 8.8-7.2 16-16 16zM192 0C156.7 0 128 28.7 128 64V320c0 35.3 28.7 64 64 64H368c35.3 0 64-28.7 64-64V99.9c0-17-6.7-33.3-18.7-45.3L369.4 10.7C357.4 -1.3 341.1-8 324.1-8H324.1 192zM64 128c-35.3 0-64 28.7-64 64V448c0 35.3 28.7 64 64 64H256c35.3 0 64-28.7 64-64V416H272v32c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V192c0-8.8 7.2-16 16-16h32V128H64z"/></svg>';
+        btn.addEventListener('click', function () {
+          navigator.clipboard.writeText(code.textContent).then(function () {
+            btn.setAttribute('data-copied', '');
+            btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="14" height="14" fill="currentColor"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>';
+            setTimeout(function () {
+              btn.removeAttribute('data-copied');
+              btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="14" height="14" fill="currentColor"><path d="M384 336H192c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16l140.1 0L384 99.9V320c0 8.8-7.2 16-16 16zM192 0C156.7 0 128 28.7 128 64V320c0 35.3 28.7 64 64 64H368c35.3 0 64-28.7 64-64V99.9c0-17-6.7-33.3-18.7-45.3L369.4 10.7C357.4 -1.3 341.1-8 324.1-8H324.1 192zM64 128c-35.3 0-64 28.7-64 64V448c0 35.3 28.7 64 64 64H256c35.3 0 64-28.7 64-64V416H272v32c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V192c0-8.8 7.2-16 16-16h32V128H64z"/></svg>';
+            }, 2000);
+          });
+        });
+        header.appendChild(btn);
+
+        pre.parentNode.insertBefore(header, pre);
+      });
+    })();
+  </script>
+
+  {/* 라이트박스: 포스트 이미지 클릭 시 확대 */}
+  <div id="lightbox-overlay">
+    <img id="lightbox-img" />
+  </div>
+  <script is:inline>
+    (function () {
+      var overlay = document.getElementById('lightbox-overlay');
+      var lbImg = document.getElementById('lightbox-img');
+
+      document.querySelectorAll('.post-content img').forEach(function (img) {
+        img.style.cursor = 'zoom-in';
+        img.addEventListener('click', function () {
+          lbImg.src = img.src;
+          lbImg.alt = img.alt;
+          overlay.classList.add('active');
+        });
+      });
+
+      overlay.addEventListener('click', function () {
+        overlay.classList.remove('active');
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') overlay.classList.remove('active');
+      });
+    })();
+  </script>
+</Base>

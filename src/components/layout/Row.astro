@@ -1,0 +1,26 @@
+---
+interface Props {
+  class?: string;
+  rowAlign?: string;
+  columnAlign?: string;
+  reverse?: boolean;
+}
+
+const {
+  class: className = '',
+  rowAlign = 'flex-start',
+  columnAlign = 'flex-start',
+  reverse = false,
+} = Astro.props;
+---
+
+<div
+  class={`flex ${className}`}
+  style={{
+    flexDirection: reverse ? 'row-reverse' : 'row',
+    justifyContent: rowAlign,
+    alignItems: columnAlign,
+  }}
+>
+  <slot />
+</div>
