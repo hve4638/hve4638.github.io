@@ -1,4 +1,6 @@
 ---
+import { getExcerpt } from '../utils/excerpt';
+
 interface Props {
   post: {
     id: string;
@@ -13,16 +15,6 @@ interface Props {
 }
 
 const { post } = Astro.props;
-
-function getExcerpt(body: string, length = 200) {
-  const plain = body
-    .replace(/```[\s\S]*?```/g, '')
-    .replace(/!?\[.*?\]\(.*?\)/g, '')
-    .replace(/[#*>`~_\-]/g, '')
-    .replace(/\n+/g, ' ')
-    .trim();
-  return plain.length > length ? plain.slice(0, length) + '...' : plain;
-}
 ---
 
 <div class="post-preview">
@@ -31,22 +23,26 @@ function getExcerpt(body: string, length = 200) {
       <h1 class="card-title">{post.data.title}</h1>
 
       <div class="post-content">
-        <p>{getExcerpt(post.body ?? '')}</p>
+        <p>{getExcerpt(post.body ?? '', 200)}</p>
       </div>
 
       <div class="post-meta">
         <div class="meta-left">
+          <i class="far fa-calendar fa-fw"></i>
           <time datetime={post.data.date.toISOString()}>
-            {post.data.date.toLocaleDateString("ko-KR")}
+            {`${post.data.date.getFullYear()}/${String(post.data.date.getMonth() + 1).padStart(2, '0')}/${String(post.data.date.getDate()).padStart(2, '0')}`}
           </time>
           {post.data.categories && post.data.categories.length > 0 && (
             <span class="categories">
+              <i class="far fa-folder-open fa-fw"></i>
               {post.data.categories.join(", ")}
             </span>
           )}
         </div>
         {post.data.pin && (
-          <div class="pin">📌</div>
+          <div class="pin">
+            <i class="fas fa-thumbtack fa-fw"></i>
+          </div>
         )}
       </div>
     </div>

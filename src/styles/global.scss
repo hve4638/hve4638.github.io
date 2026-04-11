@@ -57,6 +57,8 @@
   --btn-share-hover-color: var(--link-color);
   --card-hovor-bg: #eeeeee;
   --card-border-color: #ececec;
+  --post-preview-bg: rgb(255, 255, 255);
+  --post-preview-hover-bg: rgb(238, 238, 238);
   --card-box-shadow: rgba(234, 234, 234, 0.76);
   --label-color: #616161;
   --relate-post-date: rgba(30, 55, 70, 0.4);
@@ -167,6 +169,8 @@
   --card-header-bg: rgb(51, 50, 50);
   --card-hovor-bg: #3a3a3a;
   --card-border-color: rgb(53, 53, 60);
+  --post-preview-bg: rgb(33, 33, 33);
+  --post-preview-hover-bg: rgb(58, 58, 58);
   --card-box-shadow: var(--main-bg);
   --label-color: rgb(108, 117, 125);
   --kbd-wrap-color: #6a6a6a;
@@ -393,11 +397,11 @@ body {
   padding-left: 0.5rem;
 
   a {
-    color: gray;
+    color: var(--link-color);
     text-decoration: none;
 
     &:hover {
-      color: var(--link-color);
+      text-decoration: underline;
     }
   }
 
@@ -584,7 +588,7 @@ footer {
 
 #post-list {
   margin-top: 1.75rem;
-  padding: 0 1rem;
+  padding: 0 52px;
 
   a {
     text-decoration: none;
@@ -595,15 +599,20 @@ footer {
     padding: 0.5rem;
     border-radius: 0.75rem;
     border: 1px solid var(--card-border-color);
-    transition: all 0.35s ease-in-out;
+    background: var(--post-preview-bg);
+    transition: all 0.15s linear;
 
     &:hover {
-      background: var(--card-hovor-bg);
+      background: var(--post-preview-hover-bg);
       box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
     }
 
     &:not(:last-child) {
       margin-bottom: 1rem;
+    }
+
+    .card-body {
+      padding: 2px 16px;
     }
 
     .card-title {
@@ -613,8 +622,8 @@ footer {
     }
 
     .post-content {
-      margin-top: 0.6rem;
-      margin-bottom: 0.6rem;
+      margin-top: 0.4rem;
+      margin-bottom: 0.4rem;
       color: var(--post-list-text-color);
       font-size: 0.9rem;
 
@@ -638,9 +647,14 @@ footer {
 
       .meta-left {
         display: flex;
-        gap: 1.2rem;
+        align-items: center;
+
+        i {
+          margin-right: 4px;
+        }
 
         .categories {
+          margin-left: 1rem;
           margin-bottom: 0;
         }
       }
@@ -868,6 +882,10 @@ footer {
   margin-top: 2rem;
   overflow-wrap: break-word;
 
+  p {
+    margin-bottom: 12px;
+  }
+
   /* 제목 */
   h1, h2, h3, h4, h5 {
     color: var(--heading-color);
@@ -875,7 +893,7 @@ footer {
     font-family: Lato, 'Microsoft Yahei', sans-serif;
   }
 
-  h1 { font-size: 1.9rem; margin-top: 3rem; margin-bottom: 1.5rem; }
+  h1 { font-size: 1.8rem; margin-top: 3rem; margin-bottom: 0; }
   h2 { font-size: 1.6rem; margin-top: 2.5rem; margin-bottom: 1rem; }
   h3 { font-size: 1.3rem; margin-top: 2rem; margin-bottom: 0.8rem; }
   h4 { font-size: 1.15rem; margin-top: 1.5rem; margin-bottom: 0.5rem; }
@@ -1097,7 +1115,7 @@ footer {
 }
 
 .post {
-  padding: 0 1rem;
+  padding: 0 48px;
   flex: 1;
   min-width: 0;
 }
@@ -1226,6 +1244,7 @@ footer {
   font-size: 2rem;
   color: var(--heading-color);
   font-weight: 600;
+  margin-top: 48px;
   margin-bottom: 0.5rem;
 }
 
@@ -1233,7 +1252,7 @@ footer {
   font-size: 0.85rem;
   color: var(--text-muted-color);
   word-spacing: 1px;
-  margin-bottom: 2rem;
+  margin-bottom: 16px;
 
   > span + span::before {
     content: '·';
