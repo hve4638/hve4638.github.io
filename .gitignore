@@ -32,5 +32,6 @@ pnpm-debug.log*
 
 .playwright*/
 .screenshots
+.pnpm-store
 
 !.gitkeep
